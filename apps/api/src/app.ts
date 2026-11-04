@@ -9,7 +9,7 @@ import { TokenClaims, hashPassword, signToken, verifyPassword, Role } from './au
 import { Database } from './db';
 import { AdminController } from './admin';
 import { runClientForecast } from './forecast-run';
-import { assetCreate, clientCreate, scenarioSchema, siteCreate, typeCreate } from './schemas';
+import { assetCreate, clientCreate, regionCreate, scenarioSchema, siteCreate, typeCreate } from './schemas';
 import {
   type AppConfig, AuthGuard, CONFIG, Claims, DB, Public, Roles, WRITERS, audit, parse, tenant,
 } from './common';
@@ -89,16 +89,46 @@ export class RegisterController {
   @Get('sites/:siteId')
   site(@Claims() c: TokenClaims, @Param('siteId') siteId: string) {
     return this.db.withTenant(tenant(c), async (q) => {
-      const row = (await q.query('SELECT id, client_id, code, name, site_class, address FROM site WHERE id = $1', [siteId])).rows[0];
+      const row = (await q.query(
+        `SELECT s.id, s.client_id, s.code, s.name, s.site_class, s.address, s.region_id, d.code AS region_code, d.name AS region_name
+           FROM site s LEFT JOIN region d ON d.id = s.region_id WHERE s.id = $1`, [siteId])).rows[0];
       if (!row) throw new NotFoundException('Site not found');
       return row;
     });
   }
 
   @Get('clients/:clientId/sites')
-  sites(@Claims() c: TokenClaims, @Param('clientId') clientId: string) {
+  sites(@Claims() c: TokenClaims, @Param('clientId') clientId: string, @Query('regionId') regionId?: string) {
     return this.db.withTenant(tenant(c), async (q) =>
-      (await q.query('SELECT id, code, name, site_class, address FROM site WHERE client_id = $1 ORDER BY code', [clientId])).rows);
+      (await q.query(
+        `SELECT s.id, s.code, s.name, s.site_class, s.address, s.region_id, d.code AS region_code, d.name AS region_name
+           FROM site s LEFT JOIN region d ON d.id = s.region_id
+          WHERE s.client_id = $1 AND ($2::uuid IS NULL OR s.region_id = $2::uuid) ORDER BY s.code`, [clientId, regionId ?? null])).rows);
+  }
+
+  @Get('clients/:clientId/regions')
+  regions(@Claims() c: TokenClaims, @Param('clientId') clientId: string) {
+    return this.db.withTenant(tenant(c), async (q) =>
+      (await q.query(
+        `SELECT d.id, d.code, d.name, (SELECT count(*)::int FROM site s WHERE s.region_id = d.id) AS site_count
+           FROM region d WHERE d.client_id = $1 ORDER BY d.code`, [clientId])).rows);
+  }
+
+  @Post('clients/:clientId/regions') @Roles(...WRITERS)
+  createRegion(@Claims() c: TokenClaims, @Param('clientId') clientId: string, @Body() body: unknown) {
+    const b = parse(regionCreate, body);
+    return this.db.withTenant(tenant(c), async (q) => {
+      await this.requireClient(q, clientId);
+      try {
+        const row = (await q.query<{ id: string }>(
+          'INSERT INTO region (organisation_id, client_id, code, name) VALUES ($1,$2,$3,$4) RETURNING id, code, name', [c.org, clientId, b.code, b.name])).rows[0]!;
+        await audit(q, c, 'create', 'region', row.id, clientId);
+        return row;
+      } catch (e: any) {
+        if (e?.code === '23505') throw new ConflictException('Region code already exists for this client');
+        throw e;
+      }
+    });
   }
 
   @Post('clients/:clientId/sites') @Roles(...WRITERS)
@@ -108,13 +138,14 @@ export class RegisterController {
       await this.requireClient(q, clientId);
       try {
         const row = (await q.query<{ id: string }>(
-          `INSERT INTO site (organisation_id, client_id, code, name, site_class, address, latitude, longitude, hazards, attributes)
-           VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING id, code, name`,
-          [c.org, clientId, b.code, b.name, b.siteClass ?? null, b.address ?? null, b.latitude ?? null, b.longitude ?? null, b.hazards ?? null, b.attributes])).rows[0]!;
+          `INSERT INTO site (organisation_id, client_id, region_id, code, name, site_class, address, latitude, longitude, hazards, attributes)
+           VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) RETURNING id, code, name`,
+          [c.org, clientId, b.regionId ?? null, b.code, b.name, b.siteClass ?? null, b.address ?? null, b.latitude ?? null, b.longitude ?? null, b.hazards ?? null, b.attributes])).rows[0]!;
         await audit(q, c, 'create', 'site', row.id, clientId);
         return row;
       } catch (e: any) {
         if (e?.code === '23505') throw new ConflictException('Site code already exists for this client');
+        if (e?.code === '23503') throw new BadRequestException('regionId does not exist for this client');
         throw e;
       }
     });

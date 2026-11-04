@@ -6,7 +6,9 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "start": "node --env-file-if-exists=.env --import tsx src/main.ts"
+    "start": "node --env-file-if-exists=.env --import tsx src/main.ts",
+    "seed:demo": "node --env-file-if-exists=.env --import tsx src/seed/run-demo.ts",
+    "seed:build-transmitters": "tsx src/seed/build-transmitters.ts"
   },
   "dependencies": {
     "@ace/forecast": "*",

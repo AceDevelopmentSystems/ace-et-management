@@ -7,8 +7,13 @@ export const clientBase = z.object({ name: z.string().min(1), code: z.string().m
 export const clientCreate = clientBase.extend({ code: clientBase.shape.code.optional(), currency: clientBase.shape.currency.default('NZD') });
 export const clientPatch = clientBase.partial();
 
+export const regionBase = z.object({ code: z.string().min(1).max(20), name: z.string().min(1) });
+export const regionCreate = regionBase;
+export const regionPatch = regionBase.partial();
+
 export const siteBase = z.object({
   code: z.string().min(1), name: z.string().min(1), siteClass: z.string(), address: z.string(),
+  regionId: z.string().uuid().nullable(),
   latitude: z.number().min(-90).max(90), longitude: z.number().min(-180).max(180),
   hazards: z.string(), attributes: z.record(z.string(), z.unknown()),
 });

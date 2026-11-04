@@ -1,0 +1,6701 @@
+{
+ "source": {
+  "url": "https://ozdigitaltv.com/transmitters",
+  "attribution": "Transmitter site list from ozdigitaltv.com, which states it is based on Australian Communications and Media Authority data.",
+  "fetchedOn": "2026-11-04"
+ },
+ "states": [
+  {
+   "code": "ACT",
+   "name": "Australian Capital Territory",
+   "sites": [
+    {
+     "id": 3,
+     "name": "Black Mountain",
+     "detail": "Telecom Tower",
+     "description": "Telecom Tower Black Mountain",
+     "coverageAreas": [
+      "Canberra"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/ACT/3-Black-Mountain"
+    },
+    {
+     "id": 448,
+     "name": "Banks, Theodore",
+     "detail": "Multiple",
+     "description": "Broadcast Site Water Tank Orange Thorn Cres Banks",
+     "coverageAreas": [
+      "Conder"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/ACT/448-Banks-Theodore"
+    },
+    {
+     "id": 1,
+     "name": "Torrens",
+     "detail": "Broadcast Australia Site Mt Taylor off Waldock St (Chifley)",
+     "description": "Broadcast Australia Site Mt Taylor off Waldock St (Chifley) Torrens",
+     "coverageAreas": [
+      "Weston Creek/Woden"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/ACT/1-Torrens"
+    }
+   ]
+  },
+  {
+   "code": "NSW",
+   "name": "New South Wales",
+   "sites": [
+    {
+     "id": 429,
+     "name": "Adelong",
+     "detail": "Broadcast Site 3 km ENE of",
+     "description": "Broadcast Site 3 km ENE of Adelong",
+     "coverageAreas": [
+      "Adelong"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/429-Adelong"
+    },
+    {
+     "id": 6,
+     "name": "Albury, Springdale Heights",
+     "detail": "Multiple",
+     "description": "Allcom Site One Tree Hill Albury",
+     "coverageAreas": [
+      "Albury North"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/6-Albury-Springdale-Heights"
+    },
+    {
+     "id": 597,
+     "name": "Anna Bay",
+     "detail": "Broadcast Site - Hunter Water Corporation Water Tank",
+     "description": "Broadcast Site - Hunter Water Corporation Water Tank Anna Bay",
+     "coverageAreas": [
+      "Anna Bay"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/597--Anna-Bay"
+    },
+    {
+     "id": 76,
+     "name": "Dumaresq",
+     "detail": "Prime digital tower Little Duval Mountain via Boorolong Road",
+     "description": "Prime digital tower Little Duval Mountain via Boorolong Road Dumaresq",
+     "coverageAreas": [
+      "Armidale"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/76-Dumaresq"
+    },
+    {
+     "id": 565,
+     "name": "Armidale",
+     "detail": "Broadcast Tower Kellys Plains Translator Rd",
+     "description": "Broadcast Tower Kellys Plains Translator Rd Armidale",
+     "coverageAreas": [
+      "Armidale North"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/565-Armidale"
+    },
+    {
+     "id": 16,
+     "name": "Ashford",
+     "detail": "Broadcast Australia site Ashford-Bukkulla Rd 2.4km ESE of",
+     "description": "Broadcast Australia site Ashford-Bukkulla Rd 2.4km ESE of Ashford",
+     "coverageAreas": [
+      "Ashford"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/16-Ashford"
+    },
+    {
+     "id": 8,
+     "name": "Balranald",
+     "detail": "Balranald Reservoir off Church St",
+     "description": "Balranald Reservoir off Church St Balranald",
+     "coverageAreas": [
+      "Balranald"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/8-Balranald"
+    },
+    {
+     "id": 48,
+     "name": "Mt Wandera",
+     "detail": "Broadcast Site 18km WSW of Batemans Bay",
+     "description": "Broadcast Site 18km WSW of Batemans Bay Mt Wandera",
+     "coverageAreas": [
+      "Batemans Bay/Moruya"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/48-Mt-Wandera"
+    },
+    {
+     "id": 98,
+     "name": "Mt Panorama",
+     "detail": "WIN Television Site Reid Park",
+     "description": "WIN Television Site Reid Park Mt Panorama",
+     "coverageAreas": [
+      "Bathurst"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/98-Mt-Panorama"
+    },
+    {
+     "id": 450,
+     "name": "Batlow",
+     "detail": "Broadcast Site Snubba Road 4 km SE of",
+     "description": "Broadcast Site Snubba Road 4 km SE of Batlow",
+     "coverageAreas": [
+      "Batlow"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/450-Batlow"
+    },
+    {
+     "id": 18,
+     "name": "Mumbulla Mountain",
+     "detail": "Broadcast Site 14.5 km N of Bega",
+     "description": "Broadcast Site 14.5 km N of Bega Mumbulla Mountain",
+     "coverageAreas": [
+      "Bega"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/18-Mumbulla-Mountain"
+    },
+    {
+     "id": 611,
+     "name": "Belmont North",
+     "detail": "Axicom Site Adj Water Reservoir 117 Violet Town Rd",
+     "description": "Axicom Site Adj Water Reservoir 117 Violet Town Rd Belmont North",
+     "coverageAreas": [
+      "Belmont North"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/611-Belmont-North"
+    },
+    {
+     "id": 460,
+     "name": "Bermagui",
+     "detail": "Reservoir 9 Barragoot Street",
+     "description": "Reservoir 9 Barragoot Street Bermagui",
+     "coverageAreas": [
+      "Bermagui"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/460-Bermagui"
+    },
+    {
+     "id": 610,
+     "name": "Toormina",
+     "detail": "Optus Monopole Toormina Water Reservoir Off Belbowrie Road",
+     "description": "Optus Monopole Toormina Water Reservoir Off Belbowrie Road Toormina",
+     "coverageAreas": [
+      "Boambee/Sawtell"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/610-Toormina"
+    },
+    {
+     "id": 26,
+     "name": "Bombala",
+     "detail": "Axicom Site off Gunningrach Rd",
+     "description": "Axicom Site off Gunningrach Rd Bombala",
+     "coverageAreas": [
+      "Bombala"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/26-Bombala"
+    },
+    {
+     "id": 752,
+     "name": "Bonalbo",
+     "detail": "Broadcast Site Browns Hill off Woodenbong Rd 3km SSE of",
+     "description": "Broadcast Site Browns Hill off Woodenbong Rd 3km SSE of Bonalbo",
+     "coverageAreas": [
+      "Bonalbo"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/752-Bonalbo"
+    },
+    {
+     "id": 32,
+     "name": "Bouddi",
+     "detail": "Broadcast Site Bombi Road",
+     "description": "Broadcast Site Bombi Road Bouddi",
+     "coverageAreas": [
+      "Bouddi"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/32-Bouddi"
+    },
+    {
+     "id": 595,
+     "name": "Bourke",
+     "detail": "Telstra Site Mount Oxley",
+     "description": "Telstra Site Mount Oxley Bourke",
+     "coverageAreas": [
+      "Bourke"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/595-Bourke"
+    },
+    {
+     "id": 564,
+     "name": "Bourke",
+     "detail": "Broadcast Mast Council Site Water Treatment Plant Wortumertie Street",
+     "description": "Broadcast Mast Council Site Water Treatment Plant Wortumertie Street Bourke",
+     "coverageAreas": [
+      "Bourke Town"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/564-Bourke"
+    },
+    {
+     "id": 786,
+     "name": "Bowning",
+     "detail": "Fire Watch Tower Bowning Hill",
+     "description": "Fire Watch Tower Bowning Hill Bowning",
+     "coverageAreas": [
+      "Bowning"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/786-Bowning"
+    },
+    {
+     "id": 64,
+     "name": "Mount Gibraltar",
+     "detail": "Broadcast Site 100 m N of trig point",
+     "description": "Broadcast Site 100 m N of trig point Mount Gibraltar",
+     "coverageAreas": [
+      "Bowral/Mittagong"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/64-Mount-Gibraltar"
+    },
+    {
+     "id": 21,
+     "name": "Mt Gillamatong",
+     "detail": "Broadcast Site 2.8 km SW of Braidwood",
+     "description": "Broadcast Site 2.8 km SW of Braidwood Mt Gillamatong",
+     "coverageAreas": [
+      "Braidwood"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/21-Mt-Gillamatong"
+    },
+    {
+     "id": 571,
+     "name": "Brewarrina",
+     "detail": "Water Treatment Plant Bokhara Street",
+     "description": "Water Treatment Plant Bokhara Street Brewarrina",
+     "coverageAreas": [
+      "Brewarrina"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/571-Brewarrina"
+    },
+    {
+     "id": 55,
+     "name": "Broken Hill",
+     "detail": "Broadcast site Rocky Hill",
+     "description": "Broadcast site Rocky Hill Broken Hill",
+     "coverageAreas": [
+      "Broken Hill"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/55-Broken-Hill"
+    },
+    {
+     "id": 785,
+     "name": "Bulahdelah",
+     "detail": "Broadcast Site adj reservoir 14-16 Bulahdelah Way",
+     "description": "Broadcast Site adj reservoir 14-16 Bulahdelah Way Bulahdelah",
+     "coverageAreas": [
+      "Bulahdelah"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/785-Bulahdelah"
+    },
+    {
+     "id": 463,
+     "name": "Lake George",
+     "detail": "DDA Site Chaton Ridge",
+     "description": "DDA Site Chaton Ridge Lake George",
+     "coverageAreas": [
+      "Bungendore"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/463--Lake-George"
+    },
+    {
+     "id": 562,
+     "name": "Byron Bay",
+     "detail": "Broadcast Site Reservoir Paterson St",
+     "description": "Broadcast Site Reservoir Paterson St Byron Bay",
+     "coverageAreas": [
+      "Byron Bay"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/562-Byron-Bay"
+    },
+    {
+     "id": 431,
+     "name": "Captains Flat",
+     "detail": "Broadcast Site Water Reservoir Old Mines Road",
+     "description": "Broadcast Site Water Reservoir Old Mines Road Captains Flat",
+     "coverageAreas": [
+      "Captains Flat"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/431-Captains-Flat"
+    },
+    {
+     "id": 70,
+     "name": "Cassilis",
+     "detail": "NBN Site",
+     "description": "NBN Site Cassilis",
+     "coverageAreas": [
+      "Cassilis"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/70-Cassilis"
+    },
+    {
+     "id": 79,
+     "name": "Mt Canobolas",
+     "detail": "Multiple",
+     "description": "Prime TV Tower Mt Canobolas",
+     "coverageAreas": [
+      "Central Tablelands"
+     ],
+     "powerStars": 6,
+     "path": "transmitters/NSW/79--Mt-Canobolas"
+    },
+    {
+     "id": 41,
+     "name": "Mt Cenn Cruaich",
+     "detail": "Broadcast Australia Site Access Road",
+     "description": "Broadcast Australia Site Access Road Mt Cenn Cruaich",
+     "coverageAreas": [
+      "Central Western Slopes"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/41-Mt-Cenn-Cruaich"
+    },
+    {
+     "id": 7,
+     "name": "Cobar",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Fort Bourke Hill North Rd Cobar",
+     "coverageAreas": [
+      "Cobar"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/7-Cobar"
+    },
+    {
+     "id": 91,
+     "name": "Korora",
+     "detail": "Broadcast Monopole NRTV Site off 115 Bruxner Park Rd",
+     "description": "Broadcast Monopole NRTV Site off 115 Bruxner Park Rd Korora",
+     "coverageAreas": [
+      "Coffs Harbour"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/91-Korora"
+    },
+    {
+     "id": 614,
+     "name": "Emerald Heights",
+     "detail": "Crown Castle Site 43b Saye Close",
+     "description": "Crown Castle Site 43b Saye Close Emerald Heights",
+     "coverageAreas": [
+      "Coffs Harbour North"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/614-Emerald-Heights"
+    },
+    {
+     "id": 417,
+     "name": "Collaroy",
+     "detail": "NBN TV Site Redwell Road off Golden Hwy",
+     "description": "NBN TV Site Redwell Road off Golden Hwy Collaroy",
+     "coverageAreas": [
+      "Collaroy"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/417-Collaroy"
+    },
+    {
+     "id": 44,
+     "name": "Condobolin",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Reservoir Hill Brady St Condobolin",
+     "coverageAreas": [
+      "Condobolin"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/44-Condobolin"
+    },
+    {
+     "id": 78,
+     "name": "Coolah",
+     "detail": "Prime TV Site Adj Queensborough Trig off Kerrawah Road",
+     "description": "Prime TV Site Adj Queensborough Trig off Kerrawah Road Coolah",
+     "coverageAreas": [
+      "Coolah"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/78-Coolah"
+    },
+    {
+     "id": 89,
+     "name": "Cooma",
+     "detail": "Telstra Site Radio Hill Off Polo Flat Rd",
+     "description": "Telstra Site Radio Hill Off Polo Flat Rd Cooma",
+     "coverageAreas": [
+      "Cooma Town"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/89-Cooma"
+    },
+    {
+     "id": 90,
+     "name": "Mt Roberts",
+     "detail": "Ten Capital Broadcast Site",
+     "description": "Ten Capital Broadcast Site Mt Roberts",
+     "coverageAreas": [
+      "Cooma/Monaro"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/90-Mt-Roberts"
+    },
+    {
+     "id": 452,
+     "name": "Cootamundra",
+     "detail": "Broadcast Site Bimbadeen Water Tower",
+     "description": "Broadcast Site Bimbadeen Water Tower Cootamundra",
+     "coverageAreas": [
+      "Cootamundra"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/452-Cootamundra"
+    },
+    {
+     "id": 419,
+     "name": "Cowra",
+     "detail": "Broadcast/Mobile Tower Off Senic Drive",
+     "description": "Broadcast/Mobile Tower Off Senic Drive Cowra",
+     "coverageAreas": [
+      "Cowra"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/419-Cowra"
+    },
+    {
+     "id": 605,
+     "name": "Crookwell",
+     "detail": "Broadcast Australia Site Wades Hill",
+     "description": "Broadcast Australia Site Wades Hill Crookwell",
+     "coverageAreas": [
+      "Crookwell"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/605-Crookwell"
+    },
+    {
+     "id": 466,
+     "name": "Kianga",
+     "detail": "Optus Site Council Reservoir Duesburys Rd",
+     "description": "Optus Site Council Reservoir Duesburys Rd Kianga",
+     "coverageAreas": [
+      "Dalmeny"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/466-Kianga"
+    },
+    {
+     "id": 17,
+     "name": "Deniliquin",
+     "detail": "Broadcast Site 10km SE of",
+     "description": "Broadcast Site 10km SE of Deniliquin",
+     "coverageAreas": [
+      "Deniliquin"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/17-Deniliquin"
+    },
+    {
+     "id": 766,
+     "name": "Dubbo",
+     "detail": "Telstra Radio Terminal Buninyong Hill Near",
+     "description": "Telstra Radio Terminal Buninyong Hill Near Dubbo",
+     "coverageAreas": [
+      "Dubbo"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/766-Dubbo"
+    },
+    {
+     "id": 35,
+     "name": "Dungog",
+     "detail": "Broadcast Site Coorei Hill",
+     "description": "Broadcast Site Coorei Hill Dungog",
+     "coverageAreas": [
+      "Dungog"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/35-Dungog"
+    },
+    {
+     "id": 453,
+     "name": "Eastgrove",
+     "detail": "Broadcast site Corner Park and Farm Road",
+     "description": "Broadcast site Corner Park and Farm Road Eastgrove",
+     "coverageAreas": [
+      "Eastgrove"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/453-Eastgrove"
+    },
+    {
+     "id": 24,
+     "name": "Eden",
+     "detail": "Broadcast Australia Site Bimmil Hill Bimmil Firetrail",
+     "description": "Broadcast Australia Site Bimmil Hill Bimmil Firetrail Eden",
+     "coverageAreas": [
+      "Eden"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/24-Eden"
+    },
+    {
+     "id": 567,
+     "name": "Elizabeth Beach",
+     "detail": "Telstra Site Water Reservoir off Hillside Parade",
+     "description": "Telstra Site Water Reservoir off Hillside Parade Elizabeth Beach",
+     "coverageAreas": [
+      "Elizabeth Beach"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/567-Elizabeth-Beach"
+    },
+    {
+     "id": 454,
+     "name": "Eugowra",
+     "detail": "Broadcast Site Off Nanima Road 3.3 km S of",
+     "description": "Broadcast Site Off Nanima Road 3.3 km S of Eugowra",
+     "coverageAreas": [
+      "Eugowra"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/454-Eugowra"
+    },
+    {
+     "id": 570,
+     "name": "Forster",
+     "detail": "Water Tower Likely Street",
+     "description": "Water Tower Likely Street Forster",
+     "coverageAreas": [
+      "Forster"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/570-Forster"
+    },
+    {
+     "id": 60,
+     "name": "Carpenters Hill",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site 4 km NW of Glenn Innes Carpenters Hill",
+     "coverageAreas": [
+      "Glen Innes"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/60-Carpenters-Hill"
+    },
+    {
+     "id": 11,
+     "name": "Gloucester",
+     "detail": "Broadcast Australia Site Kia Ora Lookout",
+     "description": "Broadcast Australia Site Kia Ora Lookout Gloucester",
+     "coverageAreas": [
+      "Gloucester"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/11-Gloucester"
+    },
+    {
+     "id": 599,
+     "name": "Goodooga",
+     "detail": "Broadcast Site Lot 1 Goodooga Road",
+     "description": "Broadcast Site Lot 1 Goodooga Road Goodooga",
+     "coverageAreas": [
+      "Goodooga"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/599-Goodooga"
+    },
+    {
+     "id": 49,
+     "name": "North Gosford",
+     "detail": "CTF Gosford Site Tower Rumbalara Trig 82-59 Callemondah Avenue",
+     "description": "CTF Gosford Site Tower Rumbalara Trig 82-59 Callemondah Avenue North Gosford",
+     "coverageAreas": [
+      "Gosford"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/49-North-Gosford"
+    },
+    {
+     "id": 88,
+     "name": "Mt Gray, Mt Gray",
+     "detail": "Multiple",
+     "description": "Telstra Site Mt Gray",
+     "coverageAreas": [
+      "Goulburn"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/88-Mt-Gray-Mt-Gray"
+    },
+    {
+     "id": 14,
+     "name": "Mount Moombil",
+     "detail": "Broadcast Mast 26 km WSW of Coffs Harbour",
+     "description": "Broadcast Mast 26 km WSW of Coffs Harbour Mount Moombil",
+     "coverageAreas": [
+      "Grafton/Kempsey"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/14-Mount-Moombil"
+    },
+    {
+     "id": 464,
+     "name": "Cmts Grenfell",
+     "detail": "Grenfell",
+     "description": "Grenfell Cmts Grenfell",
+     "coverageAreas": [
+      "Grenfell"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/464-Cmts-Grenfell"
+    },
+    {
+     "id": 455,
+     "name": "Gundagai",
+     "detail": "Broadcast Pole Mt Parnassus Lookout",
+     "description": "Broadcast Pole Mt Parnassus Lookout Gundagai",
+     "coverageAreas": [
+      "Gundagai"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/455-Gundagai"
+    },
+    {
+     "id": 458,
+     "name": "Gunning",
+     "detail": "Broadcast/Comms Site Nelanglo St",
+     "description": "Broadcast/Comms Site Nelanglo St Gunning",
+     "coverageAreas": [
+      "Gunning"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/458-Gunning"
+    },
+    {
+     "id": 470,
+     "name": "Harden",
+     "detail": "Water Reservoir Kelly Street",
+     "description": "Water Reservoir Kelly Street Harden",
+     "coverageAreas": [
+      "Harden"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/470-Harden"
+    },
+    {
+     "id": 83,
+     "name": "Hay",
+     "detail": "Television Site Midwestern Hwy 15km NE",
+     "description": "Television Site Midwestern Hwy 15km NE Hay",
+     "coverageAreas": [
+      "Hay"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/83-Hay"
+    },
+    {
+     "id": 474,
+     "name": "Hillston",
+     "detail": "Wheat Silo High Street",
+     "description": "Wheat Silo High Street Hillston",
+     "coverageAreas": [
+      "Hillston"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/474-Hillston"
+    },
+    {
+     "id": 712,
+     "name": "Holbrook",
+     "detail": "Holbrook Motor Village Corner of Hume Highway and Bardwell Street",
+     "description": "Holbrook Motor Village Corner of Hume Highway and Bardwell Street Holbrook",
+     "coverageAreas": [
+      "Holbrook (Motor Village)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/NSW/712-Holbrook"
+    },
+    {
+     "id": 10,
+     "name": "Knights Hill, Knights Hill",
+     "detail": "Multiple",
+     "description": "Broadcast Australia tower 233 Knights Hill Road Knights Hill",
+     "coverageAreas": [
+      "Illawarra"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/10-Knights-Hill-Knights-Hill"
+    },
+    {
+     "id": 13,
+     "name": "Inverell",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Swanbrook Road Inverell",
+     "coverageAreas": [
+      "Inverell"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/13-Inverell"
+    },
+    {
+     "id": 600,
+     "name": "Ivanhoe",
+     "detail": "Broadcast Site Lot 1 Balranald Road",
+     "description": "Broadcast Site Lot 1 Balranald Road Ivanhoe",
+     "coverageAreas": [
+      "Ivanhoe"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/600-Ivanhoe"
+    },
+    {
+     "id": 25,
+     "name": "Jerilderie",
+     "detail": "BAI Comms Site Conargo Rd",
+     "description": "BAI Comms Site Conargo Rd Jerilderie",
+     "coverageAreas": [
+      "Jerilderie"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/25-Jerilderie"
+    },
+    {
+     "id": 38,
+     "name": "East Jindabyne",
+     "detail": "BAI Comms Tower Jinderboine Hill 5149 Kosciuszko Rd East",
+     "description": "BAI Comms Tower Jinderboine Hill 5149 Kosciuszko Rd East East Jindabyne",
+     "coverageAreas": [
+      "Jindabyne"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/38-East-Jindabyne"
+    },
+    {
+     "id": 461,
+     "name": "Junee",
+     "detail": "Council Tower adj Water Reservoir Beach St",
+     "description": "Council Tower adj Water Reservoir Beach St Junee",
+     "coverageAreas": [
+      "Junee"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/461-Junee"
+    },
+    {
+     "id": 440,
+     "name": "Cumber Melon Mtn",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Cumber Melon Mtn",
+     "coverageAreas": [
+      "Kandos"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/440--Cumber-Melon-Mtn"
+    },
+    {
+     "id": 84,
+     "name": "Khancoban",
+     "detail": "Broadcast Site Pendergast Road",
+     "description": "Broadcast Site Pendergast Road Khancoban",
+     "coverageAreas": [
+      "Khancoban"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/84-Khancoban"
+    },
+    {
+     "id": 67,
+     "name": "Kings Cross",
+     "detail": "Elan Building Victoria St",
+     "description": "Elan Building Victoria St Kings Cross",
+     "coverageAreas": [
+      "Kings Cross"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/67-Kings-Cross"
+    },
+    {
+     "id": 58,
+     "name": "Charlestown",
+     "detail": "Centenary Lookout Reservoir",
+     "description": "Centenary Lookout Reservoir Charlestown",
+     "coverageAreas": [
+      "Kotara"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/58-Charlestown"
+    },
+    {
+     "id": 37,
+     "name": "Geneva Hill",
+     "detail": "Broadcast Site off James Street",
+     "description": "Broadcast Site off James Street Geneva Hill",
+     "coverageAreas": [
+      "Kyogle"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/37-Geneva-Hill"
+    },
+    {
+     "id": 561,
+     "name": "Jolly Nose Hill",
+     "detail": "Broadcast Site Camp Ridge Road",
+     "description": "Broadcast Site Camp Ridge Road Jolly Nose Hill",
+     "coverageAreas": [
+      "Laurieton"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/561-Jolly-Nose-Hill"
+    },
+    {
+     "id": 54,
+     "name": "Lightning Ridge",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Off Wooloroo Rd 3km N of Lightning Ridge",
+     "coverageAreas": [
+      "Lightning Ridge"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/54-Lightning-Ridge"
+    },
+    {
+     "id": 45,
+     "name": "Lithgow",
+     "detail": "Broadcast Site Reservoir Hill",
+     "description": "Broadcast Site Reservoir Hill Lithgow",
+     "coverageAreas": [
+      "Lithgow"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/45-Lithgow"
+    },
+    {
+     "id": 39,
+     "name": "Morts Estate",
+     "detail": "Broadcast Site above Arden St",
+     "description": "Broadcast Site above Arden St Morts Estate",
+     "coverageAreas": [
+      "Lithgow East"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/39-Morts-Estate"
+    },
+    {
+     "id": 566,
+     "name": "Maclean",
+     "detail": "Broadcast/Comm Site Lookout Rd",
+     "description": "Broadcast/Comm Site Lookout Rd Maclean",
+     "coverageAreas": [
+      "Maclean/Ashby"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/566-Maclean"
+    },
+    {
+     "id": 47,
+     "name": "Manly",
+     "detail": "Broadcast Site Sewage Treatment Plant",
+     "description": "Broadcast Site Sewage Treatment Plant Manly",
+     "coverageAreas": [
+      "Manly/Mosman"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/47-Manly"
+    },
+    {
+     "id": 68,
+     "name": "Middle Brother",
+     "detail": "Main Broadcast Tower",
+     "description": "Main Broadcast Tower Middle Brother",
+     "coverageAreas": [
+      "Manning River"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/68-Middle-Brother"
+    },
+    {
+     "id": 779,
+     "name": "Raymond Terrace",
+     "detail": "Fire Tower Wallaroo Hill off Pacific Hwy 12km North of",
+     "description": "Fire Tower Wallaroo Hill off Pacific Hwy 12km North of Raymond Terrace",
+     "coverageAreas": [
+      "Medowie"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/779-Raymond-Terrace"
+    },
+    {
+     "id": 601,
+     "name": "Menindee",
+     "detail": "Broadcast Site Menindee-Broken Hill Road 7km North of",
+     "description": "Broadcast Site Menindee-Broken Hill Road 7km North of Menindee",
+     "coverageAreas": [
+      "Menindee"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/601-Menindee"
+    },
+    {
+     "id": 63,
+     "name": "Cooks Hill",
+     "detail": "Multiple",
+     "description": "Broadcast Site 11-17 Mosbri Crescent Cooks Hill",
+     "coverageAreas": [
+      "Merewether"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/63-Cooks-Hill"
+    },
+    {
+     "id": 763,
+     "name": "Tura Beach",
+     "detail": "Broadcast Site adj Water Reservoir Sapphire Coast Drive",
+     "description": "Broadcast Site adj Water Reservoir Sapphire Coast Drive Tura Beach",
+     "coverageAreas": [
+      "Merimbula"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/763-Tura-Beach"
+    },
+    {
+     "id": 53,
+     "name": "Merriwa",
+     "detail": "Broadcast/Police Site Banderra Downs",
+     "description": "Broadcast/Police Site Banderra Downs Merriwa",
+     "coverageAreas": [
+      "Merriwa"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/53-Merriwa"
+    },
+    {
+     "id": 456,
+     "name": "Mount Nebo",
+     "detail": "Broadcast Site O`Briens Rd",
+     "description": "Broadcast Site O`Briens Rd Mount Nebo",
+     "coverageAreas": [
+      "Mount Kembla"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/456-Mount-Nebo"
+    },
+    {
+     "id": 469,
+     "name": "Warren",
+     "detail": "Telstra Site Mount Foster Near",
+     "description": "Telstra Site Mount Foster Near Warren",
+     "coverageAreas": [
+      "Mt Foster IBL"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/469-Warren"
+    },
+    {
+     "id": 61,
+     "name": "Mudgee",
+     "detail": "Multiple",
+     "description": "Commercial Broadcast Site Endicott Hill (Lower Mount Misery) Mudgee",
+     "coverageAreas": [
+      "Mudgee"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/61-Mudgee"
+    },
+    {
+     "id": 52,
+     "name": "Yenda",
+     "detail": "Broadcast Mast BAI Comms Site Mt Bingar Mount Bingar Rd",
+     "description": "Broadcast Mast BAI Comms Site Mt Bingar Mount Bingar Rd Yenda",
+     "coverageAreas": [
+      "Murrumbidgee Irrigation Area"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/52-Yenda"
+    },
+    {
+     "id": 71,
+     "name": "Murrurundi",
+     "detail": "Multiple",
+     "description": "NBN TV Site Mount Helen off New England Hwy Murrurundi",
+     "coverageAreas": [
+      "Murrurundi"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/71-Murrurundi"
+    },
+    {
+     "id": 33,
+     "name": "Buckeridge Lookout",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Buckeridge Lookout",
+     "coverageAreas": [
+      "Narooma"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/33-Buckeridge-Lookout"
+    },
+    {
+     "id": 467,
+     "name": "Narrandera",
+     "detail": "Water Reservoir cnr Gordon and Broad Streets",
+     "description": "Water Reservoir cnr Gordon and Broad Streets Narrandera",
+     "coverageAreas": [
+      "Narrandera"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/467-Narrandera"
+    },
+    {
+     "id": 12,
+     "name": "West Wallsend",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Mt Sugarloaf 5A Mount Sugarloaf Rd West Wallsend",
+     "coverageAreas": [
+      "Newcastle"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/12-West-Wallsend"
+    },
+    {
+     "id": 784,
+     "name": "Cambewarra Mountain",
+     "detail": "New Tower Cambewarra Lookout",
+     "description": "New Tower Cambewarra Lookout Cambewarra Mountain",
+     "coverageAreas": [
+      "Nowra North"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/784-Cambewarra-Mountain"
+    },
+    {
+     "id": 51,
+     "name": "Nyngan",
+     "detail": "BAI Comms Site Lot 95 Tottenham Road",
+     "description": "BAI Comms Site Lot 95 Tottenham Road Nyngan",
+     "coverageAreas": [
+      "Nyngan"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/51-Nyngan"
+    },
+    {
+     "id": 92,
+     "name": "Oberon",
+     "detail": "Telstra Site Falls Hill Abercrombie Road",
+     "description": "Telstra Site Falls Hill Abercrombie Road Oberon",
+     "coverageAreas": [
+      "Oberon"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/92-Oberon"
+    },
+    {
+     "id": 563,
+     "name": "Ocean Shores",
+     "detail": "Broadcast Site Tongarra Reservoir",
+     "description": "Broadcast Site Tongarra Reservoir Ocean Shores",
+     "coverageAreas": [
+      "Ocean Shores"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/563-Ocean-Shores"
+    },
+    {
+     "id": 787,
+     "name": "Parkes",
+     "detail": "Spicer Park Caravan Park off Albert Street",
+     "description": "Spicer Park Caravan Park off Albert Street Parkes",
+     "coverageAreas": [
+      "Parkes (Spicer Park CP)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/NSW/787-Parkes"
+    },
+    {
+     "id": 471,
+     "name": "Peak Hill",
+     "detail": "Council Site Water Reservoir off Frazer Ave",
+     "description": "Council Site Water Reservoir off Frazer Ave Peak Hill",
+     "coverageAreas": [
+      "Peak Hill"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/471-Peak-Hill"
+    },
+    {
+     "id": 607,
+     "name": "Vault Hill",
+     "detail": "Crown Castle Optus/Telstra Site off Remembrance Drive",
+     "description": "Crown Castle Optus/Telstra Site off Remembrance Drive Vault Hill",
+     "coverageAreas": [
+      "Picton"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/607-Vault-Hill"
+    },
+    {
+     "id": 87,
+     "name": "Nelson Bay",
+     "detail": "Telstra Site Gan Gan Hill Near",
+     "description": "Telstra Site Gan Gan Hill Near Nelson Bay",
+     "coverageAreas": [
+      "Port Stephens"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/87-Nelson-Bay"
+    },
+    {
+     "id": 75,
+     "name": "Garlands Hill",
+     "detail": "Multiple",
+     "description": "North East Mast Broadcast Site Garlands Hill",
+     "coverageAreas": [
+      "Portland/Wallerawang"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/75-Garlands-Hill"
+    },
+    {
+     "id": 5,
+     "name": "Mt Nardi",
+     "detail": "Broadcast Australia Tower 30 km N of Lismore",
+     "description": "Broadcast Australia Tower 30 km N of Lismore Mt Nardi",
+     "coverageAreas": [
+      "Richmond/Tweed"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/5-Mt-Nardi"
+    },
+    {
+     "id": 613,
+     "name": "Smiths Lake",
+     "detail": "Telstra Site Water Reservoir Macwood Rd",
+     "description": "Telstra Site Water Reservoir Macwood Rd Smiths Lake",
+     "coverageAreas": [
+      "Smiths Lake"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/613-Smiths-Lake"
+    },
+    {
+     "id": 29,
+     "name": "Stanwell Tops",
+     "detail": "Broadcast Site Bald Hill",
+     "description": "Broadcast Site Bald Hill Stanwell Tops",
+     "coverageAreas": [
+      "Stanwell Park"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/29-Stanwell-Tops"
+    },
+    {
+     "id": 603,
+     "name": "Stroud",
+     "detail": "Broadcast Site Stroud Reservoir King Street",
+     "description": "Broadcast Site Stroud Reservoir King Street Stroud",
+     "coverageAreas": [
+      "Stroud"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/603-Stroud"
+    },
+    {
+     "id": 96,
+     "name": "Bethungra",
+     "detail": "Broadcast Mast Broadcast Australia Site Mt Ulandra Bethungra Rd",
+     "description": "Broadcast Mast Broadcast Australia Site Mt Ulandra Bethungra Rd Bethungra",
+     "coverageAreas": [
+      "SW Slopes/E Riverina"
+     ],
+     "powerStars": 6,
+     "path": "transmitters/NSW/96-Bethungra"
+    },
+    {
+     "id": 4,
+     "name": "Gore Hill, Artarmon, Willoughby",
+     "detail": "Multiple",
+     "description": "ABC Tower 221 Pacific Highway Gore Hill",
+     "coverageAreas": [
+      "Sydney"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/4-Gore-Hill-Artarmon-Willoughby"
+    },
+    {
+     "id": 608,
+     "name": "Kurrajong Heights",
+     "detail": "Miles Comms Site 2 246 Burralow Road",
+     "description": "Miles Comms Site 2 246 Burralow Road Kurrajong Heights",
+     "coverageAreas": [
+      "Sydney North West"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/608-Kurrajong-Heights"
+    },
+    {
+     "id": 615,
+     "name": "Razorback Range",
+     "detail": "Wollondilly Council RFS site Lot 3 Mount Hercules Rd",
+     "description": "Wollondilly Council RFS site Lot 3 Mount Hercules Rd Razorback Range",
+     "coverageAreas": [
+      "Sydney South West"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/615-Razorback-Range"
+    },
+    {
+     "id": 430,
+     "name": "Talbingo",
+     "detail": "Broadcast Site Boraig Station",
+     "description": "Broadcast Site Boraig Station Talbingo",
+     "coverageAreas": [
+      "Talbingo"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/430-Talbingo"
+    },
+    {
+     "id": 77,
+     "name": "Soma Mountain",
+     "detail": "Prime Site",
+     "description": "Prime Site Soma Mountain",
+     "coverageAreas": [
+      "Tamworth"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/77--Soma-Mountain"
+    },
+    {
+     "id": 777,
+     "name": "Taralga",
+     "detail": "Broadcast Site off Alders and Crees Road 5km E of",
+     "description": "Broadcast Site off Alders and Crees Road 5km E of Taralga",
+     "coverageAreas": [
+      "Taralga"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/777-Taralga"
+    },
+    {
+     "id": 73,
+     "name": "Tenterfield",
+     "detail": "Multiple",
+     "description": "New Council Tower Mt Mackenzie off Mt McKenzie Lookout Rd Tenterfield",
+     "coverageAreas": [
+      "Tenterfield"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/73-Tenterfield"
+    },
+    {
+     "id": 762,
+     "name": "Mt Crackenback",
+     "detail": "Broadcast Site adj Eagles Nest Restaurant",
+     "description": "Broadcast Site adj Eagles Nest Restaurant Mt Crackenback",
+     "coverageAreas": [
+      "Thredbo"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/762-Mt-Crackenback"
+    },
+    {
+     "id": 598,
+     "name": "Tottenham",
+     "detail": "Broadcast Site off Tullamore-Nyngan Road 3.5km NW of",
+     "description": "Broadcast Site off Tullamore-Nyngan Road 3.5km NW of Tottenham",
+     "coverageAreas": [
+      "Tottenham"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/598-Tottenham"
+    },
+    {
+     "id": 457,
+     "name": "Tumbarumba",
+     "detail": "Mt Ikes 14.5 km SSW of",
+     "description": "Mt Ikes 14.5 km SSW of Tumbarumba",
+     "coverageAreas": [
+      "Tumbarumba"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/457-Tumbarumba"
+    },
+    {
+     "id": 770,
+     "name": "Tumbarumba",
+     "detail": "Council Site 90 Power St",
+     "description": "Council Site 90 Power St Tumbarumba",
+     "coverageAreas": [
+      "Tumbarumba Town"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/770-Tumbarumba"
+    },
+    {
+     "id": 85,
+     "name": "Tumut",
+     "detail": "Broadcast Site Webbs Hill",
+     "description": "Broadcast Site Webbs Hill Tumut",
+     "coverageAreas": [
+      "Tumut"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/85-Tumut"
+    },
+    {
+     "id": 62,
+     "name": "Milton",
+     "detail": "Communications Site Little Forest Trig",
+     "description": "Communications Site Little Forest Trig Milton",
+     "coverageAreas": [
+      "Ulladulla"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/62-Milton"
+    },
+    {
+     "id": 69,
+     "name": "Aberdeen, East Rossgole",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Rossgole Lookout Aberdeen",
+     "coverageAreas": [
+      "Upper Hunter"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/NSW/69-Aberdeen-East-Rossgole"
+    },
+    {
+     "id": 95,
+     "name": "Mount Dowe",
+     "detail": "Broadcast Australia Site",
+     "description": "Broadcast Australia Site Mount Dowe",
+     "coverageAreas": [
+      "Upper Namoi"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NSW/95--Mount-Dowe"
+    },
+    {
+     "id": 739,
+     "name": "Uralla",
+     "detail": "Communication Site Lookout Rd",
+     "description": "Communication Site Lookout Rd Uralla",
+     "coverageAreas": [
+      "Uralla"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/739-Uralla"
+    },
+    {
+     "id": 753,
+     "name": "Martins Creek",
+     "detail": "Comms Site Mount Douglas Gardiners Road",
+     "description": "Comms Site Mount Douglas Gardiners Road Martins Creek",
+     "coverageAreas": [
+      "Vacy"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NSW/753-Martins-Creek"
+    },
+    {
+     "id": 57,
+     "name": "Wagga Wagga",
+     "detail": "Capital TV Site Willans Hill",
+     "description": "Capital TV Site Willans Hill Wagga Wagga",
+     "coverageAreas": [
+      "Wagga Wagga"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/57-Wagga-Wagga"
+    },
+    {
+     "id": 19,
+     "name": "Walcha",
+     "detail": "Broadcast Site off Legge St",
+     "description": "Broadcast Site off Legge St Walcha",
+     "coverageAreas": [
+      "Walcha"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/19-Walcha"
+    },
+    {
+     "id": 20,
+     "name": "Walgett",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Lot 1 DP611828 Castlereagh Hwy Walgett",
+     "coverageAreas": [
+      "Walgett"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/20-Walgett"
+    },
+    {
+     "id": 738,
+     "name": "Jingellic",
+     "detail": "Broadcast tower 4km E of",
+     "description": "Broadcast tower 4km E of Jingellic",
+     "coverageAreas": [
+      "Walwa/Jingellic"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/738-Jingellic"
+    },
+    {
+     "id": 616,
+     "name": "Mt Toolimbah",
+     "detail": "Gwydir Shire Site",
+     "description": "Gwydir Shire Site Mt Toolimbah",
+     "coverageAreas": [
+      "Warialda"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/616--Mt-Toolimbah"
+    },
+    {
+     "id": 764,
+     "name": "Munibung Hill",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Munibung Hill",
+     "coverageAreas": [
+      "Warners Bay"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/764--Munibung-Hill"
+    },
+    {
+     "id": 468,
+     "name": "Wellington",
+     "detail": "Telstra Radio Terminal Mount Wellesley off Bushranger Ck Rd",
+     "description": "Telstra Radio Terminal Mount Wellesley off Bushranger Ck Rd Wellington",
+     "coverageAreas": [
+      "Wellington"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/468-Wellington"
+    },
+    {
+     "id": 462,
+     "name": "Wyalong",
+     "detail": "Council Tower adj Water Tank cnr Newell Hwy and Goldfields Way",
+     "description": "Council Tower adj Water Tank cnr Newell Hwy and Goldfields Way Wyalong",
+     "coverageAreas": [
+      "West Wyalong"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/462-Wyalong"
+    },
+    {
+     "id": 22,
+     "name": "Wilcannia",
+     "detail": "Multiple",
+     "description": "Broadcast Site 2km NE of Wilcannia",
+     "coverageAreas": [
+      "Wilcannia"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/22-Wilcannia"
+    },
+    {
+     "id": 36,
+     "name": "Brokers Nose",
+     "detail": "Broadcast Site Escarpment Road",
+     "description": "Broadcast Site Escarpment Road Brokers Nose",
+     "coverageAreas": [
+      "Wollongong"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/36-Brokers-Nose"
+    },
+    {
+     "id": 612,
+     "name": "Woolgoolga",
+     "detail": "RBA Site Banana Farm Greys Road",
+     "description": "RBA Site Banana Farm Greys Road Woolgoolga",
+     "coverageAreas": [
+      "Woolgoolga"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/612-Woolgoolga"
+    },
+    {
+     "id": 604,
+     "name": "Woronora",
+     "detail": "Broadcast Site Top Eastern Cutting RTA Bridge Approach",
+     "description": "Broadcast Site Top Eastern Cutting RTA Bridge Approach Woronora",
+     "coverageAreas": [
+      "Woronora"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/604-Woronora"
+    },
+    {
+     "id": 50,
+     "name": "Forresters Beach",
+     "detail": "CTF Wyrrabalong Trig Site Monopole 27 Cromarty Hill Road",
+     "description": "CTF Wyrrabalong Trig Site Monopole 27 Cromarty Hill Road Forresters Beach",
+     "coverageAreas": [
+      "Wyong"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NSW/50-Forresters-Beach"
+    },
+    {
+     "id": 788,
+     "name": "Yass",
+     "detail": "Water Filtration Plant 24 Cooks Hill Road",
+     "description": "Water Filtration Plant 24 Cooks Hill Road Yass",
+     "coverageAreas": [
+      "Yass"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/788-Yass"
+    },
+    {
+     "id": 46,
+     "name": "Young",
+     "detail": "Broadcast Site Reservoir Hill",
+     "description": "Broadcast Site Reservoir Hill Young",
+     "coverageAreas": [
+      "Young"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NSW/46-Young"
+    }
+   ]
+  },
+  {
+   "code": "NT",
+   "name": "Northern Territory",
+   "sites": [
+    {
+     "id": 100,
+     "name": "Alice Springs",
+     "detail": "Multiple",
+     "description": "Optus Site West Gap Alice Springs",
+     "coverageAreas": [
+      "Alice Springs"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NT/100-Alice-Springs"
+    },
+    {
+     "id": 620,
+     "name": "Batchelor",
+     "detail": "Broadcast Site 2 Tarkarri Road",
+     "description": "Broadcast Site 2 Tarkarri Road Batchelor",
+     "coverageAreas": [
+      "Batchelor"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/620-Batchelor"
+    },
+    {
+     "id": 621,
+     "name": "Bathurst Island",
+     "detail": "Broadcast Site Mission Hill",
+     "description": "Broadcast Site Mission Hill Bathurst Island",
+     "coverageAreas": [
+      "Bathurst Island"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/621-Bathurst-Island"
+    },
+    {
+     "id": 623,
+     "name": "Borroloola",
+     "detail": "Broadcast Site Robinson Road",
+     "description": "Broadcast Site Robinson Road Borroloola",
+     "coverageAreas": [
+      "Borroloola"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/623-Borroloola"
+    },
+    {
+     "id": 808,
+     "name": "103 Nauiyu",
+     "detail": "Broadcast Australia Site Lot",
+     "description": "Broadcast Australia Site Lot 103 Nauiyu",
+     "coverageAreas": [
+      "Daly River"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/808--Nauiyu"
+    },
+    {
+     "id": 405,
+     "name": "Shoal Bay",
+     "detail": "Broadcast Australia Site 100 Deloraine Rd",
+     "description": "Broadcast Australia Site 100 Deloraine Rd Shoal Bay",
+     "coverageAreas": [
+      "Darwin"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/NT/405-Shoal-Bay"
+    },
+    {
+     "id": 626,
+     "name": "Darwin",
+     "detail": "Optus Site 6 Marina Boulevard",
+     "description": "Optus Site 6 Marina Boulevard Darwin",
+     "coverageAreas": [
+      "Darwin City"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/626-Darwin"
+    },
+    {
+     "id": 619,
+     "name": "Galiwinku",
+     "detail": "Broadcast Australia Site Lot 1647 off Guluwurru St",
+     "description": "Broadcast Australia Site Lot 1647 off Guluwurru St Galiwinku",
+     "coverageAreas": [
+      "Galiwinku"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NT/619-Galiwinku"
+    },
+    {
+     "id": 625,
+     "name": "Alyangula",
+     "detail": "BAI Comms Site Cypress Road",
+     "description": "BAI Comms Site Cypress Road Alyangula",
+     "coverageAreas": [
+      "Groote Eylandt"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/625-Alyangula"
+    },
+    {
+     "id": 624,
+     "name": "Jabiru",
+     "detail": "Multiple",
+     "description": "Council Site Water Tank Castenzoon St Jabiru",
+     "coverageAreas": [
+      "Jabiru"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/624-Jabiru"
+    },
+    {
+     "id": 713,
+     "name": "Katherine",
+     "detail": "Multiple",
+     "description": "Council Site Lot 3135 (13) Chardon Street Katherine",
+     "coverageAreas": [
+      "Katherine"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NT/713-Katherine"
+    },
+    {
+     "id": 627,
+     "name": "Mataranka",
+     "detail": "Telstra Radio Terminal Lot 1435 Conway Road",
+     "description": "Telstra Radio Terminal Lot 1435 Conway Road Mataranka",
+     "coverageAreas": [
+      "Mataranka"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NT/627-Mataranka"
+    },
+    {
+     "id": 617,
+     "name": "Nhulunbuy",
+     "detail": "Multiple",
+     "description": "Broadcast Site Town Water Tank Road Nhulunbuy",
+     "coverageAreas": [
+      "Nhulunbuy"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/617-Nhulunbuy"
+    },
+    {
+     "id": 622,
+     "name": "Pine Creek",
+     "detail": "Broadcast Site Lot 80 Whitelaw Street",
+     "description": "Broadcast Site Lot 80 Whitelaw Street Pine Creek",
+     "coverageAreas": [
+      "Pine Creek"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/NT/622-Pine-Creek"
+    },
+    {
+     "id": 714,
+     "name": "Tennant Creek",
+     "detail": "Multiple",
+     "description": "Imparja Broadcast Site via Peko Road Tennant Creek",
+     "coverageAreas": [
+      "Tennant Creek"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/NT/714-Tennant-Creek"
+    },
+    {
+     "id": 734,
+     "name": "Tindal",
+     "detail": "Water Reservoir off Newham Circuit",
+     "description": "Water Reservoir off Newham Circuit Tindal",
+     "coverageAreas": [
+      "Tindal"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/734-Tindal"
+    },
+    {
+     "id": 728,
+     "name": "Yirrkala",
+     "detail": "Broadcast Site Council Offices",
+     "description": "Broadcast Site Council Offices Yirrkala",
+     "coverageAreas": [
+      "Yirrkala"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/728-Yirrkala"
+    },
+    {
+     "id": 721,
+     "name": "Yulara",
+     "detail": "Broadcast Site 300m N of caravan park",
+     "description": "Broadcast Site 300m N of caravan park Yulara",
+     "coverageAreas": [
+      "Yulara"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/NT/721-Yulara"
+    }
+   ]
+  },
+  {
+   "code": "QLD",
+   "name": "Queensland",
+   "sites": [
+    {
+     "id": 759,
+     "name": "Agnes Water",
+     "detail": "Telstra Site Lot 174 Seaspray Dr",
+     "description": "Telstra Site Lot 174 Seaspray Dr Agnes Water",
+     "coverageAreas": [
+      "Agnes Water"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/759-Agnes-Water"
+    },
+    {
+     "id": 755,
+     "name": "Airlie Beach",
+     "detail": "BA monopole Shingle Beach Hill off Kara Crescent",
+     "description": "BA monopole Shingle Beach Hill off Kara Crescent Airlie Beach",
+     "coverageAreas": [
+      "Airlie Beach"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/755-Airlie-Beach"
+    },
+    {
+     "id": 495,
+     "name": "Alpha",
+     "detail": "Water Tower 54 Byron St",
+     "description": "Water Tower 54 Byron St Alpha",
+     "coverageAreas": [
+      "Alpha"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/495-Alpha"
+    },
+    {
+     "id": 631,
+     "name": "Alpha",
+     "detail": "BAI Comms Site Lot 117 off Clermont-Alpha Road",
+     "description": "BAI Comms Site Lot 117 off Clermont-Alpha Road Alpha",
+     "coverageAreas": [
+      "Alpha"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/631-Alpha"
+    },
+    {
+     "id": 724,
+     "name": "Anakie",
+     "detail": "Broadcast Site Hegarty Street",
+     "description": "Broadcast Site Hegarty Street Anakie",
+     "coverageAreas": [
+      "Anakie"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/724-Anakie"
+    },
+    {
+     "id": 640,
+     "name": "Aramac",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site McAuliffe Street Aramac",
+     "coverageAreas": [
+      "Aramac"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/640-Aramac"
+    },
+    {
+     "id": 171,
+     "name": "Atherton",
+     "detail": "QAS Site Hallorans Hill",
+     "description": "QAS Site Hallorans Hill Atherton",
+     "coverageAreas": [
+      "Atherton"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/171-Atherton"
+    },
+    {
+     "id": 633,
+     "name": "Augathella",
+     "detail": "Multiple",
+     "description": "BA Site 1 km SE of Augathella",
+     "coverageAreas": [
+      "Augathella"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/633-Augathella"
+    },
+    {
+     "id": 159,
+     "name": "Mt Inkerman",
+     "detail": "Burdekin Communications Site 12 km SE of Home Hill",
+     "description": "Burdekin Communications Site 12 km SE of Home Hill Mt Inkerman",
+     "coverageAreas": [
+      "Ayr"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/QLD/159-Mt-Inkerman"
+    },
+    {
+     "id": 192,
+     "name": "Graham Range",
+     "detail": "TV Site",
+     "description": "TV Site Graham Range",
+     "coverageAreas": [
+      "Babinda"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/192-Graham-Range"
+    },
+    {
+     "id": 486,
+     "name": "Bukali",
+     "detail": "Council Site Lovedays Hill 246 Lovedays Rd",
+     "description": "Council Site Lovedays Hill 246 Lovedays Rd Bukali",
+     "coverageAreas": [
+      "Bancroft"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/486-Bukali"
+    },
+    {
+     "id": 120,
+     "name": "Barcaldine",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Barcaldine",
+     "coverageAreas": [
+      "Barcaldine"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/120-Barcaldine"
+    },
+    {
+     "id": 666,
+     "name": "Barcaldine",
+     "detail": "Water Tower cnr Pine and Yew Streets",
+     "description": "Water Tower cnr Pine and Yew Streets Barcaldine",
+     "coverageAreas": [
+      "Barcaldine"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/666-Barcaldine"
+    },
+    {
+     "id": 645,
+     "name": "Bedourie",
+     "detail": "Multiple",
+     "description": "BA Site 42 Herbert St Bedourie",
+     "coverageAreas": [
+      "Bedourie"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/645-Bedourie"
+    },
+    {
+     "id": 125,
+     "name": "Bell",
+     "detail": "Broadcast Site Codys Hill",
+     "description": "Broadcast Site Codys Hill Bell",
+     "coverageAreas": [
+      "Bell"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/125-Bell"
+    },
+    {
+     "id": 496,
+     "name": "Birdsville",
+     "detail": "Multiple",
+     "description": "Southeast Water Tower 1 Frew St Birdsville",
+     "coverageAreas": [
+      "Birdsville"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/496-Birdsville"
+    },
+    {
+     "id": 115,
+     "name": "Blackall",
+     "detail": "Broadcast Site 3 km ESE of",
+     "description": "Broadcast Site 3 km ESE of Blackall",
+     "coverageAreas": [
+      "Blackall"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/115-Blackall"
+    },
+    {
+     "id": 659,
+     "name": "Blackall",
+     "detail": "Shire Depot Rose Street",
+     "description": "Shire Depot Rose Street Blackall",
+     "coverageAreas": [
+      "Blackall"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/659-Blackall"
+    },
+    {
+     "id": 188,
+     "name": "Cutlers Hill",
+     "detail": "Multiple",
+     "description": "Telstra Site Cutlers Hill",
+     "coverageAreas": [
+      "Blackwater"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/QLD/188-Cutlers-Hill"
+    },
+    {
+     "id": 147,
+     "name": "Boonah",
+     "detail": "Broadcast Site Reservoir Hospital Hill Worley Lane",
+     "description": "Broadcast Site Reservoir Hospital Hill Worley Lane Boonah",
+     "coverageAreas": [
+      "Boonah"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/147-Boonah"
+    },
+    {
+     "id": 510,
+     "name": "Summer Hill",
+     "detail": "QR Site",
+     "description": "QR Site Summer Hill",
+     "coverageAreas": [
+      "Bowen Environs IBL"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/510-Summer-Hill"
+    },
+    {
+     "id": 176,
+     "name": "Bowen",
+     "detail": "Southern Cross Broadcasting Site Bowen Hill",
+     "description": "Southern Cross Broadcasting Site Bowen Hill Bowen",
+     "coverageAreas": [
+      "Bowen Town"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/176-Bowen"
+    },
+    {
+     "id": 196,
+     "name": "Boyne Island",
+     "detail": "Water Reservoir Off Centenary Drive",
+     "description": "Water Reservoir Off Centenary Drive Boyne Island",
+     "coverageAreas": [
+      "Boyne Island"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/196-Boyne-Island"
+    },
+    {
+     "id": 160,
+     "name": "Mount Coot-tha",
+     "detail": "TXA T-Site Tower 445 Sir Samuel Griffith Drive",
+     "description": "TXA T-Site Tower 445 Sir Samuel Griffith Drive Mount Coot-tha",
+     "coverageAreas": [
+      "Brisbane"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/QLD/160-Mount-Coot-tha"
+    },
+    {
+     "id": 663,
+     "name": "Gregors Creek",
+     "detail": "TXA Site Daguilar Hwy Pohlmans Range Rd",
+     "description": "TXA Site Daguilar Hwy Pohlmans Range Rd Gregors Creek",
+     "coverageAreas": [
+      "Brisbane North West"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/663-Gregors-Creek"
+    },
+    {
+     "id": 658,
+     "name": "Darlington Range",
+     "detail": "Crown Castle Site off Cliff Barons Road",
+     "description": "Crown Castle Site off Cliff Barons Road Darlington Range",
+     "coverageAreas": [
+      "Brisbane South East"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/658-Darlington-Range"
+    },
+    {
+     "id": 642,
+     "name": "Burketown",
+     "detail": "Council Tower Adj Water Reservoir Lot 19 Anthony Street",
+     "description": "Council Tower Adj Water Reservoir Lot 19 Anthony Street Burketown",
+     "coverageAreas": [
+      "Burketown"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/642-Burketown"
+    },
+    {
+     "id": 737,
+     "name": "Burnett Heads",
+     "detail": "Burnett Heads Holiday Park Mittelheuser Street",
+     "description": "Burnett Heads Holiday Park Mittelheuser Street Burnett Heads",
+     "coverageAreas": [
+      "Burnett Heads (Holiday Park)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/QLD/737-Burnett-Heads"
+    },
+    {
+     "id": 173,
+     "name": "Mt Bellenden Ker",
+     "detail": "Radio Terminal 38 km SSE of Cairns",
+     "description": "Radio Terminal 38 km SSE of Cairns Mt Bellenden Ker",
+     "coverageAreas": [
+      "Cairns"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/QLD/173-Mt-Bellenden-Ker"
+    },
+    {
+     "id": 191,
+     "name": "Mt Yarrabah",
+     "detail": "Seven Queensland Site 7.6 km ENE of Cairns",
+     "description": "Seven Queensland Site 7.6 km ENE of Cairns Mt Yarrabah",
+     "coverageAreas": [
+      "Cairns East"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/191-Mt-Yarrabah"
+    },
+    {
+     "id": 509,
+     "name": "Portsmith",
+     "detail": "QR Goods Yard Aumuller St",
+     "description": "QR Goods Yard Aumuller St Portsmith",
+     "coverageAreas": [
+      "Cairns IBL"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/509-Portsmith"
+    },
+    {
+     "id": 190,
+     "name": "Saddle Mountain",
+     "detail": "TV tower Saddle Mountain Road",
+     "description": "TV tower Saddle Mountain Road Saddle Mountain",
+     "coverageAreas": [
+      "Cairns North"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/190-Saddle-Mountain"
+    },
+    {
+     "id": 639,
+     "name": "Camooweal",
+     "detail": "Telstra Site Lot 18 Plan 17 Barkly Hwy",
+     "description": "Telstra Site Lot 18 Plan 17 Barkly Hwy Camooweal",
+     "coverageAreas": [
+      "Camooweal"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/639-Camooweal"
+    },
+    {
+     "id": 576,
+     "name": "Mount Tamborine",
+     "detail": "Optus Site Laheys Lookout",
+     "description": "Optus Site Laheys Lookout Mount Tamborine",
+     "coverageAreas": [
+      "Canungra"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/576-Mount-Tamborine"
+    },
+    {
+     "id": 168,
+     "name": "Mt Lowe",
+     "detail": "MVQ UHF TV Site",
+     "description": "MVQ UHF TV Site Mt Lowe",
+     "coverageAreas": [
+      "Capella"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/168-Mt-Lowe"
+    },
+    {
+     "id": 410,
+     "name": "Cardwell",
+     "detail": "Telstra site Mulleys Hill",
+     "description": "Telstra site Mulleys Hill Cardwell",
+     "coverageAreas": [
+      "Cardwell"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/410-Cardwell"
+    },
+    {
+     "id": 757,
+     "name": "Carmila",
+     "detail": "Monopole Council Site Carmila West Rd",
+     "description": "Monopole Council Site Carmila West Rd Carmila",
+     "coverageAreas": [
+      "Carmila"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/757-Carmila"
+    },
+    {
+     "id": 153,
+     "name": "Charleville",
+     "detail": "Broadcast Australia Tower Warrego Hwy 11 km E of",
+     "description": "Broadcast Australia Tower Warrego Hwy 11 km E of Charleville",
+     "coverageAreas": [
+      "Charleville"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/153-Charleville"
+    },
+    {
+     "id": 636,
+     "name": "Charleville",
+     "detail": "Broadcast Site Warrego Highway 3 km E of",
+     "description": "Broadcast Site Warrego Highway 3 km E of Charleville",
+     "coverageAreas": [
+      "Charleville"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/636-Charleville"
+    },
+    {
+     "id": 151,
+     "name": "Towers Hill",
+     "detail": "Monopole Broadcast Australia Site off Blackjack Rd",
+     "description": "Monopole Broadcast Australia Site off Blackjack Rd Towers Hill",
+     "coverageAreas": [
+      "Charters Towers"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/151-Towers-Hill"
+    },
+    {
+     "id": 504,
+     "name": "Clairview",
+     "detail": "Council TV Site Colonial Drive",
+     "description": "Council TV Site Colonial Drive Clairview",
+     "coverageAreas": [
+      "Clairview"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/504-Clairview"
+    },
+    {
+     "id": 134,
+     "name": "Clermont",
+     "detail": "Broadcast Site McDonald Flat Rd",
+     "description": "Broadcast Site McDonald Flat Rd Clermont",
+     "coverageAreas": [
+      "Clermont"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/134-Clermont"
+    },
+    {
+     "id": 184,
+     "name": "Cloncurry",
+     "detail": "Telstra Radio Terminal Mount Avarice 3.5 km SE of",
+     "description": "Telstra Radio Terminal Mount Avarice 3.5 km SE of Cloncurry",
+     "coverageAreas": [
+      "Cloncurry"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/184-Cloncurry"
+    },
+    {
+     "id": 718,
+     "name": "Cloncurry",
+     "detail": "Water Tower Phillips Street",
+     "description": "Water Tower Phillips Street Cloncurry",
+     "coverageAreas": [
+      "Cloncurry"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/718-Cloncurry"
+    },
+    {
+     "id": 116,
+     "name": "Springlands",
+     "detail": "Broadcast Site Mt Devlin",
+     "description": "Broadcast Site Mt Devlin Springlands",
+     "coverageAreas": [
+      "Collinsville"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/116-Springlands"
+    },
+    {
+     "id": 481,
+     "name": "Briaba",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Briaba",
+     "coverageAreas": [
+      "Collinsville North IBL"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/481--Briaba"
+    },
+    {
+     "id": 132,
+     "name": "Cooktown",
+     "detail": "Multiple",
+     "description": "BAI Comms Site 70 Hope Street Cooktown",
+     "coverageAreas": [
+      "Cooktown"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/132-Cooktown"
+    },
+    {
+     "id": 490,
+     "name": "Cooloola Cove",
+     "detail": "Broadcast Site Reservoir",
+     "description": "Broadcast Site Reservoir Cooloola Cove",
+     "coverageAreas": [
+      "Cooloola Cove"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/490-Cooloola-Cove"
+    },
+    {
+     "id": 741,
+     "name": "Coolum Beach, Point Arkwright",
+     "detail": "Multiple",
+     "description": "Coolum Beach Holiday Park 1827 David Low Way Coolum Beach",
+     "coverageAreas": [
+      "Coolum Beach (Coolum Beach HP)"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/741-Coolum-Beach-Point-Arkwright"
+    },
+    {
+     "id": 516,
+     "name": "Mt Alexandra",
+     "detail": "Telstra Radio Terminal 2.2 km SW of Cow Bay and 26.6 km N of Port Douglas",
+     "description": "Telstra Radio Terminal 2.2 km SW of Cow Bay and 26.6 km N of Port Douglas Mt Alexandra",
+     "coverageAreas": [
+      "Cow Bay"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/516-Mt-Alexandra"
+    },
+    {
+     "id": 506,
+     "name": "Crediton",
+     "detail": "MVQ 6 Site Plateau Rd",
+     "description": "MVQ 6 Site Plateau Rd Crediton",
+     "coverageAreas": [
+      "Crediton IBL"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/506-Crediton"
+    },
+    {
+     "id": 503,
+     "name": "Pechey",
+     "detail": "Council Site Reservoir Cnr Thompson Road and Grapetree Road",
+     "description": "Council Site Reservoir Cnr Thompson Road and Grapetree Road Pechey",
+     "coverageAreas": [
+      "Crows Nest"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/503-Pechey"
+    },
+    {
+     "id": 114,
+     "name": "Cunnamulla",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site off Mitchell Hwy 3km NE of Cunnamulla",
+     "coverageAreas": [
+      "Cunnamulla"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/114-Cunnamulla"
+    },
+    {
+     "id": 189,
+     "name": "Currumbin",
+     "detail": "GCT Currumbin Site Monopole 66 Crest Drive",
+     "description": "GCT Currumbin Site Monopole 66 Crest Drive Currumbin",
+     "coverageAreas": [
+      "Currumbin"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/189-Currumbin"
+    },
+    {
+     "id": 517,
+     "name": "Daintree",
+     "detail": "Telstra Radio Terminal",
+     "description": "Telstra Radio Terminal Daintree",
+     "coverageAreas": [
+      "Daintree Village"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/517-Daintree"
+    },
+    {
+     "id": 109,
+     "name": "Mt Mowbullan",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Lot 13 Bunya Mountains Road Mt Mowbullan",
+     "coverageAreas": [
+      "Darling Downs"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/QLD/109-Mt-Mowbullan"
+    },
+    {
+     "id": 418,
+     "name": "Dimbulah",
+     "detail": "Broadcast Australia Site Parise Rd 5km NW of",
+     "description": "Broadcast Australia Site Parise Rd 5km NW of Dimbulah",
+     "coverageAreas": [
+      "Dimbulah"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/418-Dimbulah"
+    },
+    {
+     "id": 637,
+     "name": "Dirranbandi",
+     "detail": "BAI Comms Site Lot 12 Whyenbah Road",
+     "description": "BAI Comms Site Lot 12 Whyenbah Road Dirranbandi",
+     "coverageAreas": [
+      "Dirranbandi"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/637-Dirranbandi"
+    },
+    {
+     "id": 744,
+     "name": "Dysart",
+     "detail": "Seven Queensland Site Tayglen",
+     "description": "Seven Queensland Site Tayglen Dysart",
+     "coverageAreas": [
+      "Dysart"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/744--Dysart"
+    },
+    {
+     "id": 127,
+     "name": "Denham Range",
+     "detail": "Broadcast Australia site off Dysart Rd",
+     "description": "Broadcast Australia site off Dysart Rd Denham Range",
+     "coverageAreas": [
+      "Dysart"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/127-Denham-Range"
+    },
+    {
+     "id": 145,
+     "name": "Eidsvold",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Hospital Hill Reservoir Road Eidsvold",
+     "coverageAreas": [
+      "Eidsvold"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/145-Eidsvold"
+    },
+    {
+     "id": 772,
+     "name": "Elliott Heads",
+     "detail": "Elliott Heads Holiday Park Park Street",
+     "description": "Elliott Heads Holiday Park Park Street Elliott Heads",
+     "coverageAreas": [
+      "Elliott Heads (Holiday Park)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/QLD/772-Elliott-Heads"
+    },
+    {
+     "id": 197,
+     "name": "Emerald",
+     "detail": "Multiple",
+     "description": "Commercial TV site Between Caringal Road and Gregory Hwy Emerald",
+     "coverageAreas": [
+      "Emerald"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/197-Emerald"
+    },
+    {
+     "id": 572,
+     "name": "Emu Park",
+     "detail": "Bell Caravan Park 67 Pattison Street",
+     "description": "Bell Caravan Park 67 Pattison Street Emu Park",
+     "coverageAreas": [
+      "Emu Park (Bell Caravan Park)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/QLD/572-Emu-Park"
+    },
+    {
+     "id": 512,
+     "name": "Eromanga",
+     "detail": "SES Site Lot 301 Webber street",
+     "description": "SES Site Lot 301 Webber street Eromanga",
+     "coverageAreas": [
+      "Eromanga"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/512-Eromanga"
+    },
+    {
+     "id": 146,
+     "name": "Esk",
+     "detail": "Broadcast Site Reservoir Hill",
+     "description": "Broadcast Site Reservoir Hill Esk",
+     "coverageAreas": [
+      "Esk"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/146-Esk"
+    },
+    {
+     "id": 480,
+     "name": "Eulo",
+     "detail": "Broadcast Site Water Tank Adventure Way",
+     "description": "Broadcast Site Water Tank Adventure Way Eulo",
+     "coverageAreas": [
+      "Eulo"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/480-Eulo"
+    },
+    {
+     "id": 502,
+     "name": "Airlie Beach",
+     "detail": "Council Site Mandalay Hill",
+     "description": "Council Site Mandalay Hill Airlie Beach",
+     "coverageAreas": [
+      "Flametree/Jubilee Pocket"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/502-Airlie-Beach"
+    },
+    {
+     "id": 644,
+     "name": "Georgetown",
+     "detail": "Broadcast Site Forsyth-Georgetown Road 1 km S of",
+     "description": "Broadcast Site Forsyth-Georgetown Road 1 km S of Georgetown",
+     "coverageAreas": [
+      "Georgetown"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/644-Georgetown"
+    },
+    {
+     "id": 123,
+     "name": "Gladstone",
+     "detail": "Multiple",
+     "description": "Broadcast Site Boles St Round Hill Gladstone",
+     "coverageAreas": [
+      "Gladstone West"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/123-Gladstone"
+    },
+    {
+     "id": 155,
+     "name": "Glenden",
+     "detail": "Water Treatment Plant Usher Terrace",
+     "description": "Water Treatment Plant Usher Terrace Glenden",
+     "coverageAreas": [
+      "Glenden"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/155-Glenden"
+    },
+    {
+     "id": 165,
+     "name": "Mount Tamborine",
+     "detail": "GCT Mt Tamborine Site 103m Tower Golf Course Road",
+     "description": "GCT Mt Tamborine Site 103m Tower Golf Course Road Mount Tamborine",
+     "coverageAreas": [
+      "Gold Coast"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/QLD/165-Mount-Tamborine"
+    },
+    {
+     "id": 491,
+     "name": "Goldsborough Valley",
+     "detail": "Broadcast Site Reservoir Golden St",
+     "description": "Broadcast Site Reservoir Golden St Goldsborough Valley",
+     "coverageAreas": [
+      "Goldsborough Valley"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/491-Goldsborough-Valley"
+    },
+    {
+     "id": 117,
+     "name": "Goondiwindi",
+     "detail": "Broadcast Site 5 km NE of",
+     "description": "Broadcast Site 5 km NE of Goondiwindi",
+     "coverageAreas": [
+      "Goondiwindi"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/117-Goondiwindi"
+    },
+    {
+     "id": 131,
+     "name": "Green Hill",
+     "detail": "Broadcast Site Green Hill Rd 1.2 km E of",
+     "description": "Broadcast Site Green Hill Rd 1.2 km E of Green Hill",
+     "coverageAreas": [
+      "Gordonvale"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/131-Green-Hill"
+    },
+    {
+     "id": 122,
+     "name": "Black Mountain",
+     "detail": "Broadcast Australia Site",
+     "description": "Broadcast Australia Site Black Mountain",
+     "coverageAreas": [
+      "Gympie"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/QLD/122--Black-Mountain"
+    },
+    {
+     "id": 152,
+     "name": "Gympie",
+     "detail": "Broadcast Site Tozer Hill",
+     "description": "Broadcast Site Tozer Hill Gympie",
+     "coverageAreas": [
+      "Gympie Town"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/152-Gympie"
+    },
+    {
+     "id": 133,
+     "name": "Herberton",
+     "detail": "Broadcast Site Jane St",
+     "description": "Broadcast Site Jane St Herberton",
+     "coverageAreas": [
+      "Herberton"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/133-Herberton"
+    },
+    {
+     "id": 743,
+     "name": "Urraween",
+     "detail": "Nixons Site Ghost Hill 22 Regency Ave",
+     "description": "Nixons Site Ghost Hill 22 Regency Ave Urraween",
+     "coverageAreas": [
+      "Hervey Bay"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/743-Urraween"
+    },
+    {
+     "id": 149,
+     "name": "Hughenden",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Saleyards Rd Hughenden",
+     "coverageAreas": [
+      "Hughenden"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/149-Hughenden"
+    },
+    {
+     "id": 740,
+     "name": "Injune",
+     "detail": "Broadcast Australia site Barcoola Homestead off Kooragan Rd",
+     "description": "Broadcast Australia site Barcoola Homestead off Kooragan Rd Injune",
+     "coverageAreas": [
+      "Injune"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/740-Injune"
+    },
+    {
+     "id": 809,
+     "name": "Isisford",
+     "detail": "Council site Water Tower St Helena St",
+     "description": "Council site Water Tower St Helena St Isisford",
+     "coverageAreas": [
+      "Isisford"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/809-Isisford"
+    },
+    {
+     "id": 494,
+     "name": "Jericho",
+     "detail": "Broadcast Site Water Tower Darwin St",
+     "description": "Broadcast Site Water Tower Darwin St Jericho",
+     "coverageAreas": [
+      "Jericho"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/494-Jericho"
+    },
+    {
+     "id": 653,
+     "name": "Jericho",
+     "detail": "Broadcast/Telstra Site 13 km E of",
+     "description": "Broadcast/Telstra Site 13 km E of Jericho",
+     "coverageAreas": [
+      "Jericho"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/653-Jericho"
+    },
+    {
+     "id": 661,
+     "name": "Julia Creek",
+     "detail": "Telstra Radio Terminal Lot 30 Old Normanton Road",
+     "description": "Telstra Radio Terminal Lot 30 Old Normanton Road Julia Creek",
+     "coverageAreas": [
+      "Julia Creek"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/661-Julia-Creek"
+    },
+    {
+     "id": 651,
+     "name": "Karumba",
+     "detail": "Water Tower Karumba Water Storage Rd",
+     "description": "Water Tower Karumba Water Storage Rd Karumba",
+     "coverageAreas": [
+      "Karumba"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/651-Karumba"
+    },
+    {
+     "id": 573,
+     "name": "Kooralbyn",
+     "detail": "Council Site adj Reservoir 200-204 Walker Drive",
+     "description": "Council Site adj Reservoir 200-204 Walker Drive Kooralbyn",
+     "coverageAreas": [
+      "Kooralbyn"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/573-Kooralbyn"
+    },
+    {
+     "id": 111,
+     "name": "Longreach",
+     "detail": "Broadcast Site 10km E of",
+     "description": "Broadcast Site 10km E of Longreach",
+     "coverageAreas": [
+      "Longreach"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/111-Longreach"
+    },
+    {
+     "id": 715,
+     "name": "Longreach",
+     "detail": "Broadcast Site Borewater Tower Wonga St",
+     "description": "Broadcast Site Borewater Tower Wonga St Longreach",
+     "coverageAreas": [
+      "Longreach"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/715-Longreach"
+    },
+    {
+     "id": 166,
+     "name": "Kuttabul",
+     "detail": "Broadcast Tower Broadcast Australia Site Mt Blackwood Lot 410 Mt Blackwood Access Rd",
+     "description": "Broadcast Tower Broadcast Australia Site Mt Blackwood Lot 410 Mt Blackwood Access Rd Kuttabul",
+     "coverageAreas": [
+      "Mackay"
+     ],
+     "powerStars": 6,
+     "path": "transmitters/QLD/166-Kuttabul"
+    },
+    {
+     "id": 193,
+     "name": "Mareeba",
+     "detail": "Broadcast Mast 7Qld Site Tyrconnell Road",
+     "description": "Broadcast Mast 7Qld Site Tyrconnell Road Mareeba",
+     "coverageAreas": [
+      "Mareeba"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/193-Mareeba"
+    },
+    {
+     "id": 742,
+     "name": "Maroochydore",
+     "detail": "Maroochydore Beach Hoiliday Park 1 Melrose Parade",
+     "description": "Maroochydore Beach Hoiliday Park 1 Melrose Parade Maroochydore",
+     "coverageAreas": [
+      "Maroochydore (Holiday Park)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/QLD/742-Maroochydore"
+    },
+    {
+     "id": 489,
+     "name": "Maroon",
+     "detail": "Broadcast Site Newman Road",
+     "description": "Broadcast Site Newman Road Maroon",
+     "coverageAreas": [
+      "Maroon"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/489-Maroon"
+    },
+    {
+     "id": 630,
+     "name": "Meandarra",
+     "detail": "BA Site Yellowcap Ridge off Hurst Road 30km SW of",
+     "description": "BA Site Yellowcap Ridge off Hurst Road 30km SW of Meandarra",
+     "coverageAreas": [
+      "Meandarra"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/630-Meandarra"
+    },
+    {
+     "id": 773,
+     "name": "Miara",
+     "detail": "Miara Holiday Park Miara Rd",
+     "description": "Miara Holiday Park Miara Rd Miara",
+     "coverageAreas": [
+      "Miara (Miara HP)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/QLD/773-Miara"
+    },
+    {
+     "id": 412,
+     "name": "Middlemount",
+     "detail": "Multiple",
+     "description": "Broadcast/Comms Site Trig Station Middlemount",
+     "coverageAreas": [
+      "Middlemount"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/412-Middlemount"
+    },
+    {
+     "id": 662,
+     "name": "Columboola",
+     "detail": "Multiple",
+     "description": "Television Tower Microwave Hill 30014 Warrego Hwy Columboola",
+     "coverageAreas": [
+      "Miles"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/662-Columboola"
+    },
+    {
+     "id": 767,
+     "name": "Westwood Range",
+     "detail": "Telstra Radio Terminal",
+     "description": "Telstra Radio Terminal Westwood Range",
+     "coverageAreas": [
+      "Miriam Vale/Bororen"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/767-Westwood-Range"
+    },
+    {
+     "id": 128,
+     "name": "Dunk Island",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Dunk Island",
+     "coverageAreas": [
+      "Mission Beach"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/128--Dunk-Island"
+    },
+    {
+     "id": 137,
+     "name": "Mitchell",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Mitchell Escarpment off Warrego Hwy 15km SE of Mitchell",
+     "coverageAreas": [
+      "Mitchell"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/137-Mitchell"
+    },
+    {
+     "id": 141,
+     "name": "Mulgildie",
+     "detail": "BAI Comms Site 78 Plateau Road",
+     "description": "BAI Comms Site 78 Plateau Road Mulgildie",
+     "coverageAreas": [
+      "Monto"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/141-Mulgildie"
+    },
+    {
+     "id": 482,
+     "name": "Monto",
+     "detail": "Broadcast Site Cania View",
+     "description": "Broadcast Site Cania View Monto",
+     "coverageAreas": [
+      "Moonford"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/482-Monto"
+    },
+    {
+     "id": 774,
+     "name": "Moore Park",
+     "detail": "Moore Park Holiday Park Park Street",
+     "description": "Moore Park Holiday Park Park Street Moore Park",
+     "coverageAreas": [
+      "Moore Park (Moore Park HP)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/QLD/774-Moore-Park"
+    },
+    {
+     "id": 105,
+     "name": "Carborough Range, Carborough Range",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Carborough Range",
+     "coverageAreas": [
+      "Moranbah"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/QLD/105--Carborough-Range-Carborough-Range"
+    },
+    {
+     "id": 154,
+     "name": "Moranbah",
+     "detail": "Broadcast Site Water Tower Clements St & Mills Ave",
+     "description": "Broadcast Site Water Tower Clements St & Mills Ave Moranbah",
+     "coverageAreas": [
+      "Moranbah Town"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/154-Moranbah"
+    },
+    {
+     "id": 484,
+     "name": "Morven",
+     "detail": "Broadcast Site Council Depot cnr West & Roma Sts",
+     "description": "Broadcast Site Council Depot cnr West & Roma Sts Morven",
+     "coverageAreas": [
+      "Morven"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/484-Morven"
+    },
+    {
+     "id": 634,
+     "name": "Morven",
+     "detail": "Broadcast Site 10 km South of",
+     "description": "Broadcast Site 10 km South of Morven",
+     "coverageAreas": [
+      "Morven"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/634-Morven"
+    },
+    {
+     "id": 185,
+     "name": "Newell",
+     "detail": "Telstra Site off Mossman-Daintree Rd",
+     "description": "Telstra Site off Mossman-Daintree Rd Newell",
+     "coverageAreas": [
+      "Mossman"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/185-Newell"
+    },
+    {
+     "id": 575,
+     "name": "Boonah",
+     "detail": "Broadcast Site Mt Alford Road Via Moogarah",
+     "description": "Broadcast Site Mt Alford Road Via Moogarah Boonah",
+     "coverageAreas": [
+      "Mount Alford"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/575-Boonah"
+    },
+    {
+     "id": 746,
+     "name": "Mount Garnet",
+     "detail": "Telstra Radio Terminal Lot 39 Onyx Street",
+     "description": "Telstra Radio Terminal Lot 39 Onyx Street Mount Garnet",
+     "coverageAreas": [
+      "Mount Garnet"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/746-Mount-Garnet"
+    },
+    {
+     "id": 126,
+     "name": "Mount Isa",
+     "detail": "Multiple",
+     "description": "Broadcast Tower Broadcast Australia Site DCA Hill 2.5 km SE of Mount Isa",
+     "coverageAreas": [
+      "Mount Isa"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/126-Mount-Isa"
+    },
+    {
+     "id": 635,
+     "name": "Mt Molloy",
+     "detail": "Broadcast Site 1km N of",
+     "description": "Broadcast Site 1km N of Mt Molloy",
+     "coverageAreas": [
+      "Mount Molloy"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/635-Mt-Molloy"
+    },
+    {
+     "id": 497,
+     "name": "Mount Morgan",
+     "detail": "Broadcast Site Water Reservoir Jeannie St",
+     "description": "Broadcast Site Water Reservoir Jeannie St Mount Morgan",
+     "coverageAreas": [
+      "Mount Morgan"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/497-Mount-Morgan"
+    },
+    {
+     "id": 156,
+     "name": "Moura",
+     "detail": "Broadcast Site lane off Moura-Bindaree Rd",
+     "description": "Broadcast Site lane off Moura-Bindaree Rd Moura",
+     "coverageAreas": [
+      "Moura"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/156-Moura"
+    },
+    {
+     "id": 731,
+     "name": "Mudjimba",
+     "detail": "Mudjimba Beach Holiday Park Cottonwood Street",
+     "description": "Mudjimba Beach Holiday Park Cottonwood Street Mudjimba",
+     "coverageAreas": [
+      "Mudjimba (Mudjimba Beach HP)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/QLD/731-Mudjimba"
+    },
+    {
+     "id": 505,
+     "name": "Mundubbera",
+     "detail": "Lookout Rest Area Burnett Highway",
+     "description": "Lookout Rest Area Burnett Highway Mundubbera",
+     "coverageAreas": [
+      "Mundubbera"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/505-Mundubbera"
+    },
+    {
+     "id": 670,
+     "name": "Murgon",
+     "detail": "WIN tower Mt England off Reifs Road",
+     "description": "WIN tower Mt England off Reifs Road Murgon",
+     "coverageAreas": [
+      "Murgon"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/670-Murgon"
+    },
+    {
+     "id": 103,
+     "name": "Springbrook",
+     "detail": "40m tower NRN Broadcast Site Bilbrough Lookout",
+     "description": "40m tower NRN Broadcast Site Bilbrough Lookout Springbrook",
+     "coverageAreas": [
+      "Murwillumbah"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/103-Springbrook"
+    },
+    {
+     "id": 646,
+     "name": "Muttaburra",
+     "detail": "Multiple",
+     "description": "Broadcast Site Hospital Hill Muttaburra",
+     "coverageAreas": [
+      "Muttaburra"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/646-Muttaburra"
+    },
+    {
+     "id": 195,
+     "name": "Dulong",
+     "detail": "Broadcast Australia Site 93 Dulong Road",
+     "description": "Broadcast Australia Site 93 Dulong Road Dulong",
+     "coverageAreas": [
+      "Nambour"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/QLD/195-Dulong"
+    },
+    {
+     "id": 488,
+     "name": "Nanango",
+     "detail": "Broadcast Site near Water Reservoir Brisbane Street",
+     "description": "Broadcast Site near Water Reservoir Brisbane Street Nanango",
+     "coverageAreas": [
+      "Nanango"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/488-Nanango"
+    },
+    {
+     "id": 187,
+     "name": "Nebo",
+     "detail": "Telstra Radio Terminal Smiths Hill 6km NNE of",
+     "description": "Telstra Radio Terminal Smiths Hill 6km NNE of Nebo",
+     "coverageAreas": [
+      "Nebo"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/187-Nebo"
+    },
+    {
+     "id": 416,
+     "name": "Tewantin",
+     "detail": "Broadcast Site Wooroi Forest drive",
+     "description": "Broadcast Site Wooroi Forest drive Tewantin",
+     "coverageAreas": [
+      "Noosa/Tewantin"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/416-Tewantin"
+    },
+    {
+     "id": 735,
+     "name": "Noosaville",
+     "detail": "Noosa River Holiday Park Russell Street",
+     "description": "Noosa River Holiday Park Russell Street Noosaville",
+     "coverageAreas": [
+      "Noosaville (Noosa River HP)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/QLD/735-Noosaville"
+    },
+    {
+     "id": 647,
+     "name": "Normanton",
+     "detail": "Multiple",
+     "description": "BAI Comms Site Lot 9 Hospital Road Normanton",
+     "coverageAreas": [
+      "Normanton"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/647-Normanton"
+    },
+    {
+     "id": 775,
+     "name": "Peregian Beach",
+     "detail": "Broadcast Site adj water tower David Low Way",
+     "description": "Broadcast Site adj water tower David Low Way Peregian Beach",
+     "coverageAreas": [
+      "Peregian Beach"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/775-Peregian-Beach"
+    },
+    {
+     "id": 163,
+     "name": "Port Douglas",
+     "detail": "Comms Tower Flagstaff Hill Island Point Rd",
+     "description": "Comms Tower Flagstaff Hill Island Point Rd Port Douglas",
+     "coverageAreas": [
+      "Port Douglas"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/163-Port-Douglas"
+    },
+    {
+     "id": 175,
+     "name": "Mt Lucas",
+     "detail": "Seven Queensland Site Staniland Drive 8.5 km N of Proserpine",
+     "description": "Seven Queensland Site Staniland Drive 8.5 km N of Proserpine Mt Lucas",
+     "coverageAreas": [
+      "Proserpine"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/175-Mt-Lucas"
+    },
+    {
+     "id": 400,
+     "name": "Quilpie",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Cnr Chipu & Winchu Sts Quilpie",
+     "coverageAreas": [
+      "Quilpie"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/400-Quilpie"
+    },
+    {
+     "id": 511,
+     "name": "Rainbow Beach",
+     "detail": "Rainbow Beach Sports Field cnr Carlo and Karoonda Road",
+     "description": "Rainbow Beach Sports Field cnr Carlo and Karoonda Road Rainbow Beach",
+     "coverageAreas": [
+      "Rainbow Beach"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/511-Rainbow-Beach"
+    },
+    {
+     "id": 574,
+     "name": "Rathdowney",
+     "detail": "Broadcast Site John Street Reservoir",
+     "description": "Broadcast Site John Street Reservoir Rathdowney",
+     "coverageAreas": [
+      "Rathdowney"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/574-Rathdowney"
+    },
+    {
+     "id": 112,
+     "name": "Bald Rock",
+     "detail": "Broadcast Site 1km E of",
+     "description": "Broadcast Site 1km E of Bald Rock",
+     "coverageAreas": [
+      "Ravenshoe"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/112-Bald-Rock"
+    },
+    {
+     "id": 140,
+     "name": "Cairns",
+     "detail": "Broadcast Site Mt Williams Redlynch Valley",
+     "description": "Broadcast Site Mt Williams Redlynch Valley Cairns",
+     "coverageAreas": [
+      "Redlynch"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/140-Cairns"
+    },
+    {
+     "id": 501,
+     "name": "Richmond",
+     "detail": "Multiple",
+     "description": "Council Site Concrete Water Tower Goldring St Richmond",
+     "coverageAreas": [
+      "Richmond"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/501-Richmond"
+    },
+    {
+     "id": 108,
+     "name": "Mount Hopeful",
+     "detail": "Broadcast Australia Site 1046 Mt Hopeful Rd",
+     "description": "Broadcast Australia Site 1046 Mt Hopeful Rd Mount Hopeful",
+     "coverageAreas": [
+      "Rockhampton"
+     ],
+     "powerStars": 6,
+     "path": "transmitters/QLD/108-Mount-Hopeful"
+    },
+    {
+     "id": 129,
+     "name": "Rockhampton",
+     "detail": "Broadcast Site Forbes Avenue",
+     "description": "Broadcast Site Forbes Avenue Rockhampton",
+     "coverageAreas": [
+      "Rockhampton East"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/129-Rockhampton"
+    },
+    {
+     "id": 665,
+     "name": "Roma",
+     "detail": "Water tower 68 Bowen Street",
+     "description": "Water tower 68 Bowen Street Roma",
+     "coverageAreas": [
+      "Roma"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/665-Roma"
+    },
+    {
+     "id": 745,
+     "name": "Roma",
+     "detail": "Telstra Radio Terminal Timbury Hills off Warrego Hwy 6 km E of",
+     "description": "Telstra Radio Terminal Timbury Hills off Warrego Hwy 6 km E of Roma",
+     "coverageAreas": [
+      "Roma"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/745-Roma"
+    },
+    {
+     "id": 723,
+     "name": "Sapphire",
+     "detail": "Broadcast Site Freedom Rd",
+     "description": "Broadcast Site Freedom Rd Sapphire",
+     "coverageAreas": [
+      "Sapphire/Rubyvale"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/723-Sapphire"
+    },
+    {
+     "id": 756,
+     "name": "Sarina",
+     "detail": "CMTS Site Sarina Beach Rd",
+     "description": "CMTS Site Sarina Beach Rd Sarina",
+     "coverageAreas": [
+      "Sarina Beaches"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/756-Sarina"
+    },
+    {
+     "id": 139,
+     "name": "Shute Harbour",
+     "detail": "Pole Broadcast Site Mt Rooper",
+     "description": "Pole Broadcast Site Mt Rooper Shute Harbour",
+     "coverageAreas": [
+      "Shute Harbour"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/139-Shute-Harbour"
+    },
+    {
+     "id": 106,
+     "name": "Passchendaele",
+     "detail": "Broadcast Australia Mast Television Drive",
+     "description": "Broadcast Australia Mast Television Drive Passchendaele",
+     "coverageAreas": [
+      "Southern Downs"
+     ],
+     "powerStars": 6,
+     "path": "transmitters/QLD/106-Passchendaele"
+    },
+    {
+     "id": 409,
+     "name": "Springsure",
+     "detail": "WIN Pole Broadcast Site Roddas Lookout",
+     "description": "WIN Pole Broadcast Site Roddas Lookout Springsure",
+     "coverageAreas": [
+      "Springsure"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/409-Springsure"
+    },
+    {
+     "id": 118,
+     "name": "St George",
+     "detail": "Broadcast Australia Site 5.6 km NNW of",
+     "description": "Broadcast Australia Site 5.6 km NNW of St George",
+     "coverageAreas": [
+      "St George"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/118-St-George"
+    },
+    {
+     "id": 656,
+     "name": "St George",
+     "detail": "Optus Site Reservoir Grey St & Klinge La",
+     "description": "Optus Site Reservoir Grey St & Klinge La St George",
+     "coverageAreas": [
+      "St George"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/656-St-George"
+    },
+    {
+     "id": 492,
+     "name": "St Lawrence",
+     "detail": "Sportsground Bldg 1 Railway Pde",
+     "description": "Sportsground Bldg 1 Railway Pde St Lawrence",
+     "coverageAreas": [
+      "St Lawrence"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/492-St-Lawrence"
+    },
+    {
+     "id": 142,
+     "name": "Stuart",
+     "detail": "Broadcast Site Partington Railway Yard",
+     "description": "Broadcast Site Partington Railway Yard Stuart",
+     "coverageAreas": [
+      "Stuart"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/142-Stuart"
+    },
+    {
+     "id": 194,
+     "name": "Bald Knob",
+     "detail": "Multiple",
+     "description": "Regional broadcaster tower Cnr Bald Knob Road and Landsborough-Maleny Road Bald Knob",
+     "coverageAreas": [
+      "Sunshine Coast North"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/QLD/194-Bald-Knob"
+    },
+    {
+     "id": 648,
+     "name": "Noorindoo",
+     "detail": "BA Site Mt Walpanara",
+     "description": "BA Site Mt Walpanara Noorindoo",
+     "coverageAreas": [
+      "Surat"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/648-Noorindoo"
+    },
+    {
+     "id": 638,
+     "name": "Tambo",
+     "detail": "Broadcast Australia Site Dawson Developmental Rd 4km NNE of",
+     "description": "Broadcast Australia Site Dawson Developmental Rd 4km NNE of Tambo",
+     "coverageAreas": [
+      "Tambo"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/638-Tambo"
+    },
+    {
+     "id": 643,
+     "name": "Tambo",
+     "detail": "Broadcast Site Council Works Depot",
+     "description": "Broadcast Site Council Works Depot Tambo",
+     "coverageAreas": [
+      "Tambo"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/643-Tambo"
+    },
+    {
+     "id": 198,
+     "name": "Tara",
+     "detail": "Water Tower cnr Fry and Smallcombe Streets",
+     "description": "Water Tower cnr Fry and Smallcombe Streets Tara",
+     "coverageAreas": [
+      "Tara"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/198-Tara"
+    },
+    {
+     "id": 652,
+     "name": "Taroom",
+     "detail": "BAI Comms Site 8 Cranmer Street",
+     "description": "BAI Comms Site 8 Cranmer Street Taroom",
+     "coverageAreas": [
+      "Taroom"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/652-Taroom"
+    },
+    {
+     "id": 107,
+     "name": "Texas",
+     "detail": "Multiple",
+     "description": "BAI Comms Site The Beacon off Stanthorpe Texas Rd Texas",
+     "coverageAreas": [
+      "Texas"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/107-Texas"
+    },
+    {
+     "id": 110,
+     "name": "Isla",
+     "detail": "BAI Comms Site 16782 Leichhardt Hwy",
+     "description": "BAI Comms Site 16782 Leichhardt Hwy Isla",
+     "coverageAreas": [
+      "Theodore"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/110-Isla"
+    },
+    {
+     "id": 758,
+     "name": "Thursday Island",
+     "detail": "BAI Comms Site Green Hill Lot 1 Chester St",
+     "description": "BAI Comms Site Green Hill Lot 1 Chester St Thursday Island",
+     "coverageAreas": [
+      "Thursday Island"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/758-Thursday-Island"
+    },
+    {
+     "id": 177,
+     "name": "Tieri",
+     "detail": "Television Site Talagai Ave",
+     "description": "Television Site Talagai Ave Tieri",
+     "coverageAreas": [
+      "Tieri"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/177-Tieri"
+    },
+    {
+     "id": 522,
+     "name": "Tin Can Bay",
+     "detail": "Water Tower Squire Street",
+     "description": "Water Tower Squire Street Tin Can Bay",
+     "coverageAreas": [
+      "Tin Can Bay"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/522-Tin-Can-Bay"
+    },
+    {
+     "id": 178,
+     "name": "Toowoomba",
+     "detail": "Broadcast Site Video Ave Mount Lofty",
+     "description": "Broadcast Site Video Ave Mount Lofty Toowoomba",
+     "coverageAreas": [
+      "Toowoomba"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/178-Toowoomba"
+    },
+    {
+     "id": 518,
+     "name": "Rangeville",
+     "detail": "WIN Site 2A Heller St",
+     "description": "WIN Site 2A Heller St Rangeville",
+     "coverageAreas": [
+      "Toowoomba East"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/518-Rangeville"
+    },
+    {
+     "id": 519,
+     "name": "Toowoomba South",
+     "detail": "Top Camp Merlin Road",
+     "description": "Top Camp Merlin Road Toowoomba South",
+     "coverageAreas": [
+      "Toowoomba South"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/519-Toowoomba-South"
+    },
+    {
+     "id": 167,
+     "name": "Mount Stuart",
+     "detail": "Broadcast Australia Site Mount Stuart Road",
+     "description": "Broadcast Australia Site Mount Stuart Road Mount Stuart",
+     "coverageAreas": [
+      "Townsville"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/QLD/167-Mount-Stuart"
+    },
+    {
+     "id": 180,
+     "name": "Castle Hill",
+     "detail": "Telstra Radio Terminal 8 Sterling Drive",
+     "description": "Telstra Radio Terminal 8 Sterling Drive Castle Hill",
+     "coverageAreas": [
+      "Townsville North"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/180-Castle-Hill"
+    },
+    {
+     "id": 179,
+     "name": "Mt Myrtle",
+     "detail": "Telstra Radio Terminal 11.4 km NE of Tully",
+     "description": "Telstra Radio Terminal 11.4 km NE of Tully Mt Myrtle",
+     "coverageAreas": [
+      "Tully"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/179-Mt-Myrtle"
+    },
+    {
+     "id": 649,
+     "name": "Wandoan",
+     "detail": "BAI Comms Site 412 Nathan Rd",
+     "description": "BAI Comms Site 412 Nathan Rd Wandoan",
+     "coverageAreas": [
+      "Wandoan"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/649-Wandoan"
+    },
+    {
+     "id": 629,
+     "name": "Palm Cove",
+     "detail": "Telstra Site Buchan Point off Captain Cook Hwy",
+     "description": "Telstra Site Buchan Point off Captain Cook Hwy Palm Cove",
+     "coverageAreas": [
+      "Wangetti"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/629-Palm-Cove"
+    },
+    {
+     "id": 143,
+     "name": "Mount Tabor",
+     "detail": "Broadcast Site Quarry cnr Mount Tabor Rd and Ogilvie Rd",
+     "description": "Broadcast Site Quarry cnr Mount Tabor Rd and Ogilvie Rd Mount Tabor",
+     "coverageAreas": [
+      "Warwick"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/143-Mount-Tabor"
+    },
+    {
+     "id": 408,
+     "name": "Rocky Point",
+     "detail": "Multiple",
+     "description": "BAI Comms Site Lot 17 Transmission St Rocky Point",
+     "coverageAreas": [
+      "Weipa"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/408-Rocky-Point"
+    },
+    {
+     "id": 119,
+     "name": "Woowoonga",
+     "detail": "BA Site Mt Goonaneman",
+     "description": "BA Site Mt Goonaneman Woowoonga",
+     "coverageAreas": [
+      "Wide Bay"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/QLD/119-Woowoonga"
+    },
+    {
+     "id": 725,
+     "name": "Willows Gemfields",
+     "detail": "Broadcast Site Willows Road",
+     "description": "Broadcast Site Willows Road Willows Gemfields",
+     "coverageAreas": [
+      "Willows"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/725-Willows-Gemfields"
+    },
+    {
+     "id": 144,
+     "name": "Winton",
+     "detail": "Broadcast Site Rangelands 16km N of",
+     "description": "Broadcast Site Rangelands 16km N of Winton",
+     "coverageAreas": [
+      "Winton"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/144-Winton"
+    },
+    {
+     "id": 668,
+     "name": "Winton",
+     "detail": "Water Tower Werna St",
+     "description": "Water Tower Werna St Winton",
+     "coverageAreas": [
+      "Winton"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/QLD/668-Winton"
+    },
+    {
+     "id": 515,
+     "name": "Wonga Beach",
+     "detail": "Telstra Exchange",
+     "description": "Telstra Exchange Wonga Beach",
+     "coverageAreas": [
+      "Wonga Beach"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/515-Wonga-Beach"
+    },
+    {
+     "id": 479,
+     "name": "Wyandra",
+     "detail": "Town Hall 9-13 Macks Street",
+     "description": "Town Hall 9-13 Macks Street Wyandra",
+     "coverageAreas": [
+      "Wyandra"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/QLD/479-Wyandra"
+    },
+    {
+     "id": 487,
+     "name": "Yarraman",
+     "detail": "Broadcast Site Milkfarm Brand Property 12121 Daguilar Hwy",
+     "description": "Broadcast Site Milkfarm Brand Property 12121 Daguilar Hwy Yarraman",
+     "coverageAreas": [
+      "Yarraman"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/487-Yarraman"
+    },
+    {
+     "id": 136,
+     "name": "Meikleville Hill",
+     "detail": "Monopole Broadcast Site",
+     "description": "Monopole Broadcast Site Meikleville Hill",
+     "coverageAreas": [
+      "Yeppoon"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/136--Meikleville-Hill"
+    },
+    {
+     "id": 478,
+     "name": "Yowah",
+     "detail": "Community Centre 16 Harlequin Drive",
+     "description": "Community Centre 16 Harlequin Drive Yowah",
+     "coverageAreas": [
+      "Yowah"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/QLD/478-Yowah"
+    }
+   ]
+  },
+  {
+   "code": "SA",
+   "name": "South Australia",
+   "sites": [
+    {
+     "id": 218,
+     "name": "Crafers",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Summit Road Crafers",
+     "coverageAreas": [
+      "Adelaide"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/SA/218-Crafers"
+    },
+    {
+     "id": 420,
+     "name": "Adelaide",
+     "detail": "TXA Grenfell Centre Site Mast 25 Grenfell Street",
+     "description": "TXA Grenfell Centre Site Mast 25 Grenfell Street Adelaide",
+     "coverageAreas": [
+      "Adelaide Foothills"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/420-Adelaide"
+    },
+    {
+     "id": 678,
+     "name": "Andamooka",
+     "detail": "Telstra Site Hallion Hill Rd",
+     "description": "Telstra Site Hallion Hill Rd Andamooka",
+     "coverageAreas": [
+      "Andamooka"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/678-Andamooka"
+    },
+    {
+     "id": 581,
+     "name": "Angaston",
+     "detail": "Broadcast Site 0.8km East of",
+     "description": "Broadcast Site 0.8km East of Angaston",
+     "coverageAreas": [
+      "Angaston"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/581-Angaston"
+    },
+    {
+     "id": 221,
+     "name": "Bordertown",
+     "detail": "Multiple",
+     "description": "Television Tower SW cnr Cannwigara Rd and Ramsay Tce Bordertown",
+     "coverageAreas": [
+      "Bordertown"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/221-Bordertown"
+    },
+    {
+     "id": 210,
+     "name": "Burra",
+     "detail": "Broadcast Site The Stock Route Site",
+     "description": "Broadcast Site The Stock Route Site Burra",
+     "coverageAreas": [
+      "Burra"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/210-Burra"
+    },
+    {
+     "id": 523,
+     "name": "Bald Hill North",
+     "detail": "Link Site",
+     "description": "Link Site Bald Hill North",
+     "coverageAreas": [
+      "Burra IBL"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/SA/523--Bald-Hill-North"
+    },
+    {
+     "id": 674,
+     "name": "Cape Jervis",
+     "detail": "Broadcast Site Sappers Rd",
+     "description": "Broadcast Site Sappers Rd Cape Jervis",
+     "coverageAreas": [
+      "Cape Jervis"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/674-Cape-Jervis"
+    },
+    {
+     "id": 205,
+     "name": "Caralue Bluff",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Caralue Bluff",
+     "coverageAreas": [
+      "Caralue Bluff"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/SA/205--Caralue-Bluff"
+    },
+    {
+     "id": 577,
+     "name": "Carrickalinga",
+     "detail": "Broadcast Site 0.5 km E of Haycock Point",
+     "description": "Broadcast Site 0.5 km E of Haycock Point Carrickalinga",
+     "coverageAreas": [
+      "Carrickalinga"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/577-Carrickalinga"
+    },
+    {
+     "id": 226,
+     "name": "Ceduna",
+     "detail": "Telstra Site Lot 51 Eyre Hwy",
+     "description": "Telstra Site Lot 51 Eyre Hwy Ceduna",
+     "coverageAreas": [
+      "Ceduna/Smoky Bay"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/226-Ceduna"
+    },
+    {
+     "id": 211,
+     "name": "Clare",
+     "detail": "Broadcast site Water Tank",
+     "description": "Broadcast site Water Tank Clare",
+     "coverageAreas": [
+      "Clare"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/211-Clare"
+    },
+    {
+     "id": 213,
+     "name": "Coffin Bay",
+     "detail": "Broadcast/Telstra Site Coffin Bay Lookout",
+     "description": "Broadcast/Telstra Site Coffin Bay Lookout Coffin Bay",
+     "coverageAreas": [
+      "Coffin Bay"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/213-Coffin-Bay"
+    },
+    {
+     "id": 719,
+     "name": "Coober Pedy",
+     "detail": "Multiple",
+     "description": "Imparja Site Traeger Street Coober Pedy",
+     "coverageAreas": [
+      "Coober Pedy"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/719-Coober-Pedy"
+    },
+    {
+     "id": 747,
+     "name": "Mt Olinthus",
+     "detail": "Broadcast Australia Site 16km NW of Cowell",
+     "description": "Broadcast Australia Site 16km NW of Cowell Mt Olinthus",
+     "coverageAreas": [
+      "Cowell"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/SA/747-Mt-Olinthus"
+    },
+    {
+     "id": 206,
+     "name": "Elizabeth Downs",
+     "detail": "Broadcast Site Lot 100 Uley Road",
+     "description": "Broadcast Site Lot 100 Uley Road Elizabeth Downs",
+     "coverageAreas": [
+      "Craigmore/Hillbank"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/206-Elizabeth-Downs"
+    },
+    {
+     "id": 580,
+     "name": "Eudunda",
+     "detail": "CFS/Broadcasting Tower Julia Road",
+     "description": "CFS/Broadcasting Tower Julia Road Eudunda",
+     "coverageAreas": [
+      "Eudunda"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/580-Eudunda"
+    },
+    {
+     "id": 583,
+     "name": "Mt Gould",
+     "detail": "Vodafone Site 3 km ESE of Kersbrook",
+     "description": "Vodafone Site 3 km ESE of Kersbrook Mt Gould",
+     "coverageAreas": [
+      "Gumeracha"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/583-Mt-Gould"
+    },
+    {
+     "id": 676,
+     "name": "Hawker",
+     "detail": "Broadcast site off Rowes Road 4 km SE of",
+     "description": "Broadcast site off Rowes Road 4 km SE of Hawker",
+     "coverageAreas": [
+      "Hawker"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/676-Hawker"
+    },
+    {
+     "id": 524,
+     "name": "Karte",
+     "detail": "Link Site Biralee Nominees 3km N of",
+     "description": "Link Site Biralee Nominees 3km N of Karte",
+     "coverageAreas": [
+      "Karte IBL"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/SA/524-Karte"
+    },
+    {
+     "id": 442,
+     "name": "Keith",
+     "detail": "Multiple",
+     "description": "Commercial mast Sugarload Road 10km North of Keith",
+     "coverageAreas": [
+      "Keith"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/442-Keith"
+    },
+    {
+     "id": 228,
+     "name": "Mount Benson",
+     "detail": "Telstra Site off Southern Ports Hwy",
+     "description": "Telstra Site off Southern Ports Hwy Mount Benson",
+     "coverageAreas": [
+      "Kingston SE/Robe"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/SA/228-Mount-Benson"
+    },
+    {
+     "id": 231,
+     "name": "Lameroo",
+     "detail": "Telstra Site Lot 204 Vardon Terrace",
+     "description": "Telstra Site Lot 204 Vardon Terrace Lameroo",
+     "coverageAreas": [
+      "Lameroo"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/231-Lameroo"
+    },
+    {
+     "id": 215,
+     "name": "Leigh Creek",
+     "detail": "Broadcast Australia Site Lot 13 Wattle Street",
+     "description": "Broadcast Australia Site Lot 13 Wattle Street Leigh Creek",
+     "coverageAreas": [
+      "Leigh Creek South"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/215-Leigh-Creek"
+    },
+    {
+     "id": 675,
+     "name": "Lyndoch",
+     "detail": "Broadcast Site STEDS Lagoons Barossa Valley Way",
+     "description": "Broadcast Site STEDS Lagoons Barossa Valley Way Lyndoch",
+     "coverageAreas": [
+      "Lyndoch"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/675-Lyndoch"
+    },
+    {
+     "id": 582,
+     "name": "Maitland",
+     "detail": "Telstra tower 2 km NE of",
+     "description": "Telstra tower 2 km NE of Maitland",
+     "coverageAreas": [
+      "Maitland"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/582-Maitland"
+    },
+    {
+     "id": 579,
+     "name": "Mannum",
+     "detail": "Broadcast Site Quarry Reserve adj to East Front Rd",
+     "description": "Broadcast Site Quarry Reserve adj to East Front Rd Mannum",
+     "coverageAreas": [
+      "Mannum"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/579-Mannum"
+    },
+    {
+     "id": 443,
+     "name": "Morgan",
+     "detail": "Council Offices Fourth St",
+     "description": "Council Offices Fourth St Morgan",
+     "coverageAreas": [
+      "Morgan"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/443-Morgan"
+    },
+    {
+     "id": 673,
+     "name": "Myponga Hill",
+     "detail": "Broadcast Site Trigg Point Rd",
+     "description": "Broadcast Site Trigg Point Rd Myponga Hill",
+     "coverageAreas": [
+      "Myponga"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/673-Myponga-Hill"
+    },
+    {
+     "id": 220,
+     "name": "Naracoorte",
+     "detail": "SAGRN site Blackwell Rd",
+     "description": "SAGRN site Blackwell Rd Naracoorte",
+     "coverageAreas": [
+      "Naracoorte"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/220-Naracoorte"
+    },
+    {
+     "id": 677,
+     "name": "Normanville",
+     "detail": "Broadcasting site Mill Road",
+     "description": "Broadcasting site Mill Road Normanville",
+     "coverageAreas": [
+      "Normanville"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/677-Normanville"
+    },
+    {
+     "id": 413,
+     "name": "Orroroo",
+     "detail": "Telstra/Broadcast Site Tank Hill 1.6 km SW of",
+     "description": "Telstra/Broadcast Site Tank Hill 1.6 km SW of Orroroo",
+     "coverageAreas": [
+      "Orroroo"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/413-Orroroo"
+    },
+    {
+     "id": 229,
+     "name": "Pinnaroo",
+     "detail": "Telstra Site Lot 30 Bone Road",
+     "description": "Telstra Site Lot 30 Bone Road Pinnaroo",
+     "coverageAreas": [
+      "Pinnaroo"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/229-Pinnaroo"
+    },
+    {
+     "id": 217,
+     "name": "Port Lincoln",
+     "detail": "Telstra Site Winter Hill Lot 14 Winter Hill Drv 5 km NW of",
+     "description": "Telstra Site Winter Hill Lot 14 Winter Hill Drv 5 km NW of Port Lincoln",
+     "coverageAreas": [
+      "Port Lincoln"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/217-Port-Lincoln"
+    },
+    {
+     "id": 223,
+     "name": "Quorn",
+     "detail": "Telstra/Broadcast Site Yarrah Vale Road",
+     "description": "Telstra/Broadcast Site Yarrah Vale Road Quorn",
+     "coverageAreas": [
+      "Quorn"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/223-Quorn"
+    },
+    {
+     "id": 204,
+     "name": "Loxton",
+     "detail": "Broadcast Site Bookpurnong Terrace 4 km WSW of",
+     "description": "Broadcast Site Bookpurnong Terrace 4 km WSW of Loxton",
+     "coverageAreas": [
+      "Renmark/Loxton"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/SA/204-Loxton"
+    },
+    {
+     "id": 736,
+     "name": "Roxby Downs",
+     "detail": "Multiple",
+     "description": "Council Depot 28 Olympic Way Roxby Downs",
+     "coverageAreas": [
+      "Roxby Downs"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/736-Roxby-Downs"
+    },
+    {
+     "id": 202,
+     "name": "Mt Burr",
+     "detail": "Broadcast site 11 km E of Millicent",
+     "description": "Broadcast site 11 km E of Millicent Mt Burr",
+     "coverageAreas": [
+      "South East"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/SA/202-Mt-Burr"
+    },
+    {
+     "id": 222,
+     "name": "The Bluff",
+     "detail": "Broadcast Australia Site TV Track",
+     "description": "Broadcast Australia Site TV Track The Bluff",
+     "coverageAreas": [
+      "Spencer Gulf North"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/SA/222-The-Bluff"
+    },
+    {
+     "id": 681,
+     "name": "Strathalbyn",
+     "detail": "Telstra/Optus Site SA Water Tower Marchants Rd",
+     "description": "Telstra/Optus Site SA Water Tower Marchants Rd Strathalbyn",
+     "coverageAreas": [
+      "Strathalbyn"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/681-Strathalbyn"
+    },
+    {
+     "id": 203,
+     "name": "Streaky Bay",
+     "detail": "Broadcast Australia Site Lot 520 Cape Bauer Rd",
+     "description": "Broadcast Australia Site Lot 520 Cape Bauer Rd Streaky Bay",
+     "coverageAreas": [
+      "Streaky Bay"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/203-Streaky-Bay"
+    },
+    {
+     "id": 776,
+     "name": "Streaky Bay",
+     "detail": "Streaky Bay Islands Caravan park Lot 101 Little Islands Rd",
+     "description": "Streaky Bay Islands Caravan park Lot 101 Little Islands Rd Streaky Bay",
+     "coverageAreas": [
+      "Streaky Bay (Islands CP)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/SA/776-Streaky-Bay"
+    },
+    {
+     "id": 578,
+     "name": "Swan Reach",
+     "detail": "Broadcast site Punyelroo CFS tower 4km SE of",
+     "description": "Broadcast site Punyelroo CFS tower 4km SE of Swan Reach",
+     "coverageAreas": [
+      "Swan Reach"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/578-Swan-Reach"
+    },
+    {
+     "id": 414,
+     "name": "The Gap",
+     "detail": "WIN Site Adj to Radio Terminal",
+     "description": "WIN Site Adj to Radio Terminal The Gap",
+     "coverageAreas": [
+      "The Gap IBL"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/414-The-Gap"
+    },
+    {
+     "id": 232,
+     "name": "Borthwicks Hill",
+     "detail": "Telstra Tower 14 km west of Tumby Bay",
+     "description": "Telstra Tower 14 km west of Tumby Bay Borthwicks Hill",
+     "coverageAreas": [
+      "Tumby Bay"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/SA/232-Borthwicks-Hill"
+    },
+    {
+     "id": 214,
+     "name": "Newland Hill",
+     "detail": "SAPD site 5.5km SW of Victor Harbor",
+     "description": "SAPD site 5.5km SW of Victor Harbor Newland Hill",
+     "coverageAreas": [
+      "Victor Harbor"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/214-Newland-Hill"
+    },
+    {
+     "id": 212,
+     "name": "Ramco",
+     "detail": "Broadcast/Optus Site Lot 67 Loffler Rd",
+     "description": "Broadcast/Optus Site Lot 67 Loffler Rd Ramco",
+     "coverageAreas": [
+      "Waikerie"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/212-Ramco"
+    },
+    {
+     "id": 679,
+     "name": "Wirrulla",
+     "detail": "Telstra site off Gawler Ranges Road 8 km SE",
+     "description": "Telstra site off Gawler Ranges Road 8 km SE Wirrulla",
+     "coverageAreas": [
+      "Wirrulla"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/SA/679-Wirrulla"
+    },
+    {
+     "id": 680,
+     "name": "Woomera",
+     "detail": "Telstra site Roxby Highway",
+     "description": "Telstra site Roxby Highway Woomera",
+     "coverageAreas": [
+      "Woomera"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/SA/680-Woomera"
+    },
+    {
+     "id": 207,
+     "name": "Mt Damper",
+     "detail": "Broadcast Site McMahon Rd",
+     "description": "Broadcast Site McMahon Rd Mt Damper",
+     "coverageAreas": [
+      "Wudinna"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/SA/207-Mt-Damper"
+    },
+    {
+     "id": 672,
+     "name": "Yankalilla",
+     "detail": "Broadcast Site Jervois Road",
+     "description": "Broadcast Site Jervois Road Yankalilla",
+     "coverageAreas": [
+      "Yankalilla"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/SA/672-Yankalilla"
+    }
+   ]
+  },
+  {
+   "code": "TAS",
+   "name": "Tasmania",
+   "sites": [
+    {
+     "id": 253,
+     "name": "Acton",
+     "detail": "Broadcast Site Single Hill Cahill Place",
+     "description": "Broadcast Site Single Hill Cahill Place Acton",
+     "coverageAreas": [
+      "Acton Road"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/253-Acton"
+    },
+    {
+     "id": 274,
+     "name": "Mount Roland",
+     "detail": "Broadcast Tower Hydro Tas Site Mt Claude Olivers Rd",
+     "description": "Broadcast Tower Hydro Tas Site Mt Claude Olivers Rd Mount Roland",
+     "coverageAreas": [
+      "Barrington Valley"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/274-Mount-Roland"
+    },
+    {
+     "id": 235,
+     "name": "Bicheno",
+     "detail": "Broadcast Australia Site off Tasman Hwy 1 km South of",
+     "description": "Broadcast Australia Site off Tasman Hwy 1 km South of Bicheno",
+     "coverageAreas": [
+      "Bicheno"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/235-Bicheno"
+    },
+    {
+     "id": 240,
+     "name": "Binalong Bay",
+     "detail": "Broadcast Site Gardens Rd",
+     "description": "Broadcast Site Gardens Rd Binalong Bay",
+     "coverageAreas": [
+      "Binalong Bay"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/240-Binalong-Bay"
+    },
+    {
+     "id": 261,
+     "name": "Round Hill",
+     "detail": "Multiple",
+     "description": "Council Community Site Round Hill",
+     "coverageAreas": [
+      "Burnie"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/261-Round-Hill"
+    },
+    {
+     "id": 526,
+     "name": "Currie",
+     "detail": "Council Site Tower Hill",
+     "description": "Council Site Tower Hill Currie",
+     "coverageAreas": [
+      "Currie"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/526-Currie"
+    },
+    {
+     "id": 275,
+     "name": "Cygnet",
+     "detail": "TV Translator Site via Kings Hill Road",
+     "description": "TV Translator Site via Kings Hill Road Cygnet",
+     "coverageAreas": [
+      "Cygnet"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/275-Cygnet"
+    },
+    {
+     "id": 271,
+     "name": "Derby",
+     "detail": "Multiple",
+     "description": "Broadcast Australia tower off Derby Station Rd Derby",
+     "coverageAreas": [
+      "Derby (Tas)"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/TAS/271-Derby"
+    },
+    {
+     "id": 272,
+     "name": "174 Dover, Dover",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Hill 174 Dover",
+     "coverageAreas": [
+      "Dover"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/272--Dover-Dover"
+    },
+    {
+     "id": 273,
+     "name": "Quoiba",
+     "detail": "Broadcast Site Kelcey Tier 9 Wrendswood Drive",
+     "description": "Broadcast Site Kelcey Tier 9 Wrendswood Drive Quoiba",
+     "coverageAreas": [
+      "East Devonport"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/273-Quoiba"
+    },
+    {
+     "id": 687,
+     "name": "Braddons Lookout",
+     "detail": "Broadcast Site 244 Braddons Lookout Road",
+     "description": "Broadcast Site 244 Braddons Lookout Road Braddons Lookout",
+     "coverageAreas": [
+      "Forth"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/TAS/687-Braddons-Lookout"
+    },
+    {
+     "id": 239,
+     "name": "Port Huon",
+     "detail": "Broadcast Australia Tower Doody's Hill Lookout Doody's Hill Rd",
+     "description": "Broadcast Australia Tower Doody's Hill Lookout Doody's Hill Rd Port Huon",
+     "coverageAreas": [
+      "Geeveston"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/239-Port-Huon"
+    },
+    {
+     "id": 236,
+     "name": "Gladstone",
+     "detail": "Broadcast Site 500 m SE of",
+     "description": "Broadcast Site 500 m SE of Gladstone",
+     "coverageAreas": [
+      "Gladstone (Tas)"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/TAS/236-Gladstone"
+    },
+    {
+     "id": 255,
+     "name": "Sweets Hill",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Sweets Hill",
+     "coverageAreas": [
+      "Goshen/Goulds Country"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/255-Sweets-Hill"
+    },
+    {
+     "id": 584,
+     "name": "Hillwood",
+     "detail": "Broadcast Site Miller Court",
+     "description": "Broadcast Site Miller Court Hillwood",
+     "coverageAreas": [
+      "Hillwood"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/584-Hillwood"
+    },
+    {
+     "id": 263,
+     "name": "Mt Wellington",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Pinnacle Rd Mt Wellington",
+     "coverageAreas": [
+      "Hobart"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/TAS/263-Mt-Wellington"
+    },
+    {
+     "id": 241,
+     "name": "Risdon",
+     "detail": "Broadcast Site Government Hills",
+     "description": "Broadcast Site Government Hills Risdon",
+     "coverageAreas": [
+      "Hobart NE Suburbs"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/241-Risdon"
+    },
+    {
+     "id": 264,
+     "name": "King Island",
+     "detail": "Radio Terminal Gentle Annie",
+     "description": "Radio Terminal Gentle Annie King Island",
+     "coverageAreas": [
+      "King Island"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/TAS/264-King-Island"
+    },
+    {
+     "id": 270,
+     "name": "West Launceston",
+     "detail": "Telstra/Broadcast Site Juliana St",
+     "description": "Telstra/Broadcast Site Juliana St West Launceston",
+     "coverageAreas": [
+      "Launceston"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/270-West-Launceston"
+    },
+    {
+     "id": 256,
+     "name": "Willis Hill",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Alcomie Road Willis Hill",
+     "coverageAreas": [
+      "Lileah"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/256-Willis-Hill"
+    },
+    {
+     "id": 237,
+     "name": "Browns Hill",
+     "detail": "Broadcast Site off Brown Mountain Road",
+     "description": "Broadcast Site off Brown Mountain Road Browns Hill",
+     "coverageAreas": [
+      "Lilydale"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/237-Browns-Hill"
+    },
+    {
+     "id": 683,
+     "name": "Abbotts Lookout",
+     "detail": "Fletcher Challenge/Broadcast Site",
+     "description": "Fletcher Challenge/Broadcast Site Abbotts Lookout",
+     "coverageAreas": [
+      "Maydena"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/TAS/683--Abbotts-Lookout"
+    },
+    {
+     "id": 260,
+     "name": "Gardners Ridge",
+     "detail": "Telstra Site",
+     "description": "Telstra Site Gardners Ridge",
+     "coverageAreas": [
+      "Meander"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/260--Gardners-Ridge"
+    },
+    {
+     "id": 254,
+     "name": "Montumana",
+     "detail": "Broadcast Site Sisters Hill",
+     "description": "Broadcast Site Sisters Hill Montumana",
+     "coverageAreas": [
+      "Montumana IBL"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/254-Montumana"
+    },
+    {
+     "id": 262,
+     "name": "Mt Barrow, Mt Barrow",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Tower Mt Barrow",
+     "coverageAreas": [
+      "NE Tasmania"
+     ],
+     "powerStars": 6,
+     "path": "transmitters/TAS/262--Mt-Barrow-Mt-Barrow"
+    },
+    {
+     "id": 685,
+     "name": "Sandfly",
+     "detail": "Telstra Tower Herringback Ridge 301 Halls Track Rd",
+     "description": "Telstra Tower Herringback Ridge 301 Halls Track Rd Sandfly",
+     "coverageAreas": [
+      "Neika/Leslie Vale"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/685-Sandfly"
+    },
+    {
+     "id": 252,
+     "name": "Shepherds Hill",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Shepherds Hill",
+     "coverageAreas": [
+      "New Norfolk"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/252--Shepherds-Hill"
+    },
+    {
+     "id": 783,
+     "name": "Triabunna",
+     "detail": "Guyed mast Moreys Hill off Oakhampton Road",
+     "description": "Guyed mast Moreys Hill off Oakhampton Road Triabunna",
+     "coverageAreas": [
+      "Orford"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/783-Triabunna"
+    },
+    {
+     "id": 243,
+     "name": "Mission Hill",
+     "detail": "Broadcast Site Pineleigh St adj to Bass Hwy",
+     "description": "Broadcast Site Pineleigh St adj to Bass Hwy Mission Hill",
+     "coverageAreas": [
+      "Penguin"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/243-Mission-Hill"
+    },
+    {
+     "id": 242,
+     "name": "Port Sorell",
+     "detail": "Broadcast Site Gumbowie Drive",
+     "description": "Broadcast Site Gumbowie Drive Port Sorell",
+     "coverageAreas": [
+      "Port Sorell"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/242-Port-Sorell"
+    },
+    {
+     "id": 245,
+     "name": "Mt Owen",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Mt Owen",
+     "coverageAreas": [
+      "Queenstown/Zeehan"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/245-Mt-Owen"
+    },
+    {
+     "id": 234,
+     "name": "Mt Horror",
+     "detail": "Broadcast Australia Site",
+     "description": "Broadcast Australia Site Mt Horror",
+     "coverageAreas": [
+      "Ringarooma"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/234--Mt-Horror"
+    },
+    {
+     "id": 246,
+     "name": "Mt Read",
+     "detail": "Broadcast Australia Site",
+     "description": "Broadcast Australia Site Mt Read",
+     "coverageAreas": [
+      "Rosebery"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/246--Mt-Read"
+    },
+    {
+     "id": 257,
+     "name": "Mt Cleveland",
+     "detail": "Broadcast/Comm Site",
+     "description": "Broadcast/Comm Site Mt Cleveland",
+     "coverageAreas": [
+      "Savage River"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/257-Mt-Cleveland"
+    },
+    {
+     "id": 268,
+     "name": "Smithton",
+     "detail": "Telstra Radio Terminal and NTA Site Massey Street",
+     "description": "Telstra Radio Terminal and NTA Site Massey Street Smithton",
+     "coverageAreas": [
+      "Smithton"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/268-Smithton"
+    },
+    {
+     "id": 247,
+     "name": "Stieglitz",
+     "detail": "Broadcast Australia Site off St Helens Point Rd 3km SW of",
+     "description": "Broadcast Australia Site off St Helens Point Rd 3km SW of Stieglitz",
+     "coverageAreas": [
+      "St Helens"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/247-Stieglitz"
+    },
+    {
+     "id": 267,
+     "name": "South Sister",
+     "detail": "Telstra and NTA Site",
+     "description": "Telstra and NTA Site South Sister",
+     "coverageAreas": [
+      "St Marys"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/267-South-Sister"
+    },
+    {
+     "id": 248,
+     "name": "Strahan",
+     "detail": "Broadcast Australia Site off Ocean Beach Rd",
+     "description": "Broadcast Australia Site off Ocean Beach Rd Strahan",
+     "coverageAreas": [
+      "Strahan"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/248-Strahan"
+    },
+    {
+     "id": 250,
+     "name": "Swansea",
+     "detail": "Broadcast Site Reservoir Noyes St",
+     "description": "Broadcast Site Reservoir Noyes St Swansea",
+     "coverageAreas": [
+      "Swansea"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/TAS/250-Swansea"
+    },
+    {
+     "id": 238,
+     "name": "Opossum Bay",
+     "detail": "Broadcast Site cnr Blatherwick Rise & South-Arm Rd",
+     "description": "Broadcast Site cnr Blatherwick Rise & South-Arm Rd Opossum Bay",
+     "coverageAreas": [
+      "Taroona"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/238-Opossum-Bay"
+    },
+    {
+     "id": 259,
+     "name": "Opossum Bay",
+     "detail": "Broadcast Australia Site White Rock Point",
+     "description": "Broadcast Australia Site White Rock Point Opossum Bay",
+     "coverageAreas": [
+      "Taroona"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/259-Opossum-Bay"
+    },
+    {
+     "id": 249,
+     "name": "Ulverstone",
+     "detail": "Broadcast Site Reservoir Heazlewoods Hill",
+     "description": "Broadcast Site Reservoir Heazlewoods Hill Ulverstone",
+     "coverageAreas": [
+      "Ulverstone"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/TAS/249-Ulverstone"
+    },
+    {
+     "id": 269,
+     "name": "Companion Hill",
+     "detail": "Telstra/Broadcast Site",
+     "description": "Telstra/Broadcast Site Companion Hill",
+     "coverageAreas": [
+      "Waratah"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/269-Companion-Hill"
+    },
+    {
+     "id": 258,
+     "name": "Table Cape",
+     "detail": "Broadcast/Comms Site",
+     "description": "Broadcast/Comms Site Table Cape",
+     "coverageAreas": [
+      "Wynyard"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/TAS/258-Table-Cape"
+    }
+   ]
+  },
+  {
+   "code": "VIC",
+   "name": "Victoria",
+   "sites": [
+    {
+     "id": 293,
+     "name": "Yarck",
+     "detail": "Broadcast Site Burgess Rd",
+     "description": "Broadcast Site Burgess Rd Yarck",
+     "coverageAreas": [
+      "Alexandra"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/VIC/293-Yarck"
+    },
+    {
+     "id": 423,
+     "name": "Rennies Hill",
+     "detail": "Broadcast Australia Site off Halls Flat Road",
+     "description": "Broadcast Australia Site off Halls Flat Road Rennies Hill",
+     "coverageAreas": [
+      "Alexandra Environs"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/423-Rennies-Hill"
+    },
+    {
+     "id": 690,
+     "name": "Mt Ingoldsby",
+     "detail": "Telstra Site Harvey Street",
+     "description": "Telstra Site Harvey Street Mt Ingoldsby",
+     "coverageAreas": [
+      "Anglesea/Aireys Inlet"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/690-Mt-Ingoldsby"
+    },
+    {
+     "id": 422,
+     "name": "Marengo",
+     "detail": "BAI Comms Site 30 Roberts Rd",
+     "description": "BAI Comms Site 30 Roberts Rd Marengo",
+     "coverageAreas": [
+      "Apollo Bay"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/422-Marengo"
+    },
+    {
+     "id": 310,
+     "name": "Mt Taylor",
+     "detail": "Broadcast Australia Site off Tower Rd",
+     "description": "Broadcast Australia Site off Tower Rd Mt Taylor",
+     "coverageAreas": [
+      "Bairnsdale"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/VIC/310-Mt-Taylor"
+    },
+    {
+     "id": 313,
+     "name": "Lookout Hill",
+     "detail": "Broadcast Tower",
+     "description": "Broadcast Tower Lookout Hill",
+     "coverageAreas": [
+      "Ballarat"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/VIC/313-Lookout-Hill"
+    },
+    {
+     "id": 539,
+     "name": "Ballarat East",
+     "detail": "BTV-6 Studios Walker Street",
+     "description": "BTV-6 Studios Walker Street Ballarat East",
+     "coverageAreas": [
+      "Ballarat East"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/539-Ballarat-East"
+    },
+    {
+     "id": 311,
+     "name": "Harcort North",
+     "detail": "Multiple",
+     "description": "BA Site Mt Alexander Joseph Young Dr Harcort North",
+     "coverageAreas": [
+      "Bendigo"
+     ],
+     "powerStars": 6,
+     "path": "transmitters/VIC/311-Harcort-North"
+    },
+    {
+     "id": 528,
+     "name": "Birchip",
+     "detail": "Birchip Sport Ground western end of Morrison St",
+     "description": "Birchip Sport Ground western end of Morrison St Birchip",
+     "coverageAreas": [
+      "Birchip"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/528-Birchip"
+    },
+    {
+     "id": 304,
+     "name": "Bonnie Doon",
+     "detail": "Broadcast Site North shore Lake Eildon 1 km NE of",
+     "description": "Broadcast Site North shore Lake Eildon 1 km NE of Bonnie Doon",
+     "coverageAreas": [
+      "Bonnie Doon"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/304-Bonnie-Doon"
+    },
+    {
+     "id": 538,
+     "name": "Boolarra",
+     "detail": "Broadcast Site Off Bunderra Drive 1 km NW of",
+     "description": "Broadcast Site Off Bunderra Drive 1 km NW of Boolarra",
+     "coverageAreas": [
+      "Boolarra"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/538-Boolarra"
+    },
+    {
+     "id": 290,
+     "name": "Bright",
+     "detail": "Telstra Tower Apex Lookout off Mount Porepunkah Rd 1.5 km NE of",
+     "description": "Telstra Tower Apex Lookout off Mount Porepunkah Rd 1.5 km NE of Bright",
+     "coverageAreas": [
+      "Bright"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/290-Bright"
+    },
+    {
+     "id": 544,
+     "name": "Mt Hickey",
+     "detail": "Mitchell Shire Council Site 10 km ENE of Broadford",
+     "description": "Mitchell Shire Council Site 10 km ENE of Broadford Mt Hickey",
+     "coverageAreas": [
+      "Broadford"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/544-Mt-Hickey"
+    },
+    {
+     "id": 688,
+     "name": "Bruthen",
+     "detail": "Broadcast Australia/Wideband Networks Site Jennings Hill",
+     "description": "Broadcast Australia/Wideband Networks Site Jennings Hill Bruthen",
+     "coverageAreas": [
+      "Bruthen"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/688-Bruthen"
+    },
+    {
+     "id": 333,
+     "name": "Donald Knob",
+     "detail": "Telstra Radio Terminal 49 km ENE of Orbost",
+     "description": "Telstra Radio Terminal 49 km ENE of Orbost Donald Knob",
+     "coverageAreas": [
+      "Cann River"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/VIC/333-Donald-Knob"
+    },
+    {
+     "id": 306,
+     "name": "Casterton",
+     "detail": "Broadcast Site Seeleys Hill",
+     "description": "Broadcast Site Seeleys Hill Casterton",
+     "coverageAreas": [
+      "Casterton"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/306-Casterton"
+    },
+    {
+     "id": 552,
+     "name": "Charlton",
+     "detail": "Water Tank View Street",
+     "description": "Water Tank View Street Charlton",
+     "coverageAreas": [
+      "Charlton"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/552-Charlton"
+    },
+    {
+     "id": 301,
+     "name": "Churchill",
+     "detail": "Broadcast Site Mills Trig Pt East of",
+     "description": "Broadcast Site Mills Trig Pt East of Churchill",
+     "coverageAreas": [
+      "Churchill"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/301-Churchill"
+    },
+    {
+     "id": 284,
+     "name": "Camperdown",
+     "detail": "Broadcast Australia Site 3 km SSE of",
+     "description": "Broadcast Australia Site 3 km SSE of Camperdown",
+     "coverageAreas": [
+      "Cobden"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/284-Camperdown"
+    },
+    {
+     "id": 547,
+     "name": "Cohuna",
+     "detail": "Optus Site Roney Property Weinberg St",
+     "description": "Optus Site Roney Property Weinberg St Cohuna",
+     "coverageAreas": [
+      "Cohuna"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/VIC/547-Cohuna"
+    },
+    {
+     "id": 278,
+     "name": "Warrion",
+     "detail": "Broadcast Australia Site Warrion Hill off Warrion Hill Rd",
+     "description": "Broadcast Australia Site Warrion Hill off Warrion Hill Rd Warrion",
+     "coverageAreas": [
+      "Colac"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/VIC/278-Warrion"
+    },
+    {
+     "id": 317,
+     "name": "Coleraine",
+     "detail": "Telstra Site McKendry Hill 2 km SE of",
+     "description": "Telstra Site McKendry Hill 2 km SE of Coleraine",
+     "coverageAreas": [
+      "Coleraine"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/317-Coleraine"
+    },
+    {
+     "id": 302,
+     "name": "Towong",
+     "detail": "Broadcast Australia Site Mt Elliot Ridge Track",
+     "description": "Broadcast Australia Site Mt Elliot Ridge Track Towong",
+     "coverageAreas": [
+      "Corryong"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/302-Towong"
+    },
+    {
+     "id": 309,
+     "name": "Wightmans Hill",
+     "detail": "Broadcast Australia Site",
+     "description": "Broadcast Australia Site Wightmans Hill",
+     "coverageAreas": [
+      "Eildon"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/309--Wightmans-Hill"
+    },
+    {
+     "id": 295,
+     "name": "Eildon",
+     "detail": "Broadcast Site Dog Hill 1 km W of",
+     "description": "Broadcast Site Dog Hill 1 km W of Eildon",
+     "coverageAreas": [
+      "Eildon Town"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/VIC/295-Eildon"
+    },
+    {
+     "id": 534,
+     "name": "Falls Creek",
+     "detail": "Broadcast Site Gebi`s Ski Hire 3 Bogong High Plains Rd",
+     "description": "Broadcast Site Gebi`s Ski Hire 3 Bogong High Plains Rd Falls Creek",
+     "coverageAreas": [
+      "Falls Creek"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/VIC/534-Falls-Creek"
+    },
+    {
+     "id": 799,
+     "name": "Ferntree Gully",
+     "detail": "TXA Ferntree Gully Site Monopole 1 Bruce Crescent",
+     "description": "TXA Ferntree Gully Site Monopole 1 Bruce Crescent Ferntree Gully",
+     "coverageAreas": [
+      "Ferntree Gully"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/799-Ferntree-Gully"
+    },
+    {
+     "id": 307,
+     "name": "Foster North",
+     "detail": "Monopole Broadcast Site Off South Gippsland Highway",
+     "description": "Monopole Broadcast Site Off South Gippsland Highway Foster North",
+     "coverageAreas": [
+      "Foster"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/307-Foster-North"
+    },
+    {
+     "id": 588,
+     "name": "Highton",
+     "detail": "Tower Montpellier Service Basin",
+     "description": "Tower Montpellier Service Basin Highton",
+     "coverageAreas": [
+      "Geelong"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/VIC/588-Highton"
+    },
+    {
+     "id": 320,
+     "name": "Maramingo Hill, Maramingo Hill",
+     "detail": "Multiple",
+     "description": "Commercial Broadcast Site Maramingo Hill",
+     "coverageAreas": [
+      "Genoa"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/320--Maramingo-Hill-Maramingo-Hill"
+    },
+    {
+     "id": 288,
+     "name": "Mt Major",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site TV Access Rd Mt Major",
+     "coverageAreas": [
+      "Goulburn Valley"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/VIC/288-Mt-Major"
+    },
+    {
+     "id": 312,
+     "name": "Mt William",
+     "detail": "Broadcast Tower 29 km W of Ararat",
+     "description": "Broadcast Tower 29 km W of Ararat Mt William",
+     "coverageAreas": [
+      "Halls Gap"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/312-Mt-William"
+    },
+    {
+     "id": 806,
+     "name": "Halls Gap",
+     "detail": "Lakeside Tourist Park Tymna Drive",
+     "description": "Lakeside Tourist Park Tymna Drive Halls Gap",
+     "coverageAreas": [
+      "Halls Gap (Lakeside TP)"
+     ],
+     "powerStars": 0,
+     "path": "transmitters/VIC/806-Halls-Gap"
+    },
+    {
+     "id": 533,
+     "name": "Harrietville",
+     "detail": "Broadcast Site Cavalier Spur 4km N of",
+     "description": "Broadcast Site Cavalier Spur 4km N of Harrietville",
+     "coverageAreas": [
+      "Harrietville"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/VIC/533-Harrietville"
+    },
+    {
+     "id": 587,
+     "name": "Mt St Leonard",
+     "detail": "Telstra site",
+     "description": "Telstra site Mt St Leonard",
+     "coverageAreas": [
+      "Healesville"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/587--Mt-St-Leonard"
+    },
+    {
+     "id": 296,
+     "name": "Hopetoun",
+     "detail": "Grain Silo Garrard St",
+     "description": "Grain Silo Garrard St Hopetoun",
+     "coverageAreas": [
+      "Hopetoun (Vic)"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/296-Hopetoun"
+    },
+    {
+     "id": 286,
+     "name": "Beaulah",
+     "detail": "BA Site 1010 Rosebery-Rainbow Rd",
+     "description": "BA Site 1010 Rosebery-Rainbow Rd Beaulah",
+     "coverageAreas": [
+      "Hopetoun-Beulah"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/286-Beaulah"
+    },
+    {
+     "id": 332,
+     "name": "Arapiles",
+     "detail": "Telstra Radio Terminal Mt Arapiles Summit Rd",
+     "description": "Telstra Radio Terminal Mt Arapiles Summit Rd Arapiles",
+     "coverageAreas": [
+      "Horsham"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/VIC/332-Arapiles"
+    },
+    {
+     "id": 305,
+     "name": "Howqua",
+     "detail": "Broadcast Site Hill 480 Foxhaven Woods Point Rd",
+     "description": "Broadcast Site Hill 480 Foxhaven Woods Point Rd Howqua",
+     "coverageAreas": [
+      "Howqua"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/305-Howqua"
+    },
+    {
+     "id": 529,
+     "name": "Hunters Hill",
+     "detail": "Broadcast In Band Link Site",
+     "description": "Broadcast In Band Link Site Hunters Hill",
+     "coverageAreas": [
+      "Hunters Knob IBL"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/529-Hunters-Hill"
+    },
+    {
+     "id": 749,
+     "name": "Inverloch",
+     "detail": "Broadcast Site Sports Ground Adj Bolding Place",
+     "description": "Broadcast Site Sports Ground Adj Bolding Place Inverloch",
+     "coverageAreas": [
+      "Inverloch"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/VIC/749-Inverloch"
+    },
+    {
+     "id": 536,
+     "name": "Silcocks",
+     "detail": "Broadcast Site McFarlanes Road",
+     "description": "Broadcast Site McFarlanes Road Silcocks",
+     "coverageAreas": [
+      "Jeeralang/Yinnar South"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/536-Silcocks"
+    },
+    {
+     "id": 298,
+     "name": "030 Kiewa",
+     "detail": "Broadcast Site Hill",
+     "description": "Broadcast Site Hill 030 Kiewa",
+     "coverageAreas": [
+      "Kiewa"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/298--Kiewa"
+    },
+    {
+     "id": 331,
+     "name": "Big Hill",
+     "detail": "Telstra CMTS Site",
+     "description": "Telstra CMTS Site Big Hill",
+     "coverageAreas": [
+      "Kiewa Valley"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/331-Big-Hill"
+    },
+    {
+     "id": 549,
+     "name": "Koondrook",
+     "detail": "Sports Ground Penglase Street",
+     "description": "Sports Ground Penglase Street Koondrook",
+     "coverageAreas": [
+      "Koondrook/Barham"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/549-Koondrook"
+    },
+    {
+     "id": 316,
+     "name": "Lakes Entrance",
+     "detail": "Broadcast/Optus Site Ocean View Parade",
+     "description": "Broadcast/Optus Site Ocean View Parade Lakes Entrance",
+     "coverageAreas": [
+      "Lakes Entrance"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/316-Lakes-Entrance"
+    },
+    {
+     "id": 277,
+     "name": "Mt Tassie",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site off Traralgon-Balook Rd Mt Tassie",
+     "coverageAreas": [
+      "Latrobe Valley"
+     ],
+     "powerStars": 6,
+     "path": "transmitters/VIC/277-Mt-Tassie"
+    },
+    {
+     "id": 328,
+     "name": "Lorne",
+     "detail": "Radio Terminal 62 George Street",
+     "description": "Radio Terminal 62 George Street Lorne",
+     "coverageAreas": [
+      "Lorne"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/328-Lorne"
+    },
+    {
+     "id": 325,
+     "name": "Mallacoota",
+     "detail": "Mallacoota Radio Terminal Site",
+     "description": "Mallacoota Radio Terminal Site Mallacoota",
+     "coverageAreas": [
+      "Mallacoota"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/325-Mallacoota"
+    },
+    {
+     "id": 586,
+     "name": "Maindample",
+     "detail": "BA Site The Paps via 2820 Maroondah Hwy",
+     "description": "BA Site The Paps via 2820 Maroondah Hwy Maindample",
+     "coverageAreas": [
+      "Mansfield"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/586-Maindample"
+    },
+    {
+     "id": 287,
+     "name": "Mount Gordon",
+     "detail": "TXA Marysville Site Tower Woods Lookout Track",
+     "description": "TXA Marysville Site Tower Woods Lookout Track Mount Gordon",
+     "coverageAreas": [
+      "Marysville"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/VIC/287-Mount-Gordon"
+    },
+    {
+     "id": 326,
+     "name": "Mount Dandenong, Mt Dandenong",
+     "detail": "Multiple",
+     "description": "Tower Broadcast Australia Site Eyre Road Mount Dandenong",
+     "coverageAreas": [
+      "Melbourne"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/VIC/326-Mount-Dandenong-Mt-Dandenong"
+    },
+    {
+     "id": 720,
+     "name": "Melbourne",
+     "detail": "Bourke Place 600 Bourke Street",
+     "description": "Bourke Place 600 Bourke Street Melbourne",
+     "coverageAreas": [
+      "Melbourne Inner Suburbs"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/720-Melbourne"
+    },
+    {
+     "id": 318,
+     "name": "Red Cliffs",
+     "detail": "Broadcast Australia Site Calder Hwy 8 km S of",
+     "description": "Broadcast Australia Site Calder Hwy 8 km S of Red Cliffs",
+     "coverageAreas": [
+      "Mildura/Sunraysia"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/VIC/318-Red-Cliffs"
+    },
+    {
+     "id": 726,
+     "name": "The Sugarloaf",
+     "detail": "Council Site 3.0 km NW of Mitta Mitta",
+     "description": "Council Site 3.0 km NW of Mitta Mitta The Sugarloaf",
+     "coverageAreas": [
+      "Mitta Mitta"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/VIC/726-The-Sugarloaf"
+    },
+    {
+     "id": 585,
+     "name": "Monbulk",
+     "detail": "Broadcast Site 89 Camms Rd",
+     "description": "Broadcast Site 89 Camms Rd Monbulk",
+     "coverageAreas": [
+      "Monbulk"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/585-Monbulk"
+    },
+    {
+     "id": 540,
+     "name": "Mt Cowley",
+     "detail": "Comm Site Sabine Rd",
+     "description": "Comm Site Sabine Rd Mt Cowley",
+     "coverageAreas": [
+      "Mt Cowley IBL"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/540-Mt-Cowley"
+    },
+    {
+     "id": 541,
+     "name": "Stanley",
+     "detail": "Comms Tower SP Ausnet Site Mt Stanley off Mt Stanley Rd",
+     "description": "Comms Tower SP Ausnet Site Mt Stanley off Mt Stanley Rd Stanley",
+     "coverageAreas": [
+      "Mt Stanley IBL"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/541-Stanley"
+    },
+    {
+     "id": 282,
+     "name": "Goschen",
+     "detail": "Broadcast Australia Site Ultima-Lake Boga Rd",
+     "description": "Broadcast Australia Site Ultima-Lake Boga Rd Goschen",
+     "coverageAreas": [
+      "Murray Valley"
+     ],
+     "powerStars": 6,
+     "path": "transmitters/VIC/282-Goschen"
+    },
+    {
+     "id": 315,
+     "name": "Myrtleford",
+     "detail": "Lookout Hill Lookout Road",
+     "description": "Lookout Hill Lookout Road Myrtleford",
+     "coverageAreas": [
+      "Myrtleford"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/315-Myrtleford"
+    },
+    {
+     "id": 551,
+     "name": "Moe",
+     "detail": "Telstra Site Lot 5 cnr Golf Links Road and Coach Road Haunted Hills",
+     "description": "Telstra Site Lot 5 cnr Golf Links Road and Coach Road Haunted Hills Moe",
+     "coverageAreas": [
+      "Newborough"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/551-Moe"
+    },
+    {
+     "id": 303,
+     "name": "Lawloit",
+     "detail": "BA Site Western Highway 2km NNE of",
+     "description": "BA Site Western Highway 2km NNE of Lawloit",
+     "coverageAreas": [
+      "Nhill"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/VIC/303-Lawloit"
+    },
+    {
+     "id": 330,
+     "name": "Mt Nowa Nowa",
+     "detail": "State Government Tower 23 km NNE of Lakes Entrance",
+     "description": "State Government Tower 23 km NNE of Lakes Entrance Mt Nowa Nowa",
+     "coverageAreas": [
+      "Nowa Nowa"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/330-Mt-Nowa-Nowa"
+    },
+    {
+     "id": 319,
+     "name": "Mt Raymond",
+     "detail": "SCA Pole 12 km E of Orbost",
+     "description": "SCA Pole 12 km E of Orbost Mt Raymond",
+     "coverageAreas": [
+      "Orbost"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/319-Mt-Raymond"
+    },
+    {
+     "id": 750,
+     "name": "Ouyen",
+     "detail": "Optus Site Gregory St",
+     "description": "Optus Site Gregory St Ouyen",
+     "coverageAreas": [
+      "Ouyen"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/VIC/750-Ouyen"
+    },
+    {
+     "id": 337,
+     "name": "Narrawong",
+     "detail": "Broadcast Australia Site Mt Clay Angelino Rd",
+     "description": "Broadcast Australia Site Mt Clay Angelino Rd Narrawong",
+     "coverageAreas": [
+      "Portland"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/VIC/337-Narrawong"
+    },
+    {
+     "id": 543,
+     "name": "Robinvale",
+     "detail": "Grain Elevators Silo Moore Street",
+     "description": "Grain Elevators Silo Moore Street Robinvale",
+     "coverageAreas": [
+      "Robinvale"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/543-Robinvale"
+    },
+    {
+     "id": 294,
+     "name": "Rosebud",
+     "detail": "TXA Rosebud Site Monopole Council Offices cnr Besgrove St & Boneo Rd",
+     "description": "TXA Rosebud Site Monopole Council Offices cnr Besgrove St & Boneo Rd Rosebud",
+     "coverageAreas": [
+      "Rosebud"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/VIC/294-Rosebud"
+    },
+    {
+     "id": 421,
+     "name": "Arthurs Seat",
+     "detail": "Multiple",
+     "description": "Air Services Australia Site Steane Ave Arthurs Seat",
+     "coverageAreas": [
+      "Safety Beach"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/421-Arthurs-Seat"
+    },
+    {
+     "id": 291,
+     "name": "Selby",
+     "detail": "TXA Selby Site Tower 5 Two Bays Crescent",
+     "description": "TXA Selby Site Tower 5 Two Bays Crescent Selby",
+     "coverageAreas": [
+      "Selby"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/291-Selby"
+    },
+    {
+     "id": 300,
+     "name": "Meadows Hill",
+     "detail": "Broadcast Tower West Falls Rd",
+     "description": "Broadcast Tower West Falls Rd Meadows Hill",
+     "coverageAreas": [
+      "Seymour"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/300-Meadows-Hill"
+    },
+    {
+     "id": 321,
+     "name": "South Yarra",
+     "detail": "Como Centre Site Mast Level 22 N-E cnr 620 Chapel Street",
+     "description": "Como Centre Site Mast Level 22 N-E cnr 620 Chapel Street South Yarra",
+     "coverageAreas": [
+      "South Yarra"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/321-South-Yarra"
+    },
+    {
+     "id": 545,
+     "name": "Tanybryn",
+     "detail": "Comms Site off Skenes Creek Rd",
+     "description": "Comms Site off Skenes Creek Rd Tanybryn",
+     "coverageAreas": [
+      "Tanybryn IBL"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/545-Tanybryn"
+    },
+    {
+     "id": 289,
+     "name": "Mount Beauty",
+     "detail": "Broadcast Site 4 km NE of",
+     "description": "Broadcast Site 4 km NE of Mount Beauty",
+     "coverageAreas": [
+      "Tawonga South"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/289-Mount-Beauty"
+    },
+    {
+     "id": 537,
+     "name": "Mt Noorat",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Mt Noorat",
+     "coverageAreas": [
+      "Terang"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/537--Mt-Noorat"
+    },
+    {
+     "id": 553,
+     "name": "Timboon",
+     "detail": "Water Tower Leahys Lane",
+     "description": "Water Tower Leahys Lane Timboon",
+     "coverageAreas": [
+      "Timboon"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/553-Timboon"
+    },
+    {
+     "id": 530,
+     "name": "Yarragon South",
+     "detail": "Broadcast Site 144 Earls Road",
+     "description": "Broadcast Site 144 Earls Road Yarragon South",
+     "coverageAreas": [
+      "Trafalgar/Yarragon"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/530-Yarragon-South"
+    },
+    {
+     "id": 542,
+     "name": "Walpeup",
+     "detail": "Grain Silo off Mallee Hwy",
+     "description": "Grain Silo off Mallee Hwy Walpeup",
+     "coverageAreas": [
+      "Underbool"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/VIC/542-Walpeup"
+    },
+    {
+     "id": 285,
+     "name": "Leneva",
+     "detail": "Broadcast Australia Tower Mt Baranduda 623 Ewarts Rd",
+     "description": "Broadcast Australia Tower Mt Baranduda 623 Ewarts Rd Leneva",
+     "coverageAreas": [
+      "Upper Murray"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/VIC/285-Leneva"
+    },
+    {
+     "id": 324,
+     "name": "Upwey",
+     "detail": "TXA Upwey Site Tower 32a Belmont Avenue",
+     "description": "TXA Upwey Site Tower 32a Belmont Avenue Upwey",
+     "coverageAreas": [
+      "Upwey"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/324-Upwey"
+    },
+    {
+     "id": 336,
+     "name": "Mount Victoria",
+     "detail": "Telstra Site Donna Buang Road 3 km N of Warburton",
+     "description": "Telstra Site Donna Buang Road 3 km N of Warburton Mount Victoria",
+     "coverageAreas": [
+      "Warburton (Vic)"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/336-Mount-Victoria"
+    },
+    {
+     "id": 548,
+     "name": "Warracknabeal",
+     "detail": "SMR Site Wheat Silos Railway Street",
+     "description": "SMR Site Wheat Silos Railway Street Warracknabeal",
+     "coverageAreas": [
+      "Warracknabeal"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/548-Warracknabeal"
+    },
+    {
+     "id": 314,
+     "name": "Tower Hill",
+     "detail": "Broadcast/Comm Site Spencer Rd",
+     "description": "Broadcast/Comm Site Spencer Rd Tower Hill",
+     "coverageAreas": [
+      "Warrnambool"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/VIC/314-Tower-Hill"
+    },
+    {
+     "id": 769,
+     "name": "Warrnambool",
+     "detail": "Win TV Compound Grieve Street",
+     "description": "Win TV Compound Grieve Street Warrnambool",
+     "coverageAreas": [
+      "Warrnambool City"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/VIC/769-Warrnambool"
+    },
+    {
+     "id": 281,
+     "name": "Mt Dundas",
+     "detail": "Broadcast Australia Tower",
+     "description": "Broadcast Australia Tower Mt Dundas",
+     "coverageAreas": [
+      "Western Victoria"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/VIC/281--Mt-Dundas"
+    },
+    {
+     "id": 535,
+     "name": "Wycheproof",
+     "detail": "Broadcast Site Grain Silo",
+     "description": "Broadcast Site Grain Silo Wycheproof",
+     "coverageAreas": [
+      "Wycheproof"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/535--Wycheproof"
+    },
+    {
+     "id": 689,
+     "name": "Wye River",
+     "detail": "Broadcast Site Birds Track",
+     "description": "Broadcast Site Birds Track Wye River",
+     "coverageAreas": [
+      "Wye River"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/VIC/689-Wye-River"
+    },
+    {
+     "id": 283,
+     "name": "Constitution Hill",
+     "detail": "Broadcast Site 1 km South of Yea",
+     "description": "Broadcast Site 1 km South of Yea Constitution Hill",
+     "coverageAreas": [
+      "Yea"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/VIC/283-Constitution-Hill"
+    }
+   ]
+  },
+  {
+   "code": "WA",
+   "name": "Western Australia",
+   "sites": [
+    {
+     "id": 365,
+     "name": "Mount Clarence",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Mt Clarence off Apex Drv Mount Clarence",
+     "coverageAreas": [
+      "Albany"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/365-Mount-Clarence"
+    },
+    {
+     "id": 370,
+     "name": "Augusta",
+     "detail": "Broadcast Australia Site Lot 862 Leeuwin Rd",
+     "description": "Broadcast Australia Site Lot 862 Leeuwin Rd Augusta",
+     "coverageAreas": [
+      "Augusta"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/370-Augusta"
+    },
+    {
+     "id": 556,
+     "name": "Blackstone",
+     "detail": "Broadcast Site Lot 36 Papulankutja Rd West",
+     "description": "Broadcast Site Lot 36 Papulankutja Rd West Blackstone",
+     "coverageAreas": [
+      "Blackstone (WA)"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/556-Blackstone"
+    },
+    {
+     "id": 376,
+     "name": "Bridgetown",
+     "detail": "Broadcast Australia Site Suttons Lookout off Phillips St",
+     "description": "Broadcast Australia Site Suttons Lookout off Phillips St Bridgetown",
+     "coverageAreas": [
+      "Bridgetown"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/376-Bridgetown"
+    },
+    {
+     "id": 349,
+     "name": "Broome",
+     "detail": "Broadcast Australia Site Broome Rd 7km NNE of",
+     "description": "Broadcast Australia Site Broome Rd 7km NNE of Broome",
+     "coverageAreas": [
+      "Broome"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/349-Broome"
+    },
+    {
+     "id": 434,
+     "name": "Bruce Rock",
+     "detail": "Broadcast Site Doodlakine Rd",
+     "description": "Broadcast Site Doodlakine Rd Bruce Rock",
+     "coverageAreas": [
+      "Bruce Rock"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/434-Bruce-Rock"
+    },
+    {
+     "id": 367,
+     "name": "Burekup",
+     "detail": "Broadcast Mast Broadcast Australia Site Mt Lennard River Road",
+     "description": "Broadcast Mast Broadcast Australia Site Mt Lennard River Road Burekup",
+     "coverageAreas": [
+      "Bunbury"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/WA/367-Burekup"
+    },
+    {
+     "id": 436,
+     "name": "Rd Carnamah",
+     "detail": "Radio Site Rubbish Tip Hill Radhill",
+     "description": "Radio Site Rubbish Tip Hill Radhill Rd Carnamah",
+     "coverageAreas": [
+      "Carnamah"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/436-Rd-Carnamah"
+    },
+    {
+     "id": 384,
+     "name": "Carnarvon",
+     "detail": "Broadcast Australia Site Brown Range off North West Coastal Hwy",
+     "description": "Broadcast Australia Site Brown Range off North West Coastal Hwy Carnarvon",
+     "coverageAreas": [
+      "Carnarvon"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/384-Carnarvon"
+    },
+    {
+     "id": 397,
+     "name": "Mawson",
+     "detail": "Broadcast Australia Site Doodenanning Rd 3km NE of",
+     "description": "Broadcast Australia Site Doodenanning Rd 3km NE of Mawson",
+     "coverageAreas": [
+      "Central Agricultural"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/WA/397-Mawson"
+    },
+    {
+     "id": 696,
+     "name": "Cervantes",
+     "detail": "Multiple",
+     "description": "Broadcast Site cnr Seville and Aragon Streets Cervantes",
+     "coverageAreas": [
+      "Cervantes"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/696-Cervantes"
+    },
+    {
+     "id": 557,
+     "name": "Coolgardie",
+     "detail": "Council Mast 2437 Saumarez Street off Moran Street",
+     "description": "Council Mast 2437 Saumarez Street off Moran Street Coolgardie",
+     "coverageAreas": [
+      "Coolgardie"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/557-Coolgardie"
+    },
+    {
+     "id": 694,
+     "name": "Cue",
+     "detail": "Broadcast Site end of Foster St",
+     "description": "Broadcast Site end of Foster St Cue",
+     "coverageAreas": [
+      "Cue"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/694-Cue"
+    },
+    {
+     "id": 355,
+     "name": "Dalwallinu",
+     "detail": "Broadcast Australia Site off Dalwallinu West Rd 5km WSW of",
+     "description": "Broadcast Australia Site off Dalwallinu West Rd 5km WSW of Dalwallinu",
+     "coverageAreas": [
+      "Dalwallinu"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/WA/355-Dalwallinu"
+    },
+    {
+     "id": 378,
+     "name": "Dampier",
+     "detail": "Broadcast/Comms Tower Pilbara Iron Site Kangaroo Hill off Dampier Rd",
+     "description": "Broadcast/Comms Tower Pilbara Iron Site Kangaroo Hill off Dampier Rd Dampier",
+     "coverageAreas": [
+      "Dampier"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/378-Dampier"
+    },
+    {
+     "id": 727,
+     "name": "Denham",
+     "detail": "Multiple",
+     "description": "Council Depot 99 Dampier Road Denham",
+     "coverageAreas": [
+      "Denham"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/727-Denham"
+    },
+    {
+     "id": 439,
+     "name": "Derby",
+     "detail": "Tower Telstra Site Lot 6 Dampier Tce",
+     "description": "Tower Telstra Site Lot 6 Dampier Tce Derby",
+     "coverageAreas": [
+      "Derby (WA)"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/439-Derby"
+    },
+    {
+     "id": 807,
+     "name": "Port Denison",
+     "detail": "Council Site Golf Course Road",
+     "description": "Council Site Golf Course Road Port Denison",
+     "coverageAreas": [
+      "Dongara"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/807-Port-Denison"
+    },
+    {
+     "id": 391,
+     "name": "Esperance",
+     "detail": "Telstra Site Wireless Hill",
+     "description": "Telstra Site Wireless Hill Esperance",
+     "coverageAreas": [
+      "Esperance"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/391-Esperance"
+    },
+    {
+     "id": 385,
+     "name": "Exmouth",
+     "detail": "Broadcast Australia Site Lot 43 Murat Rd",
+     "description": "Broadcast Australia Site Lot 43 Murat Rd Exmouth",
+     "coverageAreas": [
+      "Exmouth"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/385-Exmouth"
+    },
+    {
+     "id": 358,
+     "name": "Fitzroy Crossing",
+     "detail": "Telstra Site 97 Fallon Rd",
+     "description": "Telstra Site 97 Fallon Rd Fitzroy Crossing",
+     "coverageAreas": [
+      "Fitzroy Crossing"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/358-Fitzroy-Crossing"
+    },
+    {
+     "id": 362,
+     "name": "Waggrakine",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Moresby Range off Chapman Valley Rd Waggrakine",
+     "coverageAreas": [
+      "Geraldton"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/WA/362-Waggrakine"
+    },
+    {
+     "id": 341,
+     "name": "Halls Creek",
+     "detail": "Mast Broadcast Australia Site Great Northern Hwy 1 km NE of",
+     "description": "Mast Broadcast Australia Site Great Northern Hwy 1 km NE of Halls Creek",
+     "coverageAreas": [
+      "Halls Creek"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/341-Halls-Creek"
+    },
+    {
+     "id": 706,
+     "name": "Hopetoun",
+     "detail": "Telstra NTA Site Table Hill",
+     "description": "Telstra NTA Site Table Hill Hopetoun",
+     "coverageAreas": [
+      "Hopetoun (WA)"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/706-Hopetoun"
+    },
+    {
+     "id": 359,
+     "name": "Jurien Bay",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Reservoir off Jurien Rd 4km NE of Jurien Bay",
+     "coverageAreas": [
+      "Jurien Bay"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/WA/359-Jurien-Bay"
+    },
+    {
+     "id": 372,
+     "name": "Kalbarri",
+     "detail": "Northampton Shire Site 12 Rochester St",
+     "description": "Northampton Shire Site 12 Rochester St Kalbarri",
+     "coverageAreas": [
+      "Kalbarri"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/372-Kalbarri"
+    },
+    {
+     "id": 760,
+     "name": "Karlkurla",
+     "detail": "BAI Comms Site Peters Hill Graeme St",
+     "description": "BAI Comms Site Peters Hill Graeme St Karlkurla",
+     "coverageAreas": [
+      "Kalgoorlie"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/WA/760-Karlkurla"
+    },
+    {
+     "id": 395,
+     "name": "Kambalda",
+     "detail": "Telstra/NTA Site Redhill Lookout Redhill Lookout Rd",
+     "description": "Telstra/NTA Site Redhill Lookout Redhill Lookout Rd Kambalda",
+     "coverageAreas": [
+      "Kambalda"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/395-Kambalda"
+    },
+    {
+     "id": 396,
+     "name": "Karratha",
+     "detail": "Broadcast Australia Site Bulgarra Hill Off Millstream Road",
+     "description": "Broadcast Australia Site Bulgarra Hill Off Millstream Road Karratha",
+     "coverageAreas": [
+      "Karratha"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/396-Karratha"
+    },
+    {
+     "id": 428,
+     "name": "Katanning",
+     "detail": "Shire Site Van Zuilecom Road",
+     "description": "Shire Site Van Zuilecom Road Katanning",
+     "coverageAreas": [
+      "Katanning"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/428-Katanning"
+    },
+    {
+     "id": 343,
+     "name": "Kojonup",
+     "detail": "Broadcast Site Lot 2431 Delaney Street",
+     "description": "Broadcast Site Lot 2431 Delaney Street Kojonup",
+     "coverageAreas": [
+      "Kojonup"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/343-Kojonup"
+    },
+    {
+     "id": 701,
+     "name": "Koorda",
+     "detail": "Broadcast Site SES EOC Lot 77 cnr Smith St and Ninghan St",
+     "description": "Broadcast Site SES EOC Lot 77 cnr Smith St and Ninghan St Koorda",
+     "coverageAreas": [
+      "Koorda"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/701-Koorda"
+    },
+    {
+     "id": 353,
+     "name": "Lakeside, Kellys Knob",
+     "detail": "Multiple",
+     "description": "Broadcast Monopole Broadcast Australia Site Cnr Casuarina Way & Hibiscus Dr Lakeside",
+     "coverageAreas": [
+      "Kununurra East"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/353-Lakeside-Kellys-Knob"
+    },
+    {
+     "id": 387,
+     "name": "Lake Grace",
+     "detail": "Broadcast Site 13 Dewar Street",
+     "description": "Broadcast Site 13 Dewar Street Lake Grace",
+     "coverageAreas": [
+      "Lake Grace"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/387-Lake-Grace"
+    },
+    {
+     "id": 699,
+     "name": "Nilgen",
+     "detail": "Council Site off Nilgen Rd",
+     "description": "Council Site off Nilgen Rd Nilgen",
+     "coverageAreas": [
+      "Lancelin"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/699-Nilgen"
+    },
+    {
+     "id": 693,
+     "name": "Laverton",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Off Hawks Place Laverton",
+     "coverageAreas": [
+      "Laverton"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/693-Laverton"
+    },
+    {
+     "id": 346,
+     "name": "Leeman",
+     "detail": "Broadcast Site 1km S of",
+     "description": "Broadcast Site 1km S of Leeman",
+     "coverageAreas": [
+      "Leeman"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/346-Leeman"
+    },
+    {
+     "id": 361,
+     "name": "Leinster",
+     "detail": "Broadcast Site",
+     "description": "Broadcast Site Leinster",
+     "coverageAreas": [
+      "Leinster"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/361-Leinster"
+    },
+    {
+     "id": 558,
+     "name": "Leonora",
+     "detail": "Broadcast Tower Council Site 29 Hoover St",
+     "description": "Broadcast Tower Council Site 29 Hoover St Leonora",
+     "coverageAreas": [
+      "Leonora"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/558-Leonora"
+    },
+    {
+     "id": 692,
+     "name": "Leonora",
+     "detail": "Telstra Site Laverton-Leonora Rd 3km E of",
+     "description": "Telstra Site Laverton-Leonora Rd 3km E of Leonora",
+     "coverageAreas": [
+      "Leonora"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/692-Leonora"
+    },
+    {
+     "id": 427,
+     "name": "Pinjarra",
+     "detail": "CMTS Site off Scarp Road",
+     "description": "CMTS Site off Scarp Road Pinjarra",
+     "coverageAreas": [
+      "Mandurah/Waroona"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/427-Pinjarra"
+    },
+    {
+     "id": 375,
+     "name": "Manjimup",
+     "detail": "Broadcast Site Shire Depot Marri Rd",
+     "description": "Broadcast Site Shire Depot Marri Rd Manjimup",
+     "coverageAreas": [
+      "Manjimup"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/375-Manjimup"
+    },
+    {
+     "id": 351,
+     "name": "Marble Bar",
+     "detail": "Broadcast Site 67 Augusta St",
+     "description": "Broadcast Site 67 Augusta St Marble Bar",
+     "coverageAreas": [
+      "Marble Bar"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/351-Marble-Bar"
+    },
+    {
+     "id": 388,
+     "name": "Margaret River",
+     "detail": "SES Lot 25 to 26 Le Souef Street",
+     "description": "SES Lot 25 to 26 Le Souef Street Margaret River",
+     "coverageAreas": [
+      "Margaret River"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/388-Margaret-River"
+    },
+    {
+     "id": 354,
+     "name": "Meekatharra",
+     "detail": "Broadcast Site cnr Roberts St and Oliver St",
+     "description": "Broadcast Site cnr Roberts St and Oliver St Meekatharra",
+     "coverageAreas": [
+      "Meekatharra"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/354-Meekatharra"
+    },
+    {
+     "id": 705,
+     "name": "Menzies",
+     "detail": "Multiple",
+     "description": "Shire Office Shenton Street Menzies",
+     "coverageAreas": [
+      "Menzies"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/705-Menzies"
+    },
+    {
+     "id": 374,
+     "name": "23793 Merredin",
+     "detail": "Broadcast Site SE corner of reserve",
+     "description": "Broadcast Site SE corner of reserve 23793 Merredin",
+     "coverageAreas": [
+      "Merredin"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/374--Merredin"
+    },
+    {
+     "id": 348,
+     "name": "Mingenew",
+     "detail": "Broadcast Site 8 km SSW of",
+     "description": "Broadcast Site 8 km SSW of Mingenew",
+     "coverageAreas": [
+      "Mingenew"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/348-Mingenew"
+    },
+    {
+     "id": 380,
+     "name": "Berkshire Valley",
+     "detail": "Broadcast Australia Site Quarrel Range off Old Geraldton South Rd",
+     "description": "Broadcast Australia Site Quarrel Range off Old Geraldton South Rd Berkshire Valley",
+     "coverageAreas": [
+      "Moora"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/WA/380-Berkshire-Valley"
+    },
+    {
+     "id": 345,
+     "name": "Morawa, Merkanooka",
+     "detail": "Multiple",
+     "description": "Broadcast Site 17 km SW of Morawa",
+     "coverageAreas": [
+      "Morawa"
+     ],
+     "powerStars": 4,
+     "path": "transmitters/WA/345-Morawa-Merkanooka"
+    },
+    {
+     "id": 373,
+     "name": "Mt Magnet",
+     "detail": "Broadcast Australia Site Lot 405 Criddle St",
+     "description": "Broadcast Australia Site Lot 405 Criddle St Mt Magnet",
+     "coverageAreas": [
+      "Mount Magnet"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/373-Mt-Magnet"
+    },
+    {
+     "id": 444,
+     "name": "Mullewa",
+     "detail": "Broadcast Australia Site off Geraldton - Mt Magnet Rd 1.5km SSW of",
+     "description": "Broadcast Australia Site off Geraldton - Mt Magnet Rd 1.5km SSW of Mullewa",
+     "coverageAreas": [
+      "Mullewa"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/444-Mullewa"
+    },
+    {
+     "id": 357,
+     "name": "Nannup",
+     "detail": "Broadcast Site Dunnet Rd",
+     "description": "Broadcast Site Dunnet Rd Nannup",
+     "coverageAreas": [
+      "Nannup"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/357-Nannup"
+    },
+    {
+     "id": 695,
+     "name": "Narembeen",
+     "detail": "Broadcast Site adj to High School",
+     "description": "Broadcast Site adj to High School Narembeen",
+     "coverageAreas": [
+      "Narembeen"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/695-Narembeen"
+    },
+    {
+     "id": 433,
+     "name": "Narrogin",
+     "detail": "Multiple",
+     "description": "Broadcast Site Boxsell Road Narrogin",
+     "coverageAreas": [
+      "Narrogin"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/433-Narrogin"
+    },
+    {
+     "id": 340,
+     "name": "Newman",
+     "detail": "Broadcast Australia Site TV Hill off Giles Ave 1km NW of",
+     "description": "Broadcast Australia Site TV Hill off Giles Ave 1km NW of Newman",
+     "coverageAreas": [
+      "Newman"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/340-Newman"
+    },
+    {
+     "id": 392,
+     "name": "Norseman",
+     "detail": "Telstra Site 8.5km NW of",
+     "description": "Telstra Site 8.5km NW of Norseman",
+     "coverageAreas": [
+      "Norseman"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/392-Norseman"
+    },
+    {
+     "id": 426,
+     "name": "Norseman",
+     "detail": "Broadcast Site Administration & Community Centre 88-92 Prinsep St",
+     "description": "Broadcast Site Administration & Community Centre 88-92 Prinsep St Norseman",
+     "coverageAreas": [
+      "Norseman"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/426-Norseman"
+    },
+    {
+     "id": 344,
+     "name": "Northam",
+     "detail": "Broadcast Site 1.75km W of",
+     "description": "Broadcast Site 1.75km W of Northam",
+     "coverageAreas": [
+      "Northam"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/344-Northam"
+    },
+    {
+     "id": 377,
+     "name": "18 Northampton",
+     "detail": "Broadcast Site Trig Pt",
+     "description": "Broadcast Site Trig Pt 18 Northampton",
+     "coverageAreas": [
+      "Northampton"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/377--Northampton"
+    },
+    {
+     "id": 342,
+     "name": "Onslow",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site Lot 598 Payne Way Onslow",
+     "coverageAreas": [
+      "Onslow"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/342-Onslow"
+    },
+    {
+     "id": 347,
+     "name": "Pannawonica",
+     "detail": "Broadcast Site Water Reservoir 2 km S of",
+     "description": "Broadcast Site Water Reservoir 2 km S of Pannawonica",
+     "coverageAreas": [
+      "Pannawonica"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/347-Pannawonica"
+    },
+    {
+     "id": 382,
+     "name": "Paraburdoo",
+     "detail": "Main Tower Rio Tinto Site Mt Misery 4km SSE of",
+     "description": "Main Tower Rio Tinto Site Mt Misery 4km SSE of Paraburdoo",
+     "coverageAreas": [
+      "Paraburdoo"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/382-Paraburdoo"
+    },
+    {
+     "id": 398,
+     "name": "Pemberton",
+     "detail": "TV Translator Site Rear of Forestry Commission Office Kennedy Street",
+     "description": "TV Translator Site Rear of Forestry Commission Office Kennedy Street Pemberton",
+     "coverageAreas": [
+      "Pemberton"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/398-Pemberton"
+    },
+    {
+     "id": 402,
+     "name": "Bickley, Carmel",
+     "detail": "Multiple",
+     "description": "Tower Broadcast Australia Site Television Road Bickley",
+     "coverageAreas": [
+      "Perth"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/WA/402-Bickley-Carmel"
+    },
+    {
+     "id": 691,
+     "name": "Perth",
+     "detail": "Bank West Tower 108 St Georges Terrace",
+     "description": "Bank West Tower 108 St Georges Terrace Perth",
+     "coverageAreas": [
+      "Perth City"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/691-Perth"
+    },
+    {
+     "id": 698,
+     "name": "Scarborough",
+     "detail": "Broadcast Site Observation City 138-140 The Esplanade",
+     "description": "Broadcast Site Observation City 138-140 The Esplanade Scarborough",
+     "coverageAreas": [
+      "Perth Coastal"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/698-Scarborough"
+    },
+    {
+     "id": 350,
+     "name": "Boodarie",
+     "detail": "Broadcast Site Finucane Island Rd",
+     "description": "Broadcast Site Finucane Island Rd Boodarie",
+     "coverageAreas": [
+      "Port Hedland"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/350-Boodarie"
+    },
+    {
+     "id": 700,
+     "name": "Ravensthorpe",
+     "detail": "Broadcast Tower Broadcast Australia Site 2 Queen St",
+     "description": "Broadcast Tower Broadcast Australia Site 2 Queen St Ravensthorpe",
+     "coverageAreas": [
+      "Ravensthorpe"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/700-Ravensthorpe"
+    },
+    {
+     "id": 368,
+     "name": "Mount Welcome, Roebourne",
+     "detail": "Multiple",
+     "description": "Broadcast Australia Site off Fisher Drive Mount Welcome",
+     "coverageAreas": [
+      "Roebourne"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/368-Mount-Welcome-Roebourne"
+    },
+    {
+     "id": 379,
+     "name": "Bedfordale",
+     "detail": "Broadcast/Comm Site Lot 10 Canns Rd",
+     "description": "Broadcast/Comm Site Lot 10 Canns Rd Bedfordale",
+     "coverageAreas": [
+      "Roleystone"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/379-Bedfordale"
+    },
+    {
+     "id": 364,
+     "name": "Mt Barker",
+     "detail": "Broadcast Australia Site Tower Road",
+     "description": "Broadcast Australia Site Tower Road Mt Barker",
+     "coverageAreas": [
+      "Southern Agricultural"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/WA/364-Mt-Barker"
+    },
+    {
+     "id": 393,
+     "name": "Southern Cross",
+     "detail": "Telstra Microwave Site Ghooli 18km E of",
+     "description": "Telstra Microwave Site Ghooli 18km E of Southern Cross",
+     "coverageAreas": [
+      "Southern Cross"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/393-Southern-Cross"
+    },
+    {
+     "id": 751,
+     "name": "Southern Cross",
+     "detail": "Broadcast Site Wimmera Hill Reserve off Canopus Street",
+     "description": "Broadcast Site Wimmera Hill Reserve off Canopus Street Southern Cross",
+     "coverageAreas": [
+      "Southern Cross Town"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/751-Southern-Cross"
+    },
+    {
+     "id": 386,
+     "name": "Tom Price",
+     "detail": "Broadcast Australia Site off Paraburdoo-Tom Price Rd",
+     "description": "Broadcast Australia Site off Paraburdoo-Tom Price Rd Tom Price",
+     "coverageAreas": [
+      "Tom Price"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/386-Tom-Price"
+    },
+    {
+     "id": 390,
+     "name": "Toodyay",
+     "detail": "Television Translator Mast Water Tank Hill",
+     "description": "Television Translator Mast Water Tank Hill Toodyay",
+     "coverageAreas": [
+      "Toodyay"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/390-Toodyay"
+    },
+    {
+     "id": 708,
+     "name": "Two Rocks",
+     "detail": "WAWA Tanks",
+     "description": "WAWA Tanks Two Rocks",
+     "coverageAreas": [
+      "Two Rocks"
+     ],
+     "powerStars": 3,
+     "path": "transmitters/WA/708--Two-Rocks"
+    },
+    {
+     "id": 366,
+     "name": "Latham",
+     "detail": "Broadcast Site Mt",
+     "description": "Broadcast Site Mt Latham",
+     "coverageAreas": [
+      "Wagin"
+     ],
+     "powerStars": 5,
+     "path": "transmitters/WA/366-Latham"
+    },
+    {
+     "id": 555,
+     "name": "Warburton",
+     "detail": "Broadcast Site adjacent to Community Office",
+     "description": "Broadcast Site adjacent to Community Office Warburton",
+     "coverageAreas": [
+      "Warburton (WA)"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/555-Warburton"
+    },
+    {
+     "id": 559,
+     "name": "Wongan Hills",
+     "detail": "Shire Depot Site Lot 486 Quinlan Street",
+     "description": "Shire Depot Site Lot 486 Quinlan Street Wongan Hills",
+     "coverageAreas": [
+      "Wongan Hills"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/559-Wongan-Hills"
+    },
+    {
+     "id": 363,
+     "name": "Wyndham",
+     "detail": "Broadcast Australia Site Mt Albany 23 Radio Hill Rd",
+     "description": "Broadcast Australia Site Mt Albany 23 Radio Hill Rd Wyndham",
+     "coverageAreas": [
+      "Wyndham"
+     ],
+     "powerStars": 2,
+     "path": "transmitters/WA/363-Wyndham"
+    },
+    {
+     "id": 697,
+     "name": "Yalgoo",
+     "detail": "Broadcast Site Milligan Street",
+     "description": "Broadcast Site Milligan Street Yalgoo",
+     "coverageAreas": [
+      "Yalgoo"
+     ],
+     "powerStars": 1,
+     "path": "transmitters/WA/697-Yalgoo"
+    }
+   ]
+  }
+ ]
+}

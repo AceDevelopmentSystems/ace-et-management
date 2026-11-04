@@ -60,7 +60,11 @@ export const api = {
 
 // ------------------------------------------------------------------ types (as returned by the API)
 export interface Client { id: string; name: string; code: string | null; currency: string }
-export interface Site { id: string; code: string; name: string; site_class: string | null; address: string | null }
+export interface Region { id: string; code: string; name: string; site_count: number }
+export interface Site {
+  id: string; code: string; name: string; site_class: string | null; address: string | null;
+  region_id: string | null; region_code: string | null; region_name: string | null;
+}
 export interface AssetType { id: string; parent_id: string | null; name: string; expected_life_years: number | null; unit: string | null; unit_rate: string | null }
 export interface Asset {
   id: string; parent_id: string | null; asset_type_id: string | null; name: string; install_date: string | null;
