@@ -28,4 +28,8 @@ prevent cross-tenant references. An OWNER organisation gets one implicit client 
 
 ## Tests
 `npm test -w @ace/api` runs against in-process Postgres (PGlite), so no database install is needed.
-The node-postgres path (`createPgDatabase`) is not covered by tests yet.
+Set `TEST_DATABASE_URL` (a role with CREATEDB, e.g. the `ace_dev` URL from `.env`) to run the same tests on a
+real PostgreSQL server; each run creates and drops its own throwaway database.
+
+Local dev database: `deploy/scripts/dev-db-setup.ps1` creates the `ace_dev` role and database and writes `.env`
+(set `POSTGRES_ADMIN_PASSWORD` to skip the password prompts).

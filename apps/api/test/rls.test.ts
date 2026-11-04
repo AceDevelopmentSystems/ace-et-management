@@ -1,7 +1,9 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { Database, createPgliteDatabase, migrate } from '../src/db';
+import { Database } from '../src/db';
+import { createTestDb } from './helpers';
 
 let db: Database;
+let cleanup: () => Promise<void>;
 const orgA = '11111111-1111-1111-1111-111111111111';
 const orgB = '22222222-2222-2222-2222-222222222222';
 const clientA1 = 'a1a1a1a1-0000-0000-0000-000000000001';
@@ -9,8 +11,7 @@ const clientA2 = 'a2a2a2a2-0000-0000-0000-000000000002';
 const clientB1 = 'b1b1b1b1-0000-0000-0000-000000000003';
 
 beforeAll(async () => {
-  db = await createPgliteDatabase();
-  await migrate(db);
+  ({ db, cleanup } = await createTestDb());
   await db.admin(async (q) => {
     await q.query(`INSERT INTO organisation (id,name,kind) VALUES ($1,'A','CONSULTANCY'),($2,'B','OWNER')`, [orgA, orgB]);
     await q.query(
@@ -23,7 +24,7 @@ beforeAll(async () => {
     );
   });
 });
-afterAll(() => db.close());
+afterAll(() => cleanup());
 
 const sites = (ctx: Parameters<Database['withTenant']>[0]) =>
   db.withTenant(ctx, async (q) => (await q.query<{ name: string }>('SELECT name FROM site ORDER BY name')).rows.map((r) => r.name));

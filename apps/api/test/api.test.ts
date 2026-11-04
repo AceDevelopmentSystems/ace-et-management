@@ -4,10 +4,12 @@ import { Test } from '@nestjs/testing';
 import request from 'supertest';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { AppModule } from '../src/app';
-import { Database, createPgliteDatabase, migrate } from '../src/db';
+import { Database } from '../src/db';
+import { createTestDb } from './helpers';
 
 let app: INestApplication;
 let db: Database;
+let cleanup: () => Promise<void>;
 const http = () => request(app.getHttpServer());
 const auth = (t: string) => ({ Authorization: `Bearer ${t}` });
 
@@ -18,14 +20,13 @@ async function register(kind: 'OWNER' | 'CONSULTANCY', email: string) {
 }
 
 beforeAll(async () => {
-  db = await createPgliteDatabase();
-  await migrate(db);
+  ({ db, cleanup } = await createTestDb());
   const mod = await Test.createTestingModule({ imports: [AppModule.register(db, { jwtSecret: 'x'.repeat(40) })] }).compile();
   app = mod.createNestApplication();
   app.setGlobalPrefix('api');
   await app.init();
 });
-afterAll(async () => { await app.close(); await db.close(); });
+afterAll(async () => { await app.close(); await cleanup(); });
 
 describe('auth', () => {
   it('requires a token', async () => {
