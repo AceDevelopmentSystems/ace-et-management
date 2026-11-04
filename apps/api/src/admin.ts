@@ -6,7 +6,7 @@ import { TokenClaims } from './auth';
 import { ADMINS, Claims, DB, Roles, WRITERS, audit, deleteRow, parse, patchRow, tenant } from './common';
 import { Database, Queryable } from './db';
 import { runClientForecast } from './forecast-run';
-import { assetPatch, clientPatch, namedScenarioSchema, scenarioSchema, sitePatch, typePatch } from './schemas';
+import { assetPatch, clientPatch, regionPatch, namedScenarioSchema, scenarioSchema, sitePatch, typePatch } from './schemas';
 
 /** Translate known Postgres errors raised by an update into 4xx responses. */
 async function guarded<T>(fn: () => Promise<T>, messages: { unique?: string; fk?: string }): Promise<T> {
@@ -47,11 +47,21 @@ export class AdminController {
     return this.db.withTenant(tenant(c), (q) => guarded(async () => {
       const row = await patchRow(q, 'site', id, {
         code: b.code, name: b.name, site_class: b.siteClass, address: b.address, latitude: b.latitude, longitude: b.longitude,
-        hazards: b.hazards, attributes: b.attributes,
+        hazards: b.hazards, attributes: b.attributes, region_id: b.regionId,
       }, 'id, code, name');
       await audit(q, c, 'update', 'site', id, await clientOf(q, 'site', id));
       return row;
-    }, { unique: 'Site code already exists for this client' }));
+    }, { unique: 'Site code already exists for this client', fk: 'regionId does not exist for this client' }));
+  }
+
+  @Patch('regions/:id') @Roles(...WRITERS)
+  patchRegion(@Claims() c: TokenClaims, @Param('id') id: string, @Body() body: unknown) {
+    const b = parse(regionPatch, body);
+    return this.db.withTenant(tenant(c), (q) => guarded(async () => {
+      const row = await patchRow(q, 'region', id, { code: b.code, name: b.name }, 'id, code, name');
+      await audit(q, c, 'update', 'region', id, await clientOf(q, 'region', id));
+      return row;
+    }, { unique: 'Region code already exists for this client' }));
   }
 
   @Patch('asset-types/:id') @Roles(...WRITERS)
@@ -88,6 +98,9 @@ export class AdminController {
 
   @Delete('sites/:id') @Roles(...ADMINS)
   deleteSite(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'site', 'site', id); }
+
+  @Delete('regions/:id') @Roles(...ADMINS)
+  deleteRegion(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'region', 'region', id); }
 
   @Delete('asset-types/:id') @Roles(...ADMINS)
   deleteType(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'asset_type', 'asset_type', id); }

@@ -209,3 +209,43 @@ describe('update, delete, audit and saved scenarios', () => {
     expect((await http().get(`/api/clients/${clientId}/scenarios`).set(auth(t))).body).toHaveLength(0);
   });
 });
+
+describe('regions', () => {
+  it('creates, assigns to sites, updates and deletes regions safely', async () => {
+    const t = await register('CONSULTANCY', 'regions@example.com');
+    const clientId = (await http().post('/api/clients').set(auth(t)).send({ name: 'Broadcaster' })).body.id;
+
+    const nsw = await http().post(`/api/clients/${clientId}/regions`).set(auth(t)).send({ code: 'NSW', name: 'New South Wales' });
+    expect(nsw.status).toBe(201);
+    expect((await http().post(`/api/clients/${clientId}/regions`).set(auth(t)).send({ code: 'NSW', name: 'dup' })).status).toBe(409);
+    expect((await http().post(`/api/clients/${clientId}/regions`).set(auth(t)).send({ name: 'no code' })).status).toBe(400);
+    expect((await http().post(`/api/clients/${clientId}/regions`).set(auth(t)).send({ code: 'X'.repeat(21), name: 'long' })).status).toBe(400);
+
+    const site = await http().post(`/api/clients/${clientId}/sites`).set(auth(t)).send({ code: 'S1', name: 'Site', regionId: nsw.body.id });
+    expect(site.status).toBe(201);
+    expect((await http().post(`/api/clients/${clientId}/sites`).set(auth(t)).send({ code: 'S2', name: 'Bad', regionId: '00000000-0000-0000-0000-000000000000' })).status).toBe(400);
+    expect((await http().get(`/api/sites/${site.body.id}`).set(auth(t))).body).toMatchObject({ region_code: 'NSW', region_name: 'New South Wales' });
+    expect((await http().get(`/api/clients/${clientId}/regions`).set(auth(t))).body[0]).toMatchObject({ code: 'NSW', site_count: 1 });
+
+    // a region of another client cannot be used
+    const otherClient = (await http().post('/api/clients').set(auth(t)).send({ name: 'Other client' })).body.id;
+    const vic = (await http().post(`/api/clients/${otherClient}/regions`).set(auth(t)).send({ code: 'VIC', name: 'Victoria' })).body;
+    expect((await http().patch(`/api/sites/${site.body.id}`).set(auth(t)).send({ regionId: vic.id })).status).toBe(400);
+
+    expect((await http().patch(`/api/regions/${nsw.body.id}`).set(auth(t)).send({ name: 'NSW and ACT' })).status).toBe(200);
+    expect((await http().patch(`/api/regions/${nsw.body.id}`).set(auth(t)).send({})).status).toBe(400);
+
+    // still referenced by a site -> 409; clear the site's region, then delete
+    expect((await http().delete(`/api/regions/${nsw.body.id}`).set(auth(t))).status).toBe(409);
+    expect((await http().patch(`/api/sites/${site.body.id}`).set(auth(t)).send({ regionId: null })).status).toBe(200);
+    expect((await http().delete(`/api/regions/${nsw.body.id}`).set(auth(t))).status).toBe(200);
+
+    // isolation and roles
+    const other = await register('OWNER', 'regions-other@example.com');
+    expect((await http().get(`/api/clients/${clientId}/regions`).set(auth(other))).body).toEqual([]);
+    expect((await http().patch(`/api/regions/${vic.id}`).set(auth(other)).send({ name: 'hijack' })).status).toBe(404);
+    const viewer = await addUser(t, 'client_viewer', 'regions-viewer@example.com');
+    expect((await http().post(`/api/clients/${clientId}/regions`).set(auth(viewer)).send({ code: 'QLD', name: 'Queensland' })).status).toBe(403);
+    expect((await http().get(`/api/clients/${clientId}/regions`).set(auth(viewer))).status).toBe(200);
+  });
+});

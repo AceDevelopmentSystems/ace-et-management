@@ -29,7 +29,7 @@ describe('forecastCsv', () => {
     totals: { real: 100.456, nominal: 110, presentValue: 90 },
   };
   it('includes the yearly table, site rollup and client header', () => {
-    const csv = forecastCsv(result, [{ id: 's1', code: 'TV1', name: 'Repeater', site_class: null, address: null }], { id: 'c', name: 'TVNZ', code: null, currency: 'NZD' });
+    const csv = forecastCsv(result, [{ id: 's1', code: 'TV1', name: 'Repeater', site_class: null, address: null, region_id: null, region_code: null, region_name: null }], { id: 'c', name: 'TVNZ', code: null, currency: 'NZD' });
     const lines = csv.trim().split('\r\n');
     expect(lines[0]).toBe('Client: TVNZ,Currency: NZD');
     expect(lines).toContain('Year,Real cost,Nominal cost,Present value');

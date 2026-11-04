@@ -4,7 +4,7 @@ React + Vite + TypeScript single-page app for the asset management API. Plain CS
 
 ## Screens
 - **Sign in / create an organisation** (owner or consultancy).
-- **Clients** list; per client: **Sites**, **Asset types** (default life and rate), **Forecast**.
+- **Clients** list; per client: **Sites** (with a region column and region filter), **Regions** (e.g. states), **Asset types** (default life and rate), **Forecast**.
 - **Site**: asset list (values inherited from the asset type shown in grey), add asset, **record an inspection**
   (one condition per asset, or "Mixed" for a percentage split across conditions).
 - **Forecast**: scenario form (start year, horizon, inflation, discount rate, overdue-work policy, annual cap),
