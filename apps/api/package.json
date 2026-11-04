@@ -6,7 +6,7 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "start": "tsx src/main.ts"
+    "start": "node --env-file-if-exists=.env --import tsx src/main.ts"
   },
   "dependencies": {
     "@ace/forecast": "*",

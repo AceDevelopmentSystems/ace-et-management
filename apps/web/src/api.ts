@@ -1,0 +1,91 @@
+// Thin fetch wrapper for the Nest API. The token lives in sessionStorage (cleared when the tab closes).
+
+const TOKEN_KEY = 'ace.token';
+
+export type Role = 'org_admin' | 'asset_manager' | 'assessor' | 'client_viewer' | 'contractor';
+export const getToken = () => sessionStorage.getItem(TOKEN_KEY);
+export const setToken = (t: string | null) => (t ? sessionStorage.setItem(TOKEN_KEY, t) : sessionStorage.removeItem(TOKEN_KEY));
+
+/** Display-only decode of the JWT payload (the server enforces everything; this just hides buttons). */
+export function claimsOf(token: string | null): { role: Role; org: string } | null {
+  if (!token) return null;
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]!.replace(/-/g, '+').replace(/_/g, '/')));
+    return { role: payload.role, org: payload.org };
+  } catch {
+    return null;
+  }
+}
+
+export class ApiError extends Error {
+  constructor(public status: number, message: string) {
+    super(message);
+  }
+}
+
+export const UNAUTHORIZED_EVENT = 'ace:unauthorized';
+
+async function request<T>(method: string, path: string, body?: unknown): Promise<T> {
+  const token = getToken();
+  const res = await fetch(`/api${path}`, {
+    method,
+    headers: { ...(body !== undefined ? { 'Content-Type': 'application/json' } : {}), ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+    body: body !== undefined ? JSON.stringify(body) : undefined,
+  });
+  const text = await res.text();
+  const data = text ? safeJson(text) : undefined;
+  if (!res.ok) {
+    // A 401 on a protected call means the token is missing/expired. Login failures also return 401 but carry no token.
+    if (res.status === 401 && token) window.dispatchEvent(new Event(UNAUTHORIZED_EVENT));
+    const m = (data as { message?: string | string[] } | undefined)?.message;
+    throw new ApiError(res.status, Array.isArray(m) ? m.join('; ') : m ?? `Request failed (${res.status})`);
+  }
+  return data as T;
+}
+
+function safeJson(text: string): unknown {
+  try {
+    return JSON.parse(text);
+  } catch {
+    return undefined;
+  }
+}
+
+export const api = {
+  get: <T>(path: string) => request<T>('GET', path),
+  post: <T>(path: string, body?: unknown) => request<T>('POST', path, body ?? {}),
+  patch: <T>(path: string, body: unknown) => request<T>('PATCH', path, body),
+  del: <T>(path: string) => request<T>('DELETE', path),
+};
+
+// ------------------------------------------------------------------ types (as returned by the API)
+export interface Client { id: string; name: string; code: string | null; currency: string }
+export interface Site { id: string; code: string; name: string; site_class: string | null; address: string | null }
+export interface AssetType { id: string; parent_id: string | null; name: string; expected_life_years: number | null; unit: string | null; unit_rate: string | null }
+export interface Asset {
+  id: string; parent_id: string | null; asset_type_id: string | null; name: string; install_date: string | null;
+  quantity: string; unit: string | null; unit_rate: string | null; expected_life_years: number | null; criticality: number | null;
+}
+
+export const CONDITIONS = ['none', 'excellent', 'good', 'average', 'poor', 'veryPoor', 'urgent'] as const;
+export type Condition = (typeof CONDITIONS)[number];
+export const CONDITION_LABEL: Record<Condition, string> = {
+  none: 'Not graded', excellent: 'Excellent', good: 'Good', average: 'Average', poor: 'Poor', veryPoor: 'Very poor', urgent: 'Urgent',
+};
+
+export interface ScenarioParams {
+  startYear: number; horizonYears: number; inflation: number; discountRate: number;
+  overdue: 'year1' | 'spread' | 'ignore'; overdueSpreadYears: number; annualCap?: number;
+}
+export interface SavedScenario { id: string; name: string; params: ScenarioParams; created_at: string }
+export interface YearTotal { year: number; real: number; nominal: number; presentValue: number }
+export interface LeveledYear { year: number; demand: number; spend: number; carried: number }
+export interface ForecastResponse {
+  scenario: ScenarioParams;
+  assetsAssessed: number;
+  skipped: string[];
+  byYear: YearTotal[];
+  leveled?: LeveledYear[];
+  bySite: Record<string, Record<string, number>>;
+  totals: { real: number; nominal: number; presentValue: number };
+}

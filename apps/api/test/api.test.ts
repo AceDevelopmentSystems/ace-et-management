@@ -73,6 +73,10 @@ describe('register, assessment and forecast flow', () => {
     const site = (await http().post(`/api/clients/${clientId}/sites`).set(auth(t)).send({ code: 'TV1', name: 'Repeater 1' })).body;
     expect(site.id).toBeTruthy();
     expect((await http().post(`/api/clients/${clientId}/sites`).set(auth(t)).send({ code: 'TV1', name: 'dup' })).status).toBe(409);
+    const got = await http().get(`/api/sites/${site.id}`).set(auth(t));
+    expect(got.status).toBe(200);
+    expect(got.body).toMatchObject({ id: site.id, client_id: clientId, code: 'TV1' });
+    expect((await http().get('/api/sites/00000000-0000-0000-0000-000000000000').set(auth(t))).status).toBe(404);
 
     const type = (await http().post(`/api/clients/${clientId}/asset-types`).set(auth(t)).send({ name: 'Aircon', expectedLifeYears: 15, unit: 'ea', unitRate: 8000 })).body;
     const asset = (await http().post(`/api/sites/${site.id}/assets`).set(auth(t)).send({ name: 'Split system', assetTypeId: type.id, quantity: 2 })).body;
@@ -101,6 +105,7 @@ describe('register, assessment and forecast flow', () => {
     expect((await http().get('/api/clients').set(auth(other))).body).toHaveLength(0);
     expect((await http().get(`/api/clients/${clientId}/sites`).set(auth(other))).body).toHaveLength(0);
     expect((await http().get(`/api/sites/${site.id}/assets`).set(auth(other))).body).toHaveLength(0);
+    expect((await http().get(`/api/sites/${site.id}`).set(auth(other))).status).toBe(404);
     expect((await http().post(`/api/clients/${clientId}/forecast`).set(auth(other)).send({ startYear: 2025, horizonYears: 5 })).status).toBe(404);
     expect((await http().post(`/api/sites/${site.id}/assets`).set(auth(other)).send({ name: 'x' })).status).toBe(404);
   });
