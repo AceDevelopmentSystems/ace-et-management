@@ -5,6 +5,7 @@ import { useAuth } from './auth';
 import { ClientPage } from './pages/ClientPage';
 import { Clients } from './pages/Clients';
 import { Login } from './pages/Login';
+import { Trash } from './pages/Trash';
 import { SitePage } from './pages/SitePage';
 
 const ROLE_LABEL: Record<string, string> = {
@@ -12,7 +13,7 @@ const ROLE_LABEL: Record<string, string> = {
 };
 
 function Protected({ children }: { children: ReactNode }) {
-  const { authed, role, signOut } = useAuth();
+  const { authed, role, isAdmin, signOut } = useAuth();
   const qc = useQueryClient();
   if (!authed) return <Navigate to="/login" replace />;
   // Contractors have no register access yet (the API refuses them), so say so rather than show errors.
@@ -23,6 +24,7 @@ function Protected({ children }: { children: ReactNode }) {
     <>
       <header className="top">
         <Link to="/" className="brand">Asset Management</Link>
+        {isAdmin && <Link to="/trash">Trash</Link>}
         <span className="muted">{role ? ROLE_LABEL[role] : ''}</span>
         <button className="link" onClick={() => { qc.clear(); signOut(); }}>Sign out</button>
       </header>
@@ -38,6 +40,7 @@ export function App() {
       <Route path="/" element={<Protected><Clients /></Protected>} />
       <Route path="/clients/:clientId/*" element={<Protected><ClientPage /></Protected>} />
       <Route path="/sites/:siteId" element={<Protected><SitePage /></Protected>} />
+      <Route path="/trash" element={<Protected><Trash /></Protected>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

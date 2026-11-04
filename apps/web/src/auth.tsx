@@ -8,6 +8,8 @@ interface AuthValue {
   canWrite: boolean;
   /** May record inspections. */
   canAssess: boolean;
+  /** Administrator: may delete (soft) and restore. */
+  isAdmin: boolean;
   signIn: (token: string) => void;
   signOut: () => void;
 }
@@ -31,6 +33,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       authed: !!token && !!role, role,
       canWrite: role === 'org_admin' || role === 'asset_manager',
       canAssess: role === 'org_admin' || role === 'asset_manager' || role === 'assessor',
+      isAdmin: role === 'org_admin',
       signIn, signOut,
     };
   }, [token, signIn, signOut]);

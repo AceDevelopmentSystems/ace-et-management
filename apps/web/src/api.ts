@@ -61,6 +61,11 @@ export const api = {
 // ------------------------------------------------------------------ types (as returned by the API)
 export interface Client { id: string; name: string; code: string | null; currency: string }
 export interface Region { id: string; code: string; name: string; site_count: number }
+export type TrashEntity = 'client' | 'region' | 'site' | 'asset-type' | 'asset' | 'scenario';
+export interface TrashItem {
+  entity: TrashEntity; id: string; label: string; clientId: string; clientName: string;
+  deletedAt: string; deletedBy: string | null; /** Items that went with it (sites and assets of a deleted client, assets of a site). */ includes: number;
+}
 export interface Site {
   id: string; code: string; name: string; site_class: string | null; address: string | null;
   region_id: string | null; region_code: string | null; region_name: string | null;

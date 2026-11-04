@@ -50,36 +50,56 @@ export class AuthGuard implements CanActivate {
 
 /** Record a change in the same transaction as the change itself. */
 export async function audit(
-  q: Queryable, c: TokenClaims, action: 'create' | 'update' | 'delete', entity: string, entityId: string | null, clientId: string | null,
+  q: Queryable, c: TokenClaims, action: 'create' | 'update' | 'delete' | 'restore', entity: string, entityId: string | null, clientId: string | null,
+  details?: Record<string, unknown>,
 ) {
   await q.query(
-    'INSERT INTO audit_log (organisation_id, client_id, user_id, action, entity, entity_id) VALUES ($1,$2,$3,$4,$5,$6)',
-    [c.org, clientId, c.sub, action, entity, entityId],
+    'INSERT INTO audit_log (organisation_id, client_id, user_id, action, entity, entity_id, details) VALUES ($1,$2,$3,$4,$5,$6,$7)',
+    [c.org, clientId, c.sub, action, entity, entityId, details ?? null],
   );
 }
 
 /**
+ * A reference (region, asset type, parent asset...) must point at a LIVE row of the same client. Foreign keys cannot
+ * check this: they ignore row level security, so they would accept a soft-deleted target.
+ */
+export async function requireLive(q: Queryable, table: 'region' | 'asset_type' | 'asset', id: string | null | undefined, clientId: string, field: string) {
+  if (!id) return;
+  const r = await q.query(`SELECT 1 FROM ${table} WHERE id = $1 AND client_id = $2`, [id, clientId]);
+  if (!r.rows.length) throw new BadRequestException(`${field} does not exist for this client`);
+}
+
+export type Changes = Record<string, { from: unknown; to: unknown }>;
+
+/** Record an update with what changed (old -> new). Nothing is written when no field actually changed. */
+export async function auditUpdate(q: Queryable, c: TokenClaims, entity: string, entityId: string, clientId: string | null, changes: Changes) {
+  if (Object.keys(changes).length > 0) await audit(q, c, 'update', entity, entityId, clientId, { changes });
+}
+
+/** Loose equality for values as the driver returns them (numeric columns come back as strings, jsonb as objects). */
+function sameValue(a: unknown, b: unknown): boolean {
+  if (a == null || b == null) return a == null && b == null;
+  if (typeof a === 'object' || typeof b === 'object') return JSON.stringify(a) === JSON.stringify(b);
+  const na = Number(a), nb = Number(b);
+  if (a !== '' && b !== '' && !Number.isNaN(na) && !Number.isNaN(nb) && typeof a !== 'boolean' && typeof b !== 'boolean') return na === nb;
+  return String(a) === String(b);
+}
+
+/**
  * Partial UPDATE of one row. `table` and the column names in `columns` are fixed by the caller (never user input);
- * only the values come from the request. Undefined values are skipped. Returns the updated row or throws 404.
+ * only the values come from the request. Undefined values are skipped. Soft-deleted rows are invisible (404).
+ * Returns the updated row and what actually changed (old -> new) for the audit trail.
  */
 export async function patchRow<T = Record<string, any>>(
   q: Queryable, table: string, id: string, columns: Record<string, unknown>, returning: string,
-): Promise<T> {
+): Promise<{ row: T; changes: Changes }> {
   const entries = Object.entries(columns).filter(([, v]) => v !== undefined);
   if (entries.length === 0) throw new BadRequestException('No fields to update');
+  const before = (await q.query<Record<string, unknown>>(`SELECT ${entries.map(([c]) => c).join(', ')} FROM ${table} WHERE id = $1 FOR UPDATE`, [id])).rows[0];
+  if (!before) throw new NotFoundException(`${table} not found`);
   const sets = entries.map(([col], i) => `${col} = $${i + 2}`).join(', ');
-  const rows = (await q.query<T>(`UPDATE ${table} SET ${sets} WHERE id = $1 RETURNING ${returning}`, [id, ...entries.map(([, v]) => v)])).rows;
-  if (!rows.length) throw new NotFoundException(`${table} not found`);
-  return rows[0]!;
-}
-
-/** DELETE one row; maps foreign-key and unique violations to 409. */
-export async function deleteRow(q: Queryable, table: string, id: string): Promise<void> {
-  try {
-    const r = await q.query(`DELETE FROM ${table} WHERE id = $1 RETURNING id`, [id]);
-    if (!r.rows.length) throw new NotFoundException(`${table} not found`);
-  } catch (e: any) {
-    if (e?.code === '23503') throw new ConflictException(`${table} is still referenced by other records`);
-    throw e;
-  }
+  const row = (await q.query<T>(`UPDATE ${table} SET ${sets} WHERE id = $1 RETURNING ${returning}`, [id, ...entries.map(([, v]) => v)])).rows[0]!;
+  const changes: Changes = {};
+  for (const [col, to] of entries) if (!sameValue(before[col], to)) changes[col] = { from: before[col], to };
+  return { row, changes };
 }

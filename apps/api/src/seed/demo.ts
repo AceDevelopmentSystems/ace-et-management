@@ -113,6 +113,9 @@ export async function seedDemo(db: Database, opts: SeedOptions = {}): Promise<Se
   const { organisationId, demoUser } = await db.admin(async (q) => {
     let org = (await q.query<{ id: string }>(`SELECT id FROM organisation WHERE name = $1 AND kind = 'CONSULTANCY' ORDER BY created_at LIMIT 1`, [DEMO_ORG])).rows[0];
     if (!org) org = (await q.query<{ id: string }>(`INSERT INTO organisation (name, kind) VALUES ($1,'CONSULTANCY') RETURNING id`, [DEMO_ORG])).rows[0]!;
+    // The one hard delete in the system: an operator tool, run as the database owner (the app role cannot delete),
+    // that wipes the demo client including anything of it already in the Trash. Demo data only.
+    if (opts.reset) await q.query('DELETE FROM client WHERE organisation_id = $1 AND code = $2', [org.id, DEMO_CLIENT.code]);
     let user = (await q.query<{ id: string }>('SELECT id FROM app_user WHERE email = $1', [DEMO_EMAIL])).rows[0];
     let createdPassword: string | undefined;
     if (!user) {
@@ -129,7 +132,6 @@ export async function seedDemo(db: Database, opts: SeedOptions = {}): Promise<Se
 
   // 2. everything else as the restricted role, scoped to the organisation (same path the API uses)
   const counts = await db.withTenant({ orgId: organisationId }, async (q) => {
-    if (opts.reset) await q.query('DELETE FROM client WHERE code = $1', [DEMO_CLIENT.code]);
 
     let client = (await q.query<{ id: string }>('SELECT id FROM client WHERE code = $1', [DEMO_CLIENT.code])).rows[0];
     if (!client) {
@@ -143,7 +145,7 @@ export async function seedDemo(db: Database, opts: SeedOptions = {}): Promise<Se
     for (const st of states) {
       const row = (await q.query<{ id: string }>(
         `INSERT INTO region (organisation_id, client_id, code, name) VALUES ($1,$2,$3,$4)
-         ON CONFLICT (organisation_id, client_id, code) DO UPDATE SET name = EXCLUDED.name RETURNING id`, [organisationId, clientId, st.code, st.name])).rows[0]!;
+         ON CONFLICT (organisation_id, client_id, code) WHERE deleted_at IS NULL DO UPDATE SET name = EXCLUDED.name RETURNING id`, [organisationId, clientId, st.code, st.name])).rows[0]!;
       regionId.set(st.code, row.id);
     }
 
@@ -161,7 +163,7 @@ export async function seedDemo(db: Database, opts: SeedOptions = {}): Promise<Se
         `INSERT INTO site (organisation_id, client_id, region_id, code, name, site_class, address, attributes)
          SELECT $1, $2, x.region_id::uuid, x.code, x.name, x.site_class, x.address, x.attributes::jsonb FROM (VALUES ${v.sql})
            AS x(region_id, code, name, site_class, address, attributes)
-         ON CONFLICT (organisation_id, client_id, code)
+         ON CONFLICT (organisation_id, client_id, code) WHERE deleted_at IS NULL
          DO UPDATE SET region_id = EXCLUDED.region_id, name = EXCLUDED.name, site_class = EXCLUDED.site_class, address = EXCLUDED.address, attributes = EXCLUDED.attributes
          RETURNING id, code`, [organisationId, clientId, ...v.params.map((p) => (p !== null && typeof p === 'object' ? JSON.stringify(p) : p))]);
       for (const r of res.rows) siteIdByCode.set(r.code, r.id);
