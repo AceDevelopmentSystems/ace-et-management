@@ -1,0 +1,12 @@
+{
+  "name": "ace-et-management",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Asset management platform (modernisation of legacy CMS)",
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "engines": { "node": ">=20" }
+}
