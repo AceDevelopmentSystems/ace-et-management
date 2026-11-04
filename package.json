@@ -8,5 +8,5 @@
     "test": "npm run test --workspaces --if-present",
     "build": "npm run build --workspaces --if-present"
   },
-  "engines": { "node": ">=20" }
+  "engines": { "node": ">=22.9" }
 }

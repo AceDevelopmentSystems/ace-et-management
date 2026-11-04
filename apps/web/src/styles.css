@@ -1,0 +1,48 @@
+:root {
+  --bg: #f6f7f9; --surface: #fff; --text: #1d2430; --muted: #667085; --line: #d9dde3;
+  --accent: #1f5fbf; --accent-text: #fff; --danger: #b42318; --ok: #1a7f37; --warn-bg: #fff6e0; --warn: #8a5a00;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #14171c; --surface: #1d222a; --text: #e8ebf0; --muted: #98a2b3; --line: #343b46; --accent: #5b9bf0; --accent-text: #0b1220; --danger: #f97066; --ok: #4ade80; --warn-bg: #3a2f10; --warn: #fbbf24; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.45; }
+h1 { font-size: 1.5rem; margin: 0; } h2 { font-size: 1.15rem; margin: 0.5rem 0 0; } h3 { font-size: 1rem; margin: 0.5rem 0 0; }
+a { color: var(--accent); }
+.top { display: flex; gap: 1rem; align-items: center; padding: 0.6rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; text-decoration: none; margin-right: auto; color: var(--text); }
+.page { max-width: 1100px; margin: 0 auto; padding: 1.25rem; }
+.auth { max-width: 420px; margin: 8vh auto; padding: 0 1rem; display: grid; gap: 1rem; }
+.stack { display: grid; gap: 0.9rem; align-content: start; }
+.row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: flex-end; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 0.9rem 1rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.75rem; }
+.cards .card { display: grid; gap: 0.2rem; } .cards small { color: var(--muted); } .cards strong { font-size: 1.15rem; }
+.field { display: grid; gap: 0.25rem; font-size: 0.85rem; } .field > span { color: var(--muted); } .field small { color: var(--muted); }
+input, select, button { font: inherit; }
+input, select { padding: 0.4rem 0.5rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); }
+button { padding: 0.45rem 0.9rem; border: 0; border-radius: 6px; background: var(--accent); color: var(--accent-text); cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: default; }
+button.link { background: none; color: var(--accent); padding: 0 0.25rem; text-decoration: underline; }
+button.link.danger { color: var(--danger); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; font-size: 0.9rem; }
+.table th, .table td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.table th { color: var(--muted); font-weight: 600; }
+.table tr.split td { background: var(--bg); }
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
+.list li { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 0.5rem 0.75rem; }
+.tabs { display: flex; gap: 0.25rem; border-bottom: 1px solid var(--line); }
+.tabs a { padding: 0.5rem 0.9rem; text-decoration: none; color: var(--muted); border-bottom: 2px solid transparent; }
+.tabs a.active { color: var(--text); border-bottom-color: var(--accent); font-weight: 600; }
+.muted { color: var(--muted); } .error { color: var(--danger); margin: 0; } .error li { margin-left: 1rem; }
+.ok { color: var(--ok); margin: 0; }
+.warn-text { color: var(--warn); }
+.warn { background: var(--warn-bg); color: var(--warn); padding: 0.5rem 0.75rem; border-radius: 6px; margin: 0; }
+fieldset { border: 1px solid var(--line); border-radius: 6px; padding: 0.3rem 0.5rem; display: flex; gap: 0.3rem; align-items: center; }
+legend { font-size: 0.75rem; color: var(--muted); }
+.chart { width: 100%; height: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.chart .grid { stroke: var(--line); } .chart .axis { fill: var(--muted); font-size: 11px; }
+.chart .bar { fill: var(--accent); opacity: 0.45; } .chart .bar-spend { fill: var(--accent); }
+.chart .cap { stroke: var(--danger); stroke-dasharray: 5 4; stroke-width: 1.5; }

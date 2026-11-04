@@ -21,3 +21,6 @@ Thumbs.db
 node_modules/
 dist/
 coverage/
+
+# Vite local overrides
+*.local

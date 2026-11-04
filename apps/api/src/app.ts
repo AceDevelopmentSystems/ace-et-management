@@ -11,10 +11,11 @@ import { AdminController } from './admin';
 import { runClientForecast } from './forecast-run';
 import { assetCreate, clientCreate, scenarioSchema, siteCreate, typeCreate } from './schemas';
 import {
-  AppConfig, AuthGuard, CONFIG, Claims, DB, Public, Roles, WRITERS, audit, parse, tenant,
+  type AppConfig, AuthGuard, CONFIG, Claims, DB, Public, Roles, WRITERS, audit, parse, tenant,
 } from './common';
 
-export { DB, CONFIG, AppConfig };
+export { DB, CONFIG };
+export type { AppConfig };
 
 // ------------------------------------------------------------------ auth
 const registerSchema = z.object({
@@ -81,6 +82,15 @@ export class RegisterController {
     return this.db.withTenant(tenant(c), async (q) => {
       const row = (await q.query<{ id: string }>('INSERT INTO client (organisation_id, name, code, currency) VALUES ($1,$2,$3,$4) RETURNING id, name, code, currency', [c.org, b.name, b.code ?? null, b.currency])).rows[0]!;
       await audit(q, c, 'create', 'client', row.id, row.id);
+      return row;
+    });
+  }
+
+  @Get('sites/:siteId')
+  site(@Claims() c: TokenClaims, @Param('siteId') siteId: string) {
+    return this.db.withTenant(tenant(c), async (q) => {
+      const row = (await q.query('SELECT id, client_id, code, name, site_class, address FROM site WHERE id = $1', [siteId])).rows[0];
+      if (!row) throw new NotFoundException('Site not found');
       return row;
     });
   }
