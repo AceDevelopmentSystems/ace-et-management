@@ -12,6 +12,8 @@ export interface TenantContext {
   orgId: string;
   /** Clients the user is limited to; empty/undefined means all clients in the organisation. */
   clientIds?: string[];
+  /** Also see soft-deleted rows (admin Trash and restore only). Default: deleted rows are invisible. */
+  includeDeleted?: boolean;
 }
 
 export interface Database {
@@ -25,11 +27,11 @@ export interface Database {
 const here = dirname(fileURLToPath(import.meta.url));
 export const MIGRATIONS_DIR = join(here, '..', 'migrations');
 
-const TENANT_SETUP = `SELECT set_config('app.org_id', $1, true), set_config('app.client_ids', $2, true)`;
+const TENANT_SETUP = `SELECT set_config('app.org_id', $1, true), set_config('app.client_ids', $2, true), set_config('app.include_deleted', $3, true)`;
 
 async function setupTenant(q: Queryable, ctx: TenantContext) {
   await q.query('SET LOCAL ROLE ace_app');
-  await q.query(TENANT_SETUP, [ctx.orgId, (ctx.clientIds ?? []).join(',')]);
+  await q.query(TENANT_SETUP, [ctx.orgId, (ctx.clientIds ?? []).join(','), ctx.includeDeleted ? 'on' : '']);
 }
 
 /** Apply any migrations/*.sql not yet recorded. Idempotent. */

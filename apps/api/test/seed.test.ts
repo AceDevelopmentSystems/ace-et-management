@@ -84,10 +84,9 @@ describe('demo seed', () => {
   });
 
   it('updates names on re-run and tops up a site that lost its assets', async () => {
-    await db.withTenant({ orgId }, async (q) => {
-      await q.query(`UPDATE site SET name = 'Renamed' WHERE code = 'ACT-3'`);
-      await q.query(`DELETE FROM asset WHERE site_id = (SELECT id FROM site WHERE code = 'ACT-3')`);
-    });
+    await db.withTenant({ orgId }, (q) => q.query(`UPDATE site SET name = 'Renamed' WHERE code = 'ACT-3'`));
+    // The app role cannot hard-delete (soft delete only), so remove the fixture rows as the database owner.
+    await db.admin((q) => q.query(`DELETE FROM asset WHERE site_id = (SELECT id FROM site WHERE code = 'ACT-3' AND organisation_id = $1)`, [orgId]));
     const assetsBefore = await scalar('SELECT count(*) AS n FROM asset');
     const f1 = await fingerprint();
     await seedDemo(db, { states: subset, asOf: AS_OF });

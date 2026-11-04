@@ -3,9 +3,10 @@ import {
 } from '@nestjs/common';
 import { Scenario } from '@ace/forecast';
 import { TokenClaims } from './auth';
-import { ADMINS, Claims, DB, Roles, WRITERS, audit, deleteRow, parse, patchRow, tenant } from './common';
+import { ADMINS, Claims, DB, Roles, WRITERS, audit, auditUpdate, parse, patchRow, requireLive, tenant } from './common';
 import { Database, Queryable } from './db';
 import { runClientForecast } from './forecast-run';
+import { Entity, softDelete } from './trash';
 import { assetPatch, clientPatch, regionPatch, namedScenarioSchema, scenarioSchema, sitePatch, typePatch } from './schemas';
 
 /** Translate known Postgres errors raised by an update into 4xx responses. */
@@ -35,8 +36,8 @@ export class AdminController {
   patchClient(@Claims() c: TokenClaims, @Param('id') id: string, @Body() body: unknown) {
     const b = parse(clientPatch, body);
     return this.db.withTenant(tenant(c), (q) => guarded(async () => {
-      const row = await patchRow(q, 'client', id, { name: b.name, code: b.code, currency: b.currency }, 'id, name, code, currency');
-      await audit(q, c, 'update', 'client', id, id);
+      const { row, changes } = await patchRow(q, 'client', id, { name: b.name, code: b.code, currency: b.currency }, 'id, name, code, currency');
+      await auditUpdate(q, c, 'client', id, id, changes);
       return row;
     }, { unique: 'Client code already in use' }));
   }
@@ -45,11 +46,13 @@ export class AdminController {
   patchSite(@Claims() c: TokenClaims, @Param('id') id: string, @Body() body: unknown) {
     const b = parse(sitePatch, body);
     return this.db.withTenant(tenant(c), (q) => guarded(async () => {
-      const row = await patchRow(q, 'site', id, {
+      const clientId = await clientOf(q, 'site', id);
+      if (clientId) await requireLive(q, 'region', b.regionId, clientId, 'regionId');
+      const { row, changes } = await patchRow(q, 'site', id, {
         code: b.code, name: b.name, site_class: b.siteClass, address: b.address, latitude: b.latitude, longitude: b.longitude,
         hazards: b.hazards, attributes: b.attributes, region_id: b.regionId,
       }, 'id, code, name');
-      await audit(q, c, 'update', 'site', id, await clientOf(q, 'site', id));
+      await auditUpdate(q, c, 'site', id, await clientOf(q, 'site', id), changes);
       return row;
     }, { unique: 'Site code already exists for this client', fk: 'regionId does not exist for this client' }));
   }
@@ -58,8 +61,8 @@ export class AdminController {
   patchRegion(@Claims() c: TokenClaims, @Param('id') id: string, @Body() body: unknown) {
     const b = parse(regionPatch, body);
     return this.db.withTenant(tenant(c), (q) => guarded(async () => {
-      const row = await patchRow(q, 'region', id, { code: b.code, name: b.name }, 'id, code, name');
-      await audit(q, c, 'update', 'region', id, await clientOf(q, 'region', id));
+      const { row, changes } = await patchRow(q, 'region', id, { code: b.code, name: b.name }, 'id, code, name');
+      await auditUpdate(q, c, 'region', id, await clientOf(q, 'region', id), changes);
       return row;
     }, { unique: 'Region code already exists for this client' }));
   }
@@ -69,10 +72,12 @@ export class AdminController {
     const b = parse(typePatch, body);
     if (b.parentId === id) throw new BadRequestException('A type cannot be its own parent');
     return this.db.withTenant(tenant(c), (q) => guarded(async () => {
-      const row = await patchRow(q, 'asset_type', id, {
+      const clientId = await clientOf(q, 'asset_type', id);
+      if (clientId) await requireLive(q, 'asset_type', b.parentId, clientId, 'parentId');
+      const { row, changes } = await patchRow(q, 'asset_type', id, {
         name: b.name, parent_id: b.parentId, expected_life_years: b.expectedLifeYears, unit: b.unit, unit_rate: b.unitRate,
       }, 'id, name');
-      await audit(q, c, 'update', 'asset_type', id, await clientOf(q, 'asset_type', id));
+      await auditUpdate(q, c, 'asset_type', id, await clientOf(q, 'asset_type', id), changes);
       return row;
     }, { fk: 'parentId does not exist for this client' }));
   }
@@ -82,40 +87,41 @@ export class AdminController {
     const b = parse(assetPatch, body);
     if (b.parentId === id) throw new BadRequestException('An asset cannot be its own parent');
     return this.db.withTenant(tenant(c), (q) => guarded(async () => {
-      const row = await patchRow(q, 'asset', id, {
+      const clientId = await clientOf(q, 'asset', id);
+      if (clientId) {
+        await requireLive(q, 'asset', b.parentId, clientId, 'parentId');
+        await requireLive(q, 'asset_type', b.assetTypeId, clientId, 'assetTypeId');
+      }
+      const { row, changes } = await patchRow(q, 'asset', id, {
         name: b.name, parent_id: b.parentId, asset_type_id: b.assetTypeId, manufacturer: b.manufacturer, serial_number: b.serialNumber,
         install_date: b.installDate, quantity: b.quantity, unit: b.unit, unit_rate: b.unitRate,
         expected_life_years: b.expectedLifeYears, criticality: b.criticality, attributes: b.attributes,
       }, 'id, name');
-      await audit(q, c, 'update', 'asset', id, await clientOf(q, 'asset', id));
+      await auditUpdate(q, c, 'asset', id, await clientOf(q, 'asset', id), changes);
       return row;
     }, { fk: 'parentId or assetTypeId does not exist for this client' }));
   }
 
-  // ---------------------------------------------------------------- deletes (org_admin only)
+  // ---------------------------------------------------------------- deletes (soft; org_admin only)
+  // Nothing is removed: rows are marked deleted and hidden, children go with their parent, and an admin can restore
+  // them from the Trash (see trash.ts).
   @Delete('assets/:id') @Roles(...ADMINS)
-  deleteAsset(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'asset', 'asset', id); }
+  deleteAsset(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'asset', id); }
 
   @Delete('sites/:id') @Roles(...ADMINS)
-  deleteSite(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'site', 'site', id); }
+  deleteSite(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'site', id); }
 
   @Delete('regions/:id') @Roles(...ADMINS)
-  deleteRegion(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'region', 'region', id); }
+  deleteRegion(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'region', id); }
 
   @Delete('asset-types/:id') @Roles(...ADMINS)
-  deleteType(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'asset_type', 'asset_type', id); }
+  deleteType(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'asset-type', id); }
 
   @Delete('clients/:id') @Roles(...ADMINS)
-  deleteClient(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'client', 'client', id); }
+  deleteClient(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'client', id); }
 
-  private remove(c: TokenClaims, table: string, entity: string, id: string) {
-    return this.db.withTenant(tenant(c), async (q) => {
-      const clientId = await clientOf(q, table, id);
-      await deleteRow(q, table, id);
-      // Audit rows reference the client only by id (no FK), so they survive the deletion.
-      await audit(q, c, 'delete', entity, id, clientId);
-      return { deleted: id };
-    });
+  private remove(c: TokenClaims, entity: Entity, id: string) {
+    return this.db.withTenant({ ...tenant(c), includeDeleted: true }, (q) => softDelete(q, c, entity, id));
   }
 
   // ---------------------------------------------------------------- saved forecast scenarios
@@ -139,7 +145,7 @@ export class AdminController {
   }
 
   @Delete('scenarios/:id') @Roles(...WRITERS)
-  deleteScenario(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'forecast_scenario', 'forecast_scenario', id); }
+  deleteScenario(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'scenario', id); }
 
   /** Run a saved scenario. Optional ?siteId= narrows to one site. */
   @Post('scenarios/:id/run')

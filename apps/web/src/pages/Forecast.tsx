@@ -3,7 +3,8 @@ import { FormEvent, useState } from 'react';
 import { Client, ForecastResponse, SavedScenario, ScenarioParams, Site, api } from '../api';
 import { useAuth } from '../auth';
 import { download, forecastCsv, money, num } from '../lib';
-import { BarChart, ErrorMsg, Field, Loading } from '../ui';
+import { useRemove } from '../hooks';
+import { BarChart, ErrorMsg, Field, Loading, confirmDelete } from '../ui';
 
 interface FormState { startYear: string; horizon: string; inflation: string; discount: string; overdue: ScenarioParams['overdue']; spread: string; cap: string }
 
@@ -40,7 +41,7 @@ export function ForecastTab({ client }: { client: Client }) {
     mutationFn: (params: ScenarioParams) => api.post(`/clients/${client.id}/scenarios`, { name: saveName, params }),
     onSuccess: () => { setSaveName(''); qc.invalidateQueries({ queryKey: ['scenarios', client.id] }); },
   });
-  const remove = useMutation({ mutationFn: (id: string) => api.del(`/scenarios/${id}`), onSuccess: () => qc.invalidateQueries({ queryKey: ['scenarios', client.id] }) });
+  const remove = useRemove([['scenarios', client.id]]);
 
   const parsed = toParams({ ...f });
   const onRun = (e: FormEvent) => {
@@ -91,7 +92,7 @@ export function ForecastTab({ client }: { client: Client }) {
           <li key={s.id}>
             {s.name} <span className="muted">{s.params.horizonYears} yrs from {s.params.startYear}</span>{' '}
             <button type="button" className="link" onClick={() => { run.reset(); runSaved.mutate(s); }}>Run</button>
-            {canWrite && <button type="button" className="link danger" onClick={() => { if (window.confirm(`Delete scenario “${s.name}”?`)) remove.mutate(s.id); }}>Delete</button>}
+            {canWrite && <button type="button" className="link danger" onClick={() => { if (confirmDelete(`scenario “${s.name}”`)) remove.mutate(`/scenarios/${s.id}`); }}>Delete</button>}
           </li>
         ))}
       </ul>

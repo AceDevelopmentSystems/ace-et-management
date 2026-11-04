@@ -17,6 +17,22 @@ export function ErrorMsg({ error }: { error: unknown }) {
   return <p role="alert" className="error">{error instanceof Error ? error.message : String(error)}</p>;
 }
 
+/** Deletes are soft, so say what happens rather than warning that it is permanent. */
+export const confirmDelete = (what: string, detail = ''): boolean =>
+  window.confirm(`Delete ${what}?\n\n${detail}It moves to the Trash, so nothing is lost: an administrator can restore it.`);
+
+export function RowActions({ canEdit, canDelete, onEdit, onDelete, busy }: {
+  canEdit: boolean; canDelete: boolean; onEdit: () => void; onDelete: () => void; busy?: boolean;
+}) {
+  if (!canEdit && !canDelete) return null;
+  return (
+    <span className="actions">
+      {canEdit && <button type="button" className="link" onClick={onEdit}>Edit</button>}
+      {canDelete && <button type="button" className="link danger" disabled={busy} onClick={onDelete}>Delete</button>}
+    </span>
+  );
+}
+
 export function Loading({ query }: { query: { isLoading: boolean; error: unknown } }) {
   if (query.isLoading) return <p className="muted">Loading…</p>;
   return <ErrorMsg error={query.error} />;

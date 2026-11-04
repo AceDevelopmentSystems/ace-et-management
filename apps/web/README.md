@@ -10,6 +10,11 @@ React + Vite + TypeScript single-page app for the asset management API. Plain CS
 - **Forecast**: scenario form (start year, horizon, inflation, discount rate, overdue-work policy, annual cap),
   chart, yearly and per-site tables, CSV export, saved scenarios.
 
+Every list has inline **Edit** (managers and administrators; blank optional fields clear, so a blank rate or life falls back to the
+asset type's) and **Delete** (administrators). Delete is a **soft delete**: the confirmation says the item moves to the Trash, and
+an administrator's **Trash** page lists what was deleted on its own and restores it (with whatever went with it).
+A delete or restore the server refuses (for example a region that still has sites) shows the server's reason.
+
 Write controls are hidden for roles that cannot use them (the API enforces this regardless).
 The `contractor` role sees a "not available yet" message.
 

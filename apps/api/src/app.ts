@@ -8,10 +8,11 @@ import { z } from 'zod';
 import { TokenClaims, hashPassword, signToken, verifyPassword, Role } from './auth';
 import { Database } from './db';
 import { AdminController } from './admin';
+import { TrashController } from './trash';
 import { runClientForecast } from './forecast-run';
 import { assetCreate, clientCreate, regionCreate, scenarioSchema, siteCreate, typeCreate } from './schemas';
 import {
-  type AppConfig, AuthGuard, CONFIG, Claims, DB, Public, Roles, WRITERS, audit, parse, tenant,
+  type AppConfig, AuthGuard, CONFIG, Claims, DB, Public, Roles, WRITERS, audit, parse, requireLive, tenant,
 } from './common';
 
 export { DB, CONFIG };
@@ -136,6 +137,7 @@ export class RegisterController {
     const b = parse(siteCreate, body);
     return this.db.withTenant(tenant(c), async (q) => {
       await this.requireClient(q, clientId);
+      await requireLive(q, 'region', b.regionId, clientId, 'regionId');
       try {
         const row = (await q.query<{ id: string }>(
           `INSERT INTO site (organisation_id, client_id, region_id, code, name, site_class, address, latitude, longitude, hazards, attributes)
@@ -162,6 +164,7 @@ export class RegisterController {
     const b = parse(typeCreate, body);
     return this.db.withTenant(tenant(c), async (q) => {
       await this.requireClient(q, clientId);
+      await requireLive(q, 'asset_type', b.parentId, clientId, 'parentId');
       try {
         const row = (await q.query<{ id: string }>(
           'INSERT INTO asset_type (organisation_id, client_id, parent_id, name, expected_life_years, unit, unit_rate) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id, name',
@@ -187,6 +190,8 @@ export class RegisterController {
     return this.db.withTenant(tenant(c), async (q) => {
       const site = (await q.query<{ client_id: string }>('SELECT client_id FROM site WHERE id = $1', [siteId])).rows[0];
       if (!site) throw new NotFoundException('Site not found');
+      await requireLive(q, 'asset', b.parentId, site.client_id, 'parentId');
+      await requireLive(q, 'asset_type', b.assetTypeId, site.client_id, 'assetTypeId');
       try {
         const row = (await q.query<{ id: string }>(
           `INSERT INTO asset (organisation_id, client_id, site_id, parent_id, asset_type_id, name, manufacturer, serial_number, install_date,
@@ -261,9 +266,13 @@ export class InspectionController {
 
   @Get('assets/:assetId/assessments')
   history(@Claims() c: TokenClaims, @Param('assetId') assetId: string) {
-    return this.db.withTenant(tenant(c), async (q) => (await q.query(
-      `SELECT i.inspected_on, a.conditions, a.quality_confidence, a.quantity_confidence, a.assessed_quantity, a.maintenance_cost, a.comments
-         FROM assessment a JOIN inspection i ON i.id = a.inspection_id WHERE a.asset_id = $1 ORDER BY i.inspected_on DESC`, [assetId])).rows);
+    return this.db.withTenant(tenant(c), async (q) => {
+      // History of a deleted (or foreign) asset is not served; the asset itself is hidden by row level security.
+      if (!(await q.query('SELECT 1 FROM asset WHERE id = $1', [assetId])).rows.length) throw new NotFoundException('Asset not found');
+      return (await q.query(
+        `SELECT i.inspected_on, a.conditions, a.quality_confidence, a.quantity_confidence, a.assessed_quantity, a.maintenance_cost, a.comments
+           FROM assessment a JOIN inspection i ON i.id = a.inspection_id WHERE a.asset_id = $1 ORDER BY i.inspected_on DESC`, [assetId])).rows;
+    });
   }
 }
 
@@ -290,7 +299,7 @@ export class AppModule {
   static register(db: Database, config: AppConfig): DynamicModule {
     return {
       module: AppModule,
-      controllers: [HealthController, AuthController, RegisterController, InspectionController, ForecastController, AdminController],
+      controllers: [HealthController, AuthController, RegisterController, InspectionController, ForecastController, AdminController, TrashController],
       providers: [
         { provide: DB, useValue: db },
         { provide: CONFIG, useValue: config },
