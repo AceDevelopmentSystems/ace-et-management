@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+# Least privilege: the jobs only read the repository.
+permissions:
+  contents: read
+
+# A newer push to the same PR supersedes the running check.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres # throwaway database inside this job only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit tests (in-process Postgres)
+        run: npm test
+
+      # The in-process database runs as a superuser, which hid two real bugs (a missing
+      # SET ROLE grant and a date/timezone shift). Run the API tests again on a real server
+      # as an ordinary role, like production does.
+      - name: Create a non-superuser database role
+        env:
+          PGPASSWORD: postgres
+        run: >-
+          psql -h localhost -U postgres -v ON_ERROR_STOP=1
+          -c "CREATE ROLE ace_ci LOGIN CREATEROLE CREATEDB PASSWORD 'ace_ci'"
+          -c "CREATE DATABASE ace_ci OWNER ace_ci"
+
+      - name: API tests on real PostgreSQL 16
+        env:
+          TEST_DATABASE_URL: postgres://ace_ci:ace_ci@localhost:5432/ace_ci
+          TZ: Pacific/Auckland # the dev machine's zone; dates must not shift east of UTC
+        run: npm test -w @ace/api
+
+      - name: Build web app
+        run: npm run build -w @ace/web
