@@ -33,6 +33,11 @@ button.link.danger { color: var(--danger); }
 .table tr.split td { background: var(--bg); }
 .list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
 .list li { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 0.5rem 0.75rem; }
+.badge { display: inline-block; padding: 0.05rem 0.5rem; border-radius: 999px; font-size: 0.78rem; background: var(--bg); border: 1px solid var(--line); color: var(--muted); }
+.badge.active, .badge.complete { color: var(--ok); border-color: var(--ok); }
+.badge.in_progress { color: var(--accent); border-color: var(--accent); }
+.badge.cancelled, .badge.closed { color: var(--muted); text-decoration: line-through; }
+.check { display: inline-flex; gap: 0.35rem; align-items: center; font-size: 0.9rem; padding-bottom: 0.45rem; }
 .actions { display: inline-flex; gap: 0.5rem; white-space: nowrap; }
 .list li { display: flex; gap: 0.5rem; align-items: baseline; flex-wrap: wrap; }
 .list li .actions { margin-left: auto; }

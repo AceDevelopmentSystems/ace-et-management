@@ -63,10 +63,34 @@ export async function audit(
  * A reference (region, asset type, parent asset...) must point at a LIVE row of the same client. Foreign keys cannot
  * check this: they ignore row level security, so they would accept a soft-deleted target.
  */
-export async function requireLive(q: Queryable, table: 'region' | 'asset_type' | 'asset', id: string | null | undefined, clientId: string, field: string) {
+export async function requireLive(q: Queryable, table: 'region' | 'asset_type' | 'asset' | 'site', id: string | null | undefined, clientId: string, field: string) {
   if (!id) return;
   const r = await q.query(`SELECT 1 FROM ${table} WHERE id = $1 AND client_id = $2`, [id, clientId]);
   if (!r.rows.length) throw new BadRequestException(`${field} does not exist for this client`);
+}
+
+/** Contractors belong to the organisation, not a client; row level security already limits this to the caller's own. */
+export async function requireLiveContractor(q: Queryable, id: string | null | undefined, field = 'contractorId') {
+  if (!id) return;
+  if (!(await q.query('SELECT 1 FROM contractor WHERE id = $1', [id])).rows.length) throw new BadRequestException(`${field} does not exist`);
+}
+
+/** Translate known Postgres errors raised by a write into 4xx responses. */
+export async function guarded<T>(fn: () => Promise<T>, messages: { unique?: string; fk?: string }): Promise<T> {
+  try {
+    return await fn();
+  } catch (e: any) {
+    if (e?.code === '23505') throw new ConflictException(messages.unique ?? 'Duplicate value');
+    if (e?.code === '23503') throw new BadRequestException(messages.fk ?? 'Referenced record does not exist');
+    if (e?.code === '23514') throw new BadRequestException('Value violates a constraint');
+    throw e;
+  }
+}
+
+/** Client a row belongs to, for the audit trail. */
+export async function clientOf(q: Queryable, table: string, id: string): Promise<string | null> {
+  const col = table === 'client' ? 'id' : 'client_id';
+  return (await q.query<{ c: string }>(`SELECT ${col} AS c FROM ${table} WHERE id = $1`, [id])).rows[0]?.c ?? null;
 }
 
 export type Changes = Record<string, { from: unknown; to: unknown }>;

@@ -50,3 +50,51 @@ export const scenarioSchema = z.object({
   annualCap: z.number().nonnegative().optional(),
 });
 export const namedScenarioSchema = z.object({ name: z.string().min(1), params: scenarioSchema });
+
+// ------------------------------------------------------------------ contractors, contracts, work orders
+const isoDate = z.string().date();
+
+export const contractorBase = z.object({
+  name: z.string().min(1).max(200), contactName: z.string().nullable(), email: z.string().email().nullable(),
+  phone: z.string().nullable(), notes: z.string().nullable(),
+});
+export const contractorCreate = contractorBase.partial().required({ name: true });
+export const contractorPatch = contractorBase.partial();
+
+export const contractBase = z.object({
+  contractorId: z.string().uuid(), code: z.string().min(1).max(40), name: z.string().min(1).max(200),
+  status: z.enum(['draft', 'active', 'closed']), startDate: isoDate, endDate: isoDate, notes: z.string().nullable(),
+});
+const endAfterStart = (c: { startDate?: string; endDate?: string }) => !c.startDate || !c.endDate || c.endDate >= c.startDate;
+export const contractCreate = contractBase.partial({ status: true, notes: true })
+  .refine(endAfterStart, { message: 'endDate must not be before startDate', path: ['endDate'] });
+export const contractPatch = contractBase.partial()
+  .refine(endAfterStart, { message: 'endDate must not be before startDate', path: ['endDate'] });
+
+export const lineBase = z.object({
+  siteId: z.string().uuid(), assetId: z.string().uuid(), description: z.string().min(1).max(300),
+  frequencyInterval: z.number().int().min(1).max(120), frequencyUnit: z.enum(['day', 'week', 'month', 'year']),
+  firstDueDate: isoDate, costPerOccurrence: z.number().nonnegative(),
+});
+/** A line targets exactly one of a site or an asset. */
+export const lineCreate = lineBase.partial({ siteId: true, assetId: true, frequencyInterval: true, costPerOccurrence: true })
+  .refine((l) => (l.siteId ? 1 : 0) + (l.assetId ? 1 : 0) === 1, { message: 'Give exactly one of siteId or assetId', path: ['siteId'] });
+/** The target cannot change: delete the line and add a new one instead. */
+export const linePatch = lineBase.omit({ siteId: true, assetId: true }).partial();
+
+export const generateSchema = z.object({ through: isoDate, from: isoDate.optional(), dryRun: z.boolean().default(false) });
+
+export const workOrderPatch = z.object({
+  title: z.string().min(1).max(300), dueDate: isoDate, estimatedCost: z.number().nonnegative().nullable(), notes: z.string().nullable(),
+}).partial();
+
+export const WORK_ORDER_STATUSES = ['new', 'in_progress', 'complete', 'cancelled'] as const;
+export const statusChange = z.object({
+  status: z.enum(WORK_ORDER_STATUSES), completedOn: isoDate.optional(), actualCost: z.number().nonnegative().nullable().optional(), notes: z.string().nullable().optional(),
+});
+
+export const workOrderQuery = z.object({
+  status: z.enum(WORK_ORDER_STATUSES).optional(), siteId: z.string().uuid().optional(), contractId: z.string().uuid().optional(),
+  from: isoDate.optional(), to: isoDate.optional(), overdue: z.enum(['true', 'false']).optional(),
+  limit: z.coerce.number().int().min(1).max(500).default(200), offset: z.coerce.number().int().min(0).default(0),
+});

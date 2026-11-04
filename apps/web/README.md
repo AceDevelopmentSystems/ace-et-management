@@ -15,6 +15,12 @@ asset type's) and **Delete** (administrators). Delete is a **soft delete**: the 
 an administrator's **Trash** page lists what was deleted on its own and restores it (with whatever went with it).
 A delete or restore the server refuses (for example a region that still has sites) shows the server's reason.
 
+**Contractors** (header link): the organisation's contractors. **Contracts** (client tab): a list, and a contract page with its
+schedule lines (what, where, how often, first due, cost per visit), a status selector, and a **Generate work orders** panel
+with a Preview (what would be created, what already exists) and a Create button that is safe to press again.
+**Work orders** (client tab, and on each contract): filters (status, site, due dates, overdue), paging, status moves
+(Start, Complete with date and actual cost, Cancel, Reopen), edit and delete. Overdue work shows its due date in red.
+
 Write controls are hidden for roles that cannot use them (the API enforces this regardless).
 The `contractor` role sees a "not available yet" message.
 

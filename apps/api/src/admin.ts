@@ -3,29 +3,11 @@ import {
 } from '@nestjs/common';
 import { Scenario } from '@ace/forecast';
 import { TokenClaims } from './auth';
-import { ADMINS, Claims, DB, Roles, WRITERS, audit, auditUpdate, parse, patchRow, requireLive, tenant } from './common';
-import { Database, Queryable } from './db';
+import { ADMINS, Claims, DB, Roles, WRITERS, audit, auditUpdate, clientOf, guarded, parse, patchRow, requireLive, tenant } from './common';
+import { Database } from './db';
 import { runClientForecast } from './forecast-run';
 import { Entity, softDelete } from './trash';
 import { assetPatch, clientPatch, regionPatch, namedScenarioSchema, scenarioSchema, sitePatch, typePatch } from './schemas';
-
-/** Translate known Postgres errors raised by an update into 4xx responses. */
-async function guarded<T>(fn: () => Promise<T>, messages: { unique?: string; fk?: string }): Promise<T> {
-  try {
-    return await fn();
-  } catch (e: any) {
-    if (e?.code === '23505') throw new ConflictException(messages.unique ?? 'Duplicate value');
-    if (e?.code === '23503') throw new BadRequestException(messages.fk ?? 'Referenced record does not exist');
-    if (e?.code === '23514') throw new BadRequestException('Value violates a constraint');
-    throw e;
-  }
-}
-
-/** Client a row belongs to, for the audit trail. */
-async function clientOf(q: Queryable, table: string, id: string): Promise<string | null> {
-  const col = table === 'client' ? 'id' : 'client_id';
-  return (await q.query<{ c: string }>(`SELECT ${col} AS c FROM ${table} WHERE id = $1`, [id])).rows[0]?.c ?? null;
-}
 
 @Controller()
 export class AdminController {
@@ -119,6 +101,18 @@ export class AdminController {
 
   @Delete('clients/:id') @Roles(...ADMINS)
   deleteClient(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'client', id); }
+
+  @Delete('contractors/:id') @Roles(...ADMINS)
+  deleteContractor(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'contractor', id); }
+
+  @Delete('contracts/:id') @Roles(...ADMINS)
+  deleteContract(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'contract', id); }
+
+  @Delete('contract-lines/:id') @Roles(...ADMINS)
+  deleteContractLine(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'contract-line', id); }
+
+  @Delete('work-orders/:id') @Roles(...ADMINS)
+  deleteWorkOrder(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'work-order', id); }
 
   private remove(c: TokenClaims, entity: Entity, id: string) {
     return this.db.withTenant({ ...tenant(c), includeDeleted: true }, (q) => softDelete(q, c, entity, id));

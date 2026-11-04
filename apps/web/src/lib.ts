@@ -50,3 +50,39 @@ export function num(s: string): number | undefined {
   const t = s.trim();
   return t === '' ? undefined : Number(t);
 }
+
+// ------------------------------------------------------------------ dates and work orders
+/** Today as YYYY-MM-DD in the user's own time zone (what a person means by "today"). */
+export const todayLocal = (): string => new Date().toLocaleDateString('en-CA');
+
+/** `iso` plus whole days, as YYYY-MM-DD (date-only maths in UTC, so no daylight saving surprises). */
+export function addDays(iso: string, days: number): string {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+export function describeFrequency(interval: number, unit: 'day' | 'week' | 'month' | 'year'): string {
+  if (interval === 1) return { day: 'daily', week: 'weekly', month: 'monthly', year: 'yearly' }[unit];
+  return `every ${interval} ${unit}s`;
+}
+
+import type { WorkOrderStatus } from './api';
+
+export const STATUS_LABEL: Record<WorkOrderStatus, string> = { new: 'New', in_progress: 'In progress', complete: 'Complete', cancelled: 'Cancelled' };
+
+export interface StatusAction { label: string; to: WorkOrderStatus; /** Completion needs a date and cost, so it opens a small form. */ needsDetails?: boolean }
+
+/** The moves the API allows from each status (the server enforces the same rules). */
+export function statusActions(status: WorkOrderStatus): StatusAction[] {
+  switch (status) {
+    case 'new': return [{ label: 'Start', to: 'in_progress' }, { label: 'Complete…', to: 'complete', needsDetails: true }, { label: 'Cancel', to: 'cancelled' }];
+    case 'in_progress': return [{ label: 'Complete…', to: 'complete', needsDetails: true }, { label: 'Back to new', to: 'new' }, { label: 'Cancel', to: 'cancelled' }];
+    case 'complete': return [{ label: 'Reopen', to: 'in_progress' }];
+    case 'cancelled': return [{ label: 'Reinstate', to: 'new' }];
+  }
+}
+
+/** Open and past its due date. */
+export const isOverdue = (w: { status: WorkOrderStatus; due_date: string }, today = todayLocal()): boolean =>
+  (w.status === 'new' || w.status === 'in_progress') && w.due_date < today;

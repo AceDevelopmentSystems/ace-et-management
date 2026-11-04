@@ -6,6 +6,7 @@ import { ErrorMsg, Loading } from '../ui';
 
 const KIND: Record<TrashEntity, string> = {
   client: 'Client', region: 'Region', site: 'Site', 'asset-type': 'Asset type', asset: 'Asset', scenario: 'Saved scenario',
+  contractor: 'Contractor', contract: 'Contract', 'contract-line': 'Contract line', 'work-order': 'Work order',
 };
 
 export function Trash() {
@@ -36,7 +37,7 @@ export function Trash() {
               <tr key={`${i.entity}:${i.id}`}>
                 <td>{KIND[i.entity]}</td>
                 <td>{i.label}{i.includes > 0 && <span className="muted"> · with {i.includes} item{i.includes === 1 ? '' : 's'}</span>}</td>
-                <td>{i.entity === 'client' ? '' : i.clientName}</td>
+                <td>{i.entity === 'client' ? '' : i.clientName ?? 'All clients'}</td>
                 <td title={i.deletedAt}>{new Date(i.deletedAt).toLocaleString()}{i.deletedBy ? <span className="muted"> · {i.deletedBy}</span> : null}</td>
                 <td><button type="button" disabled={restore.isPending} onClick={() => restore.mutate(i)}>Restore</button></td>
               </tr>

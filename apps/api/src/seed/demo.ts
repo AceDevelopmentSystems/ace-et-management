@@ -4,7 +4,10 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { hashPassword } from '../auth';
 import { Database, Queryable } from '../db';
+import { inChunks, values } from '../sql';
 import { TransmitterFixture } from './parse-transmitters';
+import { seedContracts } from './contracts';
+import { isoDaysBefore, pick, rng } from './random';
 
 /**
  * Demo / test data for the "Demo Consulting" consultancy: one client (TVNZ) whose regions are the Australian
@@ -37,6 +40,8 @@ export interface SeedOptions {
   states?: string[];
   /** Reference date YYYY-MM-DD for install dates and inspections (default today). */
   asOf?: string;
+  /** Generate contractors, contracts and work orders (default true). */
+  contracts?: boolean;
 }
 
 export interface SeedResult {
@@ -47,6 +52,10 @@ export interface SeedResult {
   assetTypes: number;
   assets: number;
   inspections: number;
+  contractors: number;
+  contracts: number;
+  contractLines: number;
+  workOrders: number;
   demoUser: { email: string; /** Only set when the user was created by this run. */ password?: string };
 }
 
@@ -64,40 +73,6 @@ const ASSET_TYPES = [
 type Grade = 'excellent' | 'good' | 'average' | 'poor' | 'veryPoor' | 'urgent';
 const GRADES: Grade[] = ['excellent', 'good', 'average', 'poor', 'veryPoor', 'urgent'];
 
-// ------------------------------------------------------------------ deterministic randomness
-function hash(s: string): number {
-  let h = 0x811c9dc5; // FNV-1a
-  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
-  return h >>> 0;
-}
-function rng(seed: string): () => number {
-  let a = hash(seed); // mulberry32
-  return () => {
-    a = (a + 0x6d2b79f5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-const pick = <T>(r: () => number, weighted: [T, number][]): T => {
-  const total = weighted.reduce((n, [, w]) => n + w, 0);
-  let x = r() * total;
-  for (const [v, w] of weighted) if ((x -= w) < 0) return v;
-  return weighted[weighted.length - 1]![0];
-};
-const isoDaysBefore = (asOf: string, days: number) => new Date(Date.parse(`${asOf}T00:00:00Z`) - days * 86400000).toISOString().slice(0, 10);
-
-// ------------------------------------------------------------------ SQL helpers
-/** Multi-row VALUES: placeholders for `rows` starting after `fixed` shared params, plus the flattened values. */
-function values(rows: unknown[][], fixed: number): { sql: string; params: unknown[] } {
-  let n = fixed;
-  const sql = rows.map((r) => `(${r.map(() => `$${++n}`).join(',')})`).join(',');
-  return { sql, params: rows.flat() };
-}
-async function inChunks<T>(items: T[], size: number, fn: (chunk: T[]) => Promise<void>) {
-  for (let i = 0; i < items.length; i += size) await fn(items.slice(i, i + size));
-}
-
 // ------------------------------------------------------------------ the seed
 export async function seedDemo(db: Database, opts: SeedOptions = {}): Promise<SeedResult> {
   const asOf = opts.asOf ?? new Date().toISOString().slice(0, 10);
@@ -110,7 +85,7 @@ export async function seedDemo(db: Database, opts: SeedOptions = {}): Promise<Se
   }
 
   // 1. organisation, demo user, membership (outside any tenant)
-  const { organisationId, demoUser } = await db.admin(async (q) => {
+  const { organisationId, userId, demoUser } = await db.admin(async (q) => {
     let org = (await q.query<{ id: string }>(`SELECT id FROM organisation WHERE name = $1 AND kind = 'CONSULTANCY' ORDER BY created_at LIMIT 1`, [DEMO_ORG])).rows[0];
     if (!org) org = (await q.query<{ id: string }>(`INSERT INTO organisation (name, kind) VALUES ($1,'CONSULTANCY') RETURNING id`, [DEMO_ORG])).rows[0]!;
     // The one hard delete in the system: an operator tool, run as the database owner (the app role cannot delete),
@@ -127,7 +102,7 @@ export async function seedDemo(db: Database, opts: SeedOptions = {}): Promise<Se
       await q.query('UPDATE app_user SET password_hash = $2 WHERE id = $1', [user.id, await hashPassword(opts.password!)]);
     }
     await q.query(`INSERT INTO membership (user_id, organisation_id, role) VALUES ($1,$2,'org_admin') ON CONFLICT DO NOTHING`, [user.id, org.id]);
-    return { organisationId: org.id, demoUser: { email: DEMO_EMAIL, ...(createdPassword ? { password: createdPassword } : {}) } };
+    return { organisationId: org.id, userId: user.id, demoUser: { email: DEMO_EMAIL, ...(createdPassword ? { password: createdPassword } : {}) } };
   });
 
   // 2. everything else as the restricted role, scoped to the organisation (same path the API uses)
@@ -192,7 +167,12 @@ export async function seedDemo(db: Database, opts: SeedOptions = {}): Promise<Se
     };
   });
 
-  return { organisationId, demoUser, ...counts };
+  // Contracts and work orders, through the real generator, in their own transaction (it needs include-deleted visibility).
+  const contractCounts = opts.contracts === false
+    ? { contractors: 0, contracts: 0, contractLines: 0, workOrders: 0 }
+    : await seedContracts(db, { organisationId, userId, clientId: counts.clientId, asOf, withAssets: opts.assets !== false });
+
+  return { organisationId, demoUser, ...counts, ...contractCounts };
 }
 
 interface AssetCtx {

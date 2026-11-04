@@ -5,6 +5,7 @@ own assets, or a consultancy managing assets for several clients, and projects r
 | Path | What |
 |---|---|
 | `packages/forecast` | Replacement forecast engine (pure TypeScript) with a parity port of the legacy Excel macro. See `docs/forecast-spec.md`. |
+| `packages/schedule` | Recurring due dates for scheduled maintenance (pure TypeScript). See `docs/contracts-spec.md`. |
 | `apps/api` | NestJS API over PostgreSQL with row level security per organisation/client. |
 | `apps/web` | React web app. |
 | `deploy/` | Docker, Kubernetes, Terraform and helper scripts. |
