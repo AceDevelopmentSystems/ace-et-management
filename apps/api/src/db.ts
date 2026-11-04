@@ -52,7 +52,13 @@ export async function migrate(db: Database): Promise<string[]> {
 /** Production database over node-postgres. DATABASE_URL must be a role that may SET ROLE ace_app. */
 export async function createPgDatabase(connectionString: string): Promise<Database> {
   const { default: pg } = await import('pg');
-  const pool = new pg.Pool({ connectionString });
+  // Return `date` columns as 'YYYY-MM-DD' strings. The default parser builds a local-midnight Date, which
+  // shifts to the previous day/year once serialised or read in UTC in timezones east of Greenwich.
+  const DATE_OID = 1082;
+  const pool = new pg.Pool({
+    connectionString,
+    types: { getTypeParser: ((oid: number, format?: any) => (oid === DATE_OID ? (v: string) => v : pg.types.getTypeParser(oid, format))) as any },
+  });
   const run = async <T>(fn: (q: Queryable) => Promise<T>, setup?: (q: Queryable) => Promise<void>) => {
     const client = await pool.connect();
     try {

@@ -1,51 +1,20 @@
 import {
-  BadRequestException, CanActivate, ConflictException, Controller, ExecutionContext, ForbiddenException, Get,
-  DynamicModule, Inject, Injectable, Module, NotFoundException, Param, Post, Body, Query, SetMetadata, UnauthorizedException,
-  UseGuards, createParamDecorator,
+  BadRequestException, ConflictException, Controller, Get, DynamicModule, Inject, Module, NotFoundException,
+  Param, Post, Body, Query, UnauthorizedException,
 } from '@nestjs/common';
-import { APP_GUARD, Reflector } from '@nestjs/core';
-import { CONDITIONS, Scenario, runForecast } from '@ace/forecast';
-import { z, ZodTypeAny } from 'zod';
-import { Role, TokenClaims, hashPassword, signToken, verifyPassword, verifyToken } from './auth';
-import { Database, TenantContext } from './db';
-import { ForecastRow, toAssessedAsset } from './forecast-map';
+import { APP_GUARD } from '@nestjs/core';
+import { CONDITIONS, Scenario } from '@ace/forecast';
+import { z } from 'zod';
+import { TokenClaims, hashPassword, signToken, verifyPassword, Role } from './auth';
+import { Database } from './db';
+import { AdminController } from './admin';
+import { runClientForecast } from './forecast-run';
+import { assetCreate, clientCreate, scenarioSchema, siteCreate, typeCreate } from './schemas';
+import {
+  AppConfig, AuthGuard, CONFIG, Claims, DB, Public, Roles, WRITERS, audit, parse, tenant,
+} from './common';
 
-export const DB = 'DB';
-export const CONFIG = 'CONFIG';
-export interface AppConfig { jwtSecret: string }
-
-// ------------------------------------------------------------------ helpers
-const ROLES_KEY = 'roles';
-const PUBLIC_KEY = 'public';
-const Public = () => SetMetadata(PUBLIC_KEY, true);
-const Roles = (...r: Role[]) => SetMetadata(ROLES_KEY, r);
-const WRITERS: Role[] = ['org_admin', 'asset_manager'];
-
-const Claims = createParamDecorator((_: unknown, ctx: ExecutionContext) => ctx.switchToHttp().getRequest().claims as TokenClaims);
-const tenant = (c: TokenClaims): TenantContext => ({ orgId: c.org, clientIds: c.clients });
-
-function parse<S extends ZodTypeAny>(schema: S, body: unknown): z.infer<S> {
-  const r = schema.safeParse(body);
-  if (!r.success) throw new BadRequestException(r.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`));
-  return r.data;
-}
-
-@Injectable()
-export class AuthGuard implements CanActivate {
-  constructor(@Inject(CONFIG) private cfg: AppConfig, @Inject(Reflector) private reflector: Reflector) {}
-  canActivate(ctx: ExecutionContext): boolean {
-    const targets = [ctx.getHandler(), ctx.getClass()];
-    if (this.reflector.getAllAndOverride<boolean>(PUBLIC_KEY, targets)) return true;
-    const req = ctx.switchToHttp().getRequest();
-    const header: string = req.headers.authorization ?? '';
-    const claims = header.startsWith('Bearer ') ? verifyToken(header.slice(7), this.cfg.jwtSecret) : null;
-    if (!claims) throw new UnauthorizedException();
-    const roles = this.reflector.getAllAndOverride<Role[] | undefined>(ROLES_KEY, targets);
-    if (roles && !roles.includes(claims.role)) throw new ForbiddenException('Insufficient role');
-    req.claims = claims;
-    return true;
-  }
-}
+export { DB, CONFIG, AppConfig };
 
 // ------------------------------------------------------------------ auth
 const registerSchema = z.object({
@@ -97,24 +66,6 @@ export class AuthController {
 }
 
 // ------------------------------------------------------------------ register: clients, sites, types, assets
-const clientSchema = z.object({ name: z.string().min(1), code: z.string().min(1).optional(), currency: z.string().length(3).default('NZD') });
-const siteSchema = z.object({
-  code: z.string().min(1), name: z.string().min(1), siteClass: z.string().optional(), address: z.string().optional(),
-  latitude: z.number().min(-90).max(90).optional(), longitude: z.number().min(-180).max(180).optional(),
-  hazards: z.string().optional(), attributes: z.record(z.string(), z.unknown()).default({}),
-});
-const typeSchema = z.object({
-  name: z.string().min(1), parentId: z.string().uuid().optional(), expectedLifeYears: z.number().int().positive().optional(),
-  unit: z.string().optional(), unitRate: z.number().nonnegative().optional(),
-});
-const assetSchema = z.object({
-  name: z.string().min(1), parentId: z.string().uuid().optional(), assetTypeId: z.string().uuid().optional(),
-  manufacturer: z.string().optional(), serialNumber: z.string().optional(), installDate: z.string().date().optional(),
-  quantity: z.number().nonnegative().default(1), unit: z.string().optional(), unitRate: z.number().nonnegative().optional(),
-  expectedLifeYears: z.number().int().positive().optional(), criticality: z.number().int().min(1).max(5).optional(),
-  attributes: z.record(z.string(), z.unknown()).default({}),
-});
-
 @Controller()
 export class RegisterController {
   constructor(@Inject(DB) private db: Database) {}
@@ -126,9 +77,12 @@ export class RegisterController {
 
   @Post('clients') @Roles(...WRITERS)
   createClient(@Claims() c: TokenClaims, @Body() body: unknown) {
-    const b = parse(clientSchema, body);
-    return this.db.withTenant(tenant(c), async (q) =>
-      (await q.query('INSERT INTO client (organisation_id, name, code, currency) VALUES ($1,$2,$3,$4) RETURNING id, name, code, currency', [c.org, b.name, b.code ?? null, b.currency])).rows[0]);
+    const b = parse(clientCreate, body);
+    return this.db.withTenant(tenant(c), async (q) => {
+      const row = (await q.query<{ id: string }>('INSERT INTO client (organisation_id, name, code, currency) VALUES ($1,$2,$3,$4) RETURNING id, name, code, currency', [c.org, b.name, b.code ?? null, b.currency])).rows[0]!;
+      await audit(q, c, 'create', 'client', row.id, row.id);
+      return row;
+    });
   }
 
   @Get('clients/:clientId/sites')
@@ -139,14 +93,16 @@ export class RegisterController {
 
   @Post('clients/:clientId/sites') @Roles(...WRITERS)
   createSite(@Claims() c: TokenClaims, @Param('clientId') clientId: string, @Body() body: unknown) {
-    const b = parse(siteSchema, body);
+    const b = parse(siteCreate, body);
     return this.db.withTenant(tenant(c), async (q) => {
       await this.requireClient(q, clientId);
       try {
-        return (await q.query(
+        const row = (await q.query<{ id: string }>(
           `INSERT INTO site (organisation_id, client_id, code, name, site_class, address, latitude, longitude, hazards, attributes)
            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING id, code, name`,
-          [c.org, clientId, b.code, b.name, b.siteClass ?? null, b.address ?? null, b.latitude ?? null, b.longitude ?? null, b.hazards ?? null, b.attributes])).rows[0];
+          [c.org, clientId, b.code, b.name, b.siteClass ?? null, b.address ?? null, b.latitude ?? null, b.longitude ?? null, b.hazards ?? null, b.attributes])).rows[0]!;
+        await audit(q, c, 'create', 'site', row.id, clientId);
+        return row;
       } catch (e: any) {
         if (e?.code === '23505') throw new ConflictException('Site code already exists for this client');
         throw e;
@@ -162,12 +118,19 @@ export class RegisterController {
 
   @Post('clients/:clientId/asset-types') @Roles(...WRITERS)
   createType(@Claims() c: TokenClaims, @Param('clientId') clientId: string, @Body() body: unknown) {
-    const b = parse(typeSchema, body);
+    const b = parse(typeCreate, body);
     return this.db.withTenant(tenant(c), async (q) => {
       await this.requireClient(q, clientId);
-      return (await q.query(
-        'INSERT INTO asset_type (organisation_id, client_id, parent_id, name, expected_life_years, unit, unit_rate) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id, name',
-        [c.org, clientId, b.parentId ?? null, b.name, b.expectedLifeYears ?? null, b.unit ?? null, b.unitRate ?? null])).rows[0];
+      try {
+        const row = (await q.query<{ id: string }>(
+          'INSERT INTO asset_type (organisation_id, client_id, parent_id, name, expected_life_years, unit, unit_rate) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id, name',
+          [c.org, clientId, b.parentId ?? null, b.name, b.expectedLifeYears ?? null, b.unit ?? null, b.unitRate ?? null])).rows[0]!;
+        await audit(q, c, 'create', 'asset_type', row.id, clientId);
+        return row;
+      } catch (e: any) {
+        if (e?.code === '23503') throw new BadRequestException('parentId does not exist for this client');
+        throw e;
+      }
     });
   }
 
@@ -179,17 +142,19 @@ export class RegisterController {
 
   @Post('sites/:siteId/assets') @Roles(...WRITERS)
   createAsset(@Claims() c: TokenClaims, @Param('siteId') siteId: string, @Body() body: unknown) {
-    const b = parse(assetSchema, body);
+    const b = parse(assetCreate, body);
     return this.db.withTenant(tenant(c), async (q) => {
       const site = (await q.query<{ client_id: string }>('SELECT client_id FROM site WHERE id = $1', [siteId])).rows[0];
       if (!site) throw new NotFoundException('Site not found');
       try {
-        return (await q.query(
+        const row = (await q.query<{ id: string }>(
           `INSERT INTO asset (organisation_id, client_id, site_id, parent_id, asset_type_id, name, manufacturer, serial_number, install_date,
              quantity, unit, unit_rate, expected_life_years, criticality, attributes)
            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15) RETURNING id, name`,
           [c.org, site.client_id, siteId, b.parentId ?? null, b.assetTypeId ?? null, b.name, b.manufacturer ?? null, b.serialNumber ?? null,
-            b.installDate ?? null, b.quantity, b.unit ?? null, b.unitRate ?? null, b.expectedLifeYears ?? null, b.criticality ?? null, b.attributes])).rows[0];
+            b.installDate ?? null, b.quantity, b.unit ?? null, b.unitRate ?? null, b.expectedLifeYears ?? null, b.criticality ?? null, b.attributes])).rows[0]!;
+        await audit(q, c, 'create', 'asset', row.id, site.client_id);
+        return row;
       } catch (e: any) {
         if (e?.code === '23503') throw new BadRequestException('parentId or assetTypeId does not exist for this client');
         throw e;
@@ -238,11 +203,17 @@ export class InspectionController {
         // The asset must belong to this site; RLS already limits visibility to the tenant.
         const owns = await q.query('SELECT 1 FROM asset WHERE id = $1 AND site_id = $2', [a.assetId, siteId]);
         if (!owns.rows.length) throw new BadRequestException(`Asset ${a.assetId} is not at this site`);
-        await q.query(
-          `INSERT INTO assessment (organisation_id, client_id, inspection_id, asset_id, conditions, quality_confidence, quantity_confidence,
-             assessed_quantity, maintenance_cost, comments) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`,
-          [c.org, site.client_id, insp.id, a.assetId, a.conditions, a.qualityConfidence, a.quantityConfidence, a.assessedQuantity ?? null, a.maintenanceCost ?? null, a.comments ?? null]);
+        try {
+          await q.query(
+            `INSERT INTO assessment (organisation_id, client_id, inspection_id, asset_id, conditions, quality_confidence, quantity_confidence,
+               assessed_quantity, maintenance_cost, comments) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`,
+            [c.org, site.client_id, insp.id, a.assetId, a.conditions, a.qualityConfidence, a.quantityConfidence, a.assessedQuantity ?? null, a.maintenanceCost ?? null, a.comments ?? null]);
+        } catch (e: any) {
+          if (e?.code === '23505') throw new BadRequestException(`Asset ${a.assetId} appears more than once in this inspection`);
+          throw e;
+        }
       }
+      await audit(q, c, 'create', 'inspection', insp.id, site.client_id);
       return { id: insp.id, assessments: b.assessments.length };
     });
   }
@@ -256,59 +227,14 @@ export class InspectionController {
 }
 
 // ------------------------------------------------------------------ forecast
-const scenarioSchema = z.object({
-  startYear: z.number().int().min(2000).max(2200),
-  horizonYears: z.number().int().min(1).max(50),
-  inflation: z.number().min(0).max(1).default(0),
-  discountRate: z.number().min(0).max(1).default(0),
-  overdue: z.enum(['year1', 'spread', 'ignore']).default('year1'),
-  overdueSpreadYears: z.number().int().min(1).max(20).default(3),
-  annualCap: z.number().nonnegative().optional(),
-});
-
 @Controller()
 export class ForecastController {
   constructor(@Inject(DB) private db: Database) {}
 
-  /** Latest assessment per asset, joined with type defaults. */
+  /** Ad hoc forecast from a scenario in the request body. Saved scenarios live in AdminController. */
   @Post('clients/:clientId/forecast')
-  async run(@Claims() c: TokenClaims, @Param('clientId') clientId: string, @Body() body: unknown, @Query('siteId') siteId?: string) {
-    const scenario: Scenario = parse(scenarioSchema, body);
-    const rows = await this.db.withTenant(tenant(c), async (q) => {
-      if (!(await q.query('SELECT 1 FROM client WHERE id = $1', [clientId])).rows.length) throw new NotFoundException('Client not found');
-      return (await q.query<ForecastRow>(
-        `SELECT DISTINCT ON (a.id)
-                a.id AS asset_id, a.site_id, a.quantity AS asset_quantity, a.unit_rate AS asset_unit_rate, a.expected_life_years AS asset_life,
-                t.unit_rate AS type_unit_rate, t.expected_life_years AS type_life,
-                i.inspected_on, s.conditions, s.quality_confidence, s.quantity_confidence, s.assessed_quantity
-           FROM asset a
-           JOIN assessment s ON s.asset_id = a.id
-           JOIN inspection i ON i.id = s.inspection_id
-           LEFT JOIN asset_type t ON t.id = a.asset_type_id
-          WHERE a.client_id = $1 AND ($2::uuid IS NULL OR a.site_id = $2::uuid)
-          ORDER BY a.id, i.inspected_on DESC`, [clientId, siteId ?? null])).rows;
-    });
-    const result = runForecast(rows.map(toAssessedAsset), scenario);
-    const siteOf = new Map(rows.map((r) => [r.asset_id, r.site_id]));
-    const bySite: Record<string, Record<number, number>> = {};
-    for (const l of result.lines) {
-      const s = siteOf.get(l.assetId)!;
-      const row = (bySite[s] ??= {});
-      row[l.year] = (row[l.year] ?? 0) + l.nominal;
-    }
-    return {
-      scenario,
-      assetsAssessed: rows.length - result.skipped.length,
-      skipped: result.skipped,
-      byYear: result.byYear,
-      leveled: result.leveled,
-      bySite,
-      totals: {
-        real: result.byYear.reduce((n, y) => n + y.real, 0),
-        nominal: result.byYear.reduce((n, y) => n + y.nominal, 0),
-        presentValue: result.byYear.reduce((n, y) => n + y.presentValue, 0),
-      },
-    };
+  run(@Claims() c: TokenClaims, @Param('clientId') clientId: string, @Body() body: unknown, @Query('siteId') siteId?: string) {
+    return runClientForecast(this.db, c, clientId, parse(scenarioSchema, body) as Scenario, siteId);
   }
 }
 
@@ -323,7 +249,7 @@ export class AppModule {
   static register(db: Database, config: AppConfig): DynamicModule {
     return {
       module: AppModule,
-      controllers: [HealthController, AuthController, RegisterController, InspectionController, ForecastController],
+      controllers: [HealthController, AuthController, RegisterController, InspectionController, ForecastController, AdminController],
       providers: [
         { provide: DB, useValue: db },
         { provide: CONFIG, useValue: config },
