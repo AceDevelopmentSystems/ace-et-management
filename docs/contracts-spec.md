@@ -51,5 +51,5 @@ Everything here follows the rules in `apps/api/README.md#soft-delete`.
   order whose site is deleted, ...) is refused with a clear message and nothing changes.
 
 ## Not built yet
-Ad hoc work orders (the table already allows a work order with no contract), invoices and payments, GST, a contractor
+Ad hoc work orders (the table already allows a work order with no contract), invoices and accounting export (designed in `invoices-spec.md`; the system records invoices and never makes payments), a contractor
 portal (the `contractor` role has no access yet), and notifications for overdue work.
