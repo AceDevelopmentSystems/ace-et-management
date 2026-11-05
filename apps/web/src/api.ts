@@ -61,7 +61,7 @@ export const api = {
 // ------------------------------------------------------------------ types (as returned by the API)
 export interface Client { id: string; name: string; code: string | null; currency: string }
 export interface Region { id: string; code: string; name: string; site_count: number }
-export type TrashEntity = 'client' | 'region' | 'site' | 'asset-type' | 'asset' | 'scenario' | 'contractor' | 'contract' | 'contract-line' | 'work-order';
+export type TrashEntity = 'client' | 'region' | 'site' | 'asset-type' | 'asset' | 'scenario' | 'contractor' | 'contract' | 'contract-line' | 'work-order' | 'invoice' | 'tax-code';
 export interface TrashItem {
   entity: TrashEntity; id: string; label: string; clientId: string | null; clientName: string | null;
   deletedAt: string; deletedBy: string | null; /** Items that went with it (sites and assets of a deleted client, assets of a site). */ includes: number;
@@ -128,3 +128,18 @@ export interface GenerateResult {
   dryRun: boolean; from: string | null; through: string; existing: number; deletedSkipped: number; wouldCreate: number; created: number;
   sample: { lineId: string; description: string; dueDate: string }[];
 }
+
+// ------------------------------------------------------------------ invoices (recorded, never paid by this system)
+export interface TaxCode { id: string; code: string; name: string; rate: string; external_codes: Record<string, string> }
+export type InvoiceStatus = 'received' | 'approved' | 'exported' | 'paid' | 'disputed' | 'rejected';
+export interface InvoiceSummary {
+  id: string; client_id: string; contractor_id: string; contractor_name: string; contract_id: string | null; contract_code: string | null;
+  supplier_ref: string; issue_date: string; due_date: string | null; currency: string; net: string; tax: string; gross: string;
+  status: InvoiceStatus; source: string; notes: string | null; approved_at: string | null; override_reason: string | null; paid_on: string | null; line_count: number;
+}
+export interface InvoiceLine {
+  id: string; position: number; description: string; quantity: string; unit_price: string; net: string; tax_code_id: string | null; tax_code: string | null;
+  tax_amount: string; work_order_id: string | null; work_order_code: string | null; account_code: string | null;
+}
+export interface InvoiceWarning { code: string; message: string; lineId?: string; workOrderId?: string }
+export interface InvoiceDetail extends Omit<InvoiceSummary, 'line_count'> { lines: InvoiceLine[]; warnings: InvoiceWarning[] }

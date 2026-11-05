@@ -8,6 +8,7 @@ import { num } from '../lib';
 import { ErrorMsg, Field, Loading, RowActions, confirmDelete } from '../ui';
 import { ContractsTab, WorkOrdersTab } from './Contracts';
 import { ForecastTab } from './Forecast';
+import { InvoicesTab } from './Invoices';
 
 export function ClientPage() {
   const { clientId = '' } = useParams();
@@ -27,6 +28,7 @@ export function ClientPage() {
             <NavLink to="types">Asset types</NavLink>
             <NavLink to="contracts">Contracts</NavLink>
             <NavLink to="work-orders">Work orders</NavLink>
+            <NavLink to="invoices">Invoices</NavLink>
             <NavLink to="forecast">Forecast</NavLink>
           </nav>
           <Routes>
@@ -36,6 +38,7 @@ export function ClientPage() {
             <Route path="types" element={<TypesTab clientId={clientId} />} />
             <Route path="contracts" element={<ContractsTab clientId={clientId} />} />
             <Route path="work-orders" element={<WorkOrdersTab client={client} />} />
+            <Route path="invoices" element={<InvoicesTab client={client} />} />
             <Route path="forecast" element={<ForecastTab client={client} />} />
           </Routes>
         </>

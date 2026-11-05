@@ -9,6 +9,7 @@ import { TokenClaims, hashPassword, signToken, verifyPassword, Role } from './au
 import { Database } from './db';
 import { AdminController } from './admin';
 import { ContractorsController, ContractsController, WorkOrdersController } from './contracts';
+import { InvoicesController, TaxCodesController } from './invoices';
 import { TrashController } from './trash';
 import { runClientForecast } from './forecast-run';
 import { assetCreate, clientCreate, regionCreate, scenarioSchema, siteCreate, typeCreate } from './schemas';
@@ -301,7 +302,7 @@ export class AppModule {
     return {
       module: AppModule,
       controllers: [HealthController, AuthController, RegisterController, InspectionController, ForecastController, AdminController, TrashController,
-        ContractorsController, ContractsController, WorkOrdersController],
+        ContractorsController, ContractsController, WorkOrdersController, TaxCodesController, InvoicesController],
       providers: [
         { provide: DB, useValue: db },
         { provide: CONFIG, useValue: config },

@@ -13,19 +13,20 @@ import { Database, Queryable } from './db';
  * Deleting a parent also marks its children with the SAME deleted_at (one transaction, one now()), so a restore
  * brings back exactly what went with it and nothing that was deleted earlier on its own.
  */
-export type Entity = 'client' | 'region' | 'site' | 'asset-type' | 'asset' | 'scenario' | 'contractor' | 'contract' | 'contract-line' | 'work-order';
+export type Entity = 'client' | 'region' | 'site' | 'asset-type' | 'asset' | 'scenario' | 'contractor' | 'contract' | 'contract-line' | 'work-order' | 'invoice' | 'tax-code';
 const TABLE: Record<Entity, string> = {
   client: 'client', region: 'region', site: 'site', 'asset-type': 'asset_type', asset: 'asset', scenario: 'forecast_scenario',
   contractor: 'contractor', contract: 'contract', 'contract-line': 'contract_line', 'work-order': 'work_order',
+  invoice: 'invoice', 'tax-code': 'tax_code',
 };
 export const isEntity = (s: string): s is Entity => Object.prototype.hasOwnProperty.call(TABLE, s);
 const LABEL: Record<Entity, string> = {
   client: 'Client', region: 'Region', site: 'Site', 'asset-type': 'Asset type', asset: 'Asset', scenario: 'Scenario',
-  contractor: 'Contractor', contract: 'Contract', 'contract-line': 'Contract line', 'work-order': 'Work order',
+  contractor: 'Contractor', contract: 'Contract', 'contract-line': 'Contract line', 'work-order': 'Work order', invoice: 'Invoice', 'tax-code': 'Tax code',
 };
 
-/** A contractor belongs to the organisation, so it has no client. */
-const clientColumn = (entity: Entity) => (entity === 'client' ? 'id' : entity === 'contractor' ? 'NULL::uuid' : 'client_id');
+/** Contractors and tax codes belong to the organisation, so they have no client. */
+const clientColumn = (entity: Entity) => (entity === 'client' ? 'id' : entity === 'contractor' || entity === 'tax-code' ? 'NULL::uuid' : 'client_id');
 
 const n = async (q: Queryable, sql: string, params: unknown[]) => Number((await q.query<{ n: string }>(sql, params)).rows[0]!.n);
 const plural = (count: number, one: string, many = `${one}s`) => `${count} ${count === 1 ? one : many}`;
@@ -40,6 +41,10 @@ async function cascadeDelete(q: Queryable, table: string, where: string, params:
 /** Things that must not be left pointing at a deleted row. */
 async function assertNoLiveDependants(q: Queryable, entity: Entity, id: string) {
   const refuse = (message: string) => { throw new ConflictException(message); };
+  /** Live invoice lines billing work orders that match `where` (a condition on work_order). */
+  const invoiced = (where: string) => n(q,
+    `SELECT count(*) AS n FROM invoice_line l WHERE l.deleted_at IS NULL AND l.work_order_id IN (SELECT id FROM work_order WHERE ${where} AND deleted_at IS NULL)`, [id]);
+  const onInvoices = (count: number) => `Work for it is on ${plural(count, 'invoice line')}. Delete or edit those invoices first.`;
   if (entity === 'region') {
     const sites = await n(q, 'SELECT count(*) AS n FROM site WHERE region_id = $1 AND deleted_at IS NULL', [id]);
     if (sites) refuse(`This region still has ${plural(sites, 'site')}. Move or delete them first.`);
@@ -53,14 +58,34 @@ async function assertNoLiveDependants(q: Queryable, entity: Entity, id: string) 
     if (kids) refuse(`This asset has ${plural(kids, 'component')}. Delete or move them first.`);
     const lines = await n(q, 'SELECT count(*) AS n FROM contract_line WHERE asset_id = $1 AND deleted_at IS NULL', [id]);
     if (lines) refuse(`This asset is on ${plural(lines, 'contract line')}. Remove those lines from their contracts first.`);
+    const billed = await invoiced('asset_id = $1');
+    if (billed) refuse(onInvoices(billed));
   } else if (entity === 'site') {
     const lines = await n(q,
       `SELECT count(*) AS n FROM contract_line l WHERE l.deleted_at IS NULL
           AND (l.site_id = $1 OR l.asset_id IN (SELECT id FROM asset WHERE site_id = $1 AND deleted_at IS NULL))`, [id]);
     if (lines) refuse(`This site, or an asset at it, is on ${plural(lines, 'contract line')}. Remove those lines from their contracts first.`);
+    const billed = await invoiced('site_id = $1');
+    if (billed) refuse(onInvoices(billed));
   } else if (entity === 'contractor') {
     const contracts = await n(q, 'SELECT count(*) AS n FROM contract WHERE contractor_id = $1 AND deleted_at IS NULL', [id]);
     if (contracts) refuse(`${contracts} contract${contracts === 1 ? ' uses' : 's use'} this contractor. Change or delete them first.`);
+    const bills = await n(q, 'SELECT count(*) AS n FROM invoice WHERE contractor_id = $1 AND deleted_at IS NULL', [id]);
+    if (bills) refuse(`${plural(bills, 'invoice')} from this contractor ${bills === 1 ? 'is' : 'are'} recorded. Delete them first.`);
+  } else if (entity === 'contract') {
+    const bills = await n(q, 'SELECT count(*) AS n FROM invoice WHERE contract_id = $1 AND deleted_at IS NULL', [id]);
+    if (bills) refuse(`${plural(bills, 'invoice')} ${bills === 1 ? 'is' : 'are'} recorded against this contract. Delete or move them first.`);
+    const billed = await invoiced('contract_id = $1');
+    if (billed) refuse(onInvoices(billed));
+  } else if (entity === 'work-order') {
+    const billed = await invoiced('id = $1');
+    if (billed) refuse(`This work order is on ${plural(billed, 'invoice line')}. Delete or edit those invoices first.`);
+  } else if (entity === 'tax-code') {
+    const used = await n(q, 'SELECT count(*) AS n FROM invoice_line WHERE tax_code_id = $1 AND deleted_at IS NULL', [id]);
+    if (used) refuse(`This tax code is used on ${plural(used, 'invoice line')}. Change those invoices first.`);
+  } else if (entity === 'invoice') {
+    const st = (await q.query<{ status: string }>('SELECT status FROM invoice WHERE id = $1', [id])).rows[0]?.status;
+    if (st && !['received', 'disputed', 'rejected'].includes(st)) refuse(`This invoice is ${st}. Reopen it before deleting.`);
   }
 }
 
@@ -82,7 +107,11 @@ export async function softDelete(q: Queryable, c: TokenClaims, entity: Entity, i
   } else if (entity === 'contract') {
     await down('workOrders', 'work_order', 'contract_id = $1');
     await down('contractLines', 'contract_line', 'contract_id = $1');
+  } else if (entity === 'invoice') {
+    await down('invoiceLines', 'invoice_line', 'invoice_id = $1');
   } else if (entity === 'client') {
+    await down('invoiceLines', 'invoice_line', 'client_id = $1');
+    await down('invoices', 'invoice', 'client_id = $1');
     await down('workOrders', 'work_order', 'client_id = $1');
     await down('contractLines', 'contract_line', 'client_id = $1');
     await down('contracts', 'contract', 'client_id = $1');
@@ -126,6 +155,16 @@ async function assertConsistent(q: Queryable, clientId: string) {
       (l) => `a work order is for the deleted site "${l}". Restore that site first.`],
     [`SELECT a.name AS label FROM work_order w JOIN asset a ON a.id = w.asset_id WHERE w.client_id = $1 AND w.deleted_at IS NULL AND a.deleted_at IS NOT NULL`,
       (l) => `a work order is for the deleted asset "${l}". Restore that asset first.`],
+    [`SELECT r.name AS label FROM invoice i JOIN contractor r ON r.id = i.contractor_id WHERE i.client_id = $1 AND i.deleted_at IS NULL AND r.deleted_at IS NOT NULL`,
+      (l) => `an invoice is from the deleted contractor "${l}". Restore that contractor first.`],
+    [`SELECT k.code AS label FROM invoice i JOIN contract k ON k.id = i.contract_id WHERE i.client_id = $1 AND i.deleted_at IS NULL AND k.deleted_at IS NOT NULL`,
+      (l) => `an invoice is against the deleted contract "${l}". Restore that contract first.`],
+    [`SELECT i.supplier_ref AS label FROM invoice_line l JOIN invoice i ON i.id = l.invoice_id WHERE l.client_id = $1 AND l.deleted_at IS NULL AND i.deleted_at IS NOT NULL`,
+      (l) => `a line belongs to the deleted invoice "${l}". Restore that invoice first.`],
+    [`SELECT w.title AS label FROM invoice_line l JOIN work_order w ON w.id = l.work_order_id WHERE l.client_id = $1 AND l.deleted_at IS NULL AND w.deleted_at IS NOT NULL`,
+      (l) => `an invoice line is for the deleted work order "${l}". Restore that work order first.`],
+    [`SELECT t.code AS label FROM invoice_line l JOIN tax_code t ON t.id = l.tax_code_id WHERE l.client_id = $1 AND l.deleted_at IS NULL AND t.deleted_at IS NOT NULL`,
+      (l) => `an invoice line uses the deleted tax code "${l}". Restore that tax code first.`],
   ];
   for (const [sql, message] of checks) {
     const label = await first(sql);
@@ -158,6 +197,8 @@ export async function restore(q: Queryable, c: TokenClaims, entity: Entity, id: 
     } else if (entity === 'contract') {
       await back('contractLines', 'contract_line', 'contract_id = $1');
       await back('workOrders', 'work_order', 'contract_id = $1');
+    } else if (entity === 'invoice') {
+      await back('invoiceLines', 'invoice_line', 'invoice_id = $1');
     } else if (entity === 'client') {
       await back('regions', 'region', 'client_id = $1');
       await back('assetTypes', 'asset_type', 'client_id = $1');
@@ -167,6 +208,8 @@ export async function restore(q: Queryable, c: TokenClaims, entity: Entity, id: 
       await back('contracts', 'contract', 'client_id = $1');
       await back('contractLines', 'contract_line', 'client_id = $1');
       await back('workOrders', 'work_order', 'client_id = $1');
+      await back('invoices', 'invoice', 'client_id = $1');
+      await back('invoiceLines', 'invoice_line', 'client_id = $1');
     }
     await q.query(`UPDATE ${table} SET deleted_at = NULL, deleted_by = NULL WHERE id = $1`, [id]);
     if (row.client_id) await assertConsistent(q, row.client_id);
@@ -202,6 +245,8 @@ export async function listTrash(q: Queryable): Promise<TrashItem[]> {
        FROM client c LEFT JOIN app_user u ON u.id = c.deleted_by WHERE c.deleted_at IS NOT NULL`,
     `SELECT 'contractor' AS entity, k.id, k.name AS label, NULL::uuid AS client_id, NULL::text AS client_name, k.deleted_at, u.display_name AS deleted_by, 0 AS includes
        FROM contractor k LEFT JOIN app_user u ON u.id = k.deleted_by WHERE k.deleted_at IS NOT NULL`,
+    `SELECT 'tax-code' AS entity, t.id, t.code || ' · ' || t.name AS label, NULL::uuid AS client_id, NULL::text AS client_name, t.deleted_at, u.display_name AS deleted_by, 0 AS includes
+       FROM tax_code t LEFT JOIN app_user u ON u.id = t.deleted_by WHERE t.deleted_at IS NOT NULL`,
     base('region', `r.code || ' · ' || r.name`, 'region r', 'r', notWithClient('r')),
     base('site', `s.code || ' · ' || s.name`, 'site s', 's', notWithClient('s'), `(${sameTs('asset', 'site_id', 's')}) + (${sameTs('work_order', 'site_id', 's')})`),
     base('asset-type', 't.name', 'asset_type t', 't', notWithClient('t')),
@@ -210,6 +255,7 @@ export async function listTrash(q: Queryable): Promise<TrashItem[]> {
     base('scenario', 'f.name', 'forecast_scenario f', 'f', notWithClient('f')),
     base('contract', `k.code || ' · ' || k.name`, 'contract k', 'k', notWithClient('k'), `(${sameTs('contract_line', 'contract_id', 'k')}) + (${sameTs('work_order', 'contract_id', 'k')})`),
     base('contract-line', 'l.description', 'contract_line l', 'l', `${notWithClient('l')} ${notWith('l', 'contract', 'contract_id')}`),
+    base('invoice', `i.supplier_ref || ' · ' || r.name`, 'invoice i JOIN contractor r ON r.id = i.contractor_id', 'i', notWithClient('i'), sameTs('invoice_line', 'invoice_id', 'i')),
     base('work-order', `COALESCE(kk.code || '-' || lpad(w.number::text, 4, '0'), 'WO-' || lpad(w.number::text, 4, '0')) || ' · ' || w.title`,
       'work_order w LEFT JOIN contract kk ON kk.id = w.contract_id', 'w',
       `${notWithClient('w')} ${notWith('w', 'contract', 'contract_id')} ${notWith('w', 'site', 'site_id')} ${notWith('w', 'asset', 'asset_id')}`),

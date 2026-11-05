@@ -86,3 +86,41 @@ export function statusActions(status: WorkOrderStatus): StatusAction[] {
 /** Open and past its due date. */
 export const isOverdue = (w: { status: WorkOrderStatus; due_date: string }, today = todayLocal()): boolean =>
   (w.status === 'new' || w.status === 'in_progress') && w.due_date < today;
+
+// ------------------------------------------------------------------ invoices
+import type { InvoiceStatus } from './api';
+
+/** Amounts on an invoice are shown to the cent. */
+export function money2(n: number | string, currency = 'NZD'): string {
+  return new Intl.NumberFormat('en-NZ', { style: 'currency', currency }).format(Number(n));
+}
+
+/** Paid only records what the accounting system says; this system pays nobody. */
+export const INVOICE_LABEL: Record<InvoiceStatus, string> = {
+  received: 'Received', approved: 'Approved', exported: 'Exported', paid: 'Paid (recorded)', disputed: 'Disputed', rejected: 'Rejected',
+};
+
+export interface InvoiceAction { label: string; to: InvoiceStatus; /** What extra the server needs: a reason, a payment date, or (when matching warnings exist) an override reason. */ ask?: 'reason' | 'paidOn' }
+
+/** The moves the API allows from each status (the server enforces the same rules). `exported` is only ever set by an export. */
+export function invoiceActions(status: InvoiceStatus): InvoiceAction[] {
+  switch (status) {
+    case 'received': return [{ label: 'Approve', to: 'approved' }, { label: 'Dispute…', to: 'disputed', ask: 'reason' }, { label: 'Reject…', to: 'rejected', ask: 'reason' }];
+    case 'disputed': return [{ label: 'Reopen', to: 'received' }, { label: 'Reject…', to: 'rejected', ask: 'reason' }];
+    case 'rejected': return [{ label: 'Reopen', to: 'received' }];
+    case 'approved': return [{ label: 'Record as paid…', to: 'paid', ask: 'paidOn' }, { label: 'Reopen', to: 'received' }];
+    case 'exported': return [{ label: 'Record as paid…', to: 'paid', ask: 'paidOn' }];
+    case 'paid': return [{ label: 'Undo paid', to: 'approved' }];
+  }
+}
+
+/** Line and invoice totals in whole cents, the same way the server works them out (so the preview matches what is saved). */
+export function priceInvoice(lines: { quantity: number; unitPrice: number; taxAmount: number | null; rate: number | null }[]) {
+  let net = 0, tax = 0;
+  for (const l of lines) {
+    const n = Math.round(Number((l.quantity * l.unitPrice).toFixed(6)) * 100);
+    net += n;
+    tax += l.taxAmount != null ? Math.round(Number(l.taxAmount.toFixed(6)) * 100) : l.rate != null ? Math.round(n * l.rate / 100) : 0;
+  }
+  return { net: net / 100, tax: tax / 100, gross: (net + tax) / 100 };
+}

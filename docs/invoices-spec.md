@@ -1,6 +1,21 @@
 # Contractor invoices and accounting export (design)
 
-Status: proposed. Nothing here is built yet.
+Status: **step 1 built** (tax codes, keyed-in invoices, approval with work-order matching, soft delete and Trash, screens).
+Attachments, export, spreadsheet import and the inbound API are still design only; see "Build order" at the end.
+
+Decisions made while building step 1:
+- Header totals are always worked out by the server from the lines (net = quantity x unit price in whole cents; tax = the stated
+  amount if given, else the tax code's rate, else none). Callers never send totals, so an invoice cannot be internally inconsistent
+  (the database also checks gross = net + tax).
+- Stated tax is trusted, as proposed. Mismatch flagging against the tax code is not built yet.
+- Matching warnings (contractor, contract, not complete, billed elsewhere, over the estimate by more than a fixed 10%) never block
+  by themselves. Approving past them needs `override: true` and a `reason`, which is kept on the invoice and in the audit trail.
+  The tolerance is a constant for now, not yet a setting.
+- Editing replaces the whole set of lines. The old lines are soft-deleted, not destroyed.
+- An invoice can be deleted only while received, disputed or rejected. Contractors, contracts, work orders, sites, assets and tax
+  codes that live invoices depend on cannot be deleted from under them.
+- "Undo paid" returns to `approved`. When exports exist (step 3) it will return to `exported` for exported invoices.
+- The demo seed adds Australian GST (10%) and GST free (0%) tax codes. Accounting-system names are left blank on purpose.
 
 ## Scope in one paragraph
 The system **records** invoices (bills) that contractors send for work, lets a person check and approve them against

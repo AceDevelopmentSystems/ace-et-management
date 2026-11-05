@@ -45,6 +45,15 @@ export async function seedContracts(db: Database, p: ContractSeedParams): Promis
         [p.organisationId, k.name, k.contactName, k.email, k.phone])).rows[0]!.id);
     }
 
+    // Australian GST and zero-rated, so invoices can be recorded straight away. The accounting-system names are left for the
+    // organisation to fill in (they differ per chart of accounts), so nothing here pretends to know them.
+    for (const [code, name, rate] of [['GST', 'GST 10%', 10], ['FRE', 'GST free', 0]] as const) {
+      await q.query(
+        `INSERT INTO tax_code (organisation_id, code, name, rate) SELECT $1,$2,$3,$4
+          WHERE NOT EXISTS (SELECT 1 FROM tax_code WHERE organisation_id = $1 AND lower(code) = lower($2) AND deleted_at IS NULL)`,
+        [p.organisationId, code, name, rate]);
+    }
+
     const sites = (await q.query<{ id: string; code: string; stars: number }>(
       `SELECT id, code, COALESCE((attributes->>'powerStars')::int, 0) AS stars FROM site WHERE client_id = $1 AND deleted_at IS NULL ORDER BY code`, [p.clientId])).rows;
 
