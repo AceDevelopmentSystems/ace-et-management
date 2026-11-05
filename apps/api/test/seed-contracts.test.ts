@@ -60,13 +60,15 @@ describe('demo contracts and work orders', () => {
     expect(await scalar(`SELECT count(*) AS n FROM work_order w JOIN asset a ON a.id = w.asset_id WHERE a.site_id <> w.site_id`)).toBe(0); // asset work happens at the asset's site
   });
 
-  it('is idempotent: a second run changes nothing, and contractors are not duplicated', async () => {
+  it('is idempotent: a second run changes nothing, and contractors and tax codes are not duplicated', async () => {
     const fp = await woFingerprint();
+    expect(await db.admin(async (q) => Number((await q.query<{ n: string }>('SELECT count(*) AS n FROM tax_code')).rows[0]!.n))).toBe(2);
     const contractors = await countContractors();
     const r = await seedDemo(db, { states: subset, asOf: AS_OF });
     expect(r).toMatchObject({ contractors: 3, contracts: 3 });
     expect(await woFingerprint()).toBe(fp);
     expect(await countContractors()).toBe(contractors);
+    expect(await db.admin(async (q) => Number((await q.query<{ n: string }>('SELECT count(*) AS n FROM tax_code')).rows[0]!.n))).toBe(2);
   });
 
   it('is deterministic across a full rebuild, and reuses the contractors a reset leaves behind', async () => {

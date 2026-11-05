@@ -114,6 +114,12 @@ export class AdminController {
   @Delete('work-orders/:id') @Roles(...ADMINS)
   deleteWorkOrder(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'work-order', id); }
 
+  @Delete('invoices/:id') @Roles(...ADMINS)
+  deleteInvoice(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'invoice', id); }
+
+  @Delete('tax-codes/:id') @Roles(...ADMINS)
+  deleteTaxCode(@Claims() c: TokenClaims, @Param('id') id: string) { return this.remove(c, 'tax-code', id); }
+
   private remove(c: TokenClaims, entity: Entity, id: string) {
     return this.db.withTenant({ ...tenant(c), includeDeleted: true }, (q) => softDelete(q, c, entity, id));
   }

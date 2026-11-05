@@ -31,9 +31,13 @@ prevent cross-tenant references. An OWNER organisation gets one implicit client 
 | POST | `/contracts/:id/generate` `{ through, from?, dryRun? }` | org_admin, asset_manager; repeatable, never duplicates |
 | GET | `/clients/:id/work-orders` (`status`, `siteId`, `contractId`, `from`, `to`, `overdue`, `limit`, `offset`) -> `{ items, total }`, `/work-orders/:id` | readers |
 | PATCH/POST | `/work-orders/:id`, `/work-orders/:id/status` | org_admin, asset_manager |
-| DELETE | `/clients/:id`, `/regions/:id`, `/sites/:id`, `/asset-types/:id`, `/assets/:id`, `/scenarios/:id`, `/contractors/:id`, `/contracts/:id`, `/contract-lines/:id`, `/work-orders/:id` | org_admin (scenarios: also asset_manager). **Soft delete**; 409 if still in use |
+| GET/POST/PATCH | `/tax-codes`, `/tax-codes/:id` (organisation-wide; rate in percent, `externalCodes` per accounting system) | read: readers; write: org_admin, asset_manager |
+| GET/POST | `/clients/:id/invoices` (`status`, `contractorId`, `contractId`, `from`, `to`, `limit`, `offset`) -> `{ items, total, grossTotal }` | read: readers; write: org_admin, asset_manager |
+| GET/PATCH | `/invoices/:id` (with lines and matching `warnings`; PATCH only while received or disputed, `lines` replaces the set) | same |
+| POST | `/invoices/:id/status` `{ status, reason?, override?, paidOn? }` (approve, dispute, reject, reopen, record paid). **Records only: nothing here pays anyone** | org_admin, asset_manager |
+| DELETE | `/clients/:id`, `/regions/:id`, `/sites/:id`, `/asset-types/:id`, `/assets/:id`, `/scenarios/:id`, `/contractors/:id`, `/contracts/:id`, `/contract-lines/:id`, `/work-orders/:id`, `/invoices/:id`, `/tax-codes/:id` | org_admin (scenarios: also asset_manager). **Soft delete**; 409 if still in use |
 | GET | `/trash` | org_admin: items deleted on their own, newest first |
-| POST | `/trash/:entity/:id/restore` (`client`, `region`, `site`, `asset-type`, `asset`, `scenario`, `contractor`, `contract`, `contract-line`, `work-order`) | org_admin |
+| POST | `/trash/:entity/:id/restore` (`client`, `region`, `site`, `asset-type`, `asset`, `scenario`, `contractor`, `contract`, `contract-line`, `work-order`, `invoice`, `tax-code`) | org_admin |
 | POST | `/sites/:id/inspections` (with assessments) | org_admin, asset_manager, assessor |
 | GET | `/assets/:id/assessments` | readers |
 | POST | `/clients/:id/forecast?siteId=` | readers (read-only calculation from the request body) |
@@ -55,6 +59,7 @@ UPDATE or DELETE on `audit_log`), so even a bug cannot hard-delete.
   restore that would leave a live item pointing at a deleted one is refused with 409 and nothing changes.
 - A **region**, **asset type** or **asset** that is still in use (by sites, assets or components), a **contractor** used by a contract, and a **site** or **asset** on a contract line cannot be deleted (409).
 - Deleting a **contract** also deletes its lines and work orders; a **site** or **asset** its work orders. See `docs/contracts-spec.md`.
+- Deleting an **invoice** takes its lines and is allowed only while received, disputed or rejected. A contractor, contract, work order, site, asset or tax code that live invoices use cannot be deleted (409). See `docs/invoices-spec.md`.
 - Codes (client, site, region) can be reused after a delete; restoring over a live clash is refused until one is renamed.
 - Only an `org_admin` sees the Trash or restores. Deletes and restores run with `includeDeleted` (PostgreSQL also
   checks the new row of an UPDATE against the read policy, so the row being marked must stay visible to that statement);

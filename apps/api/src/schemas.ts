@@ -98,3 +98,40 @@ export const workOrderQuery = z.object({
   from: isoDate.optional(), to: isoDate.optional(), overdue: z.enum(['true', 'false']).optional(),
   limit: z.coerce.number().int().min(1).max(500).default(200), offset: z.coerce.number().int().min(0).default(0),
 });
+
+// ---------------------------------------------------------------- tax codes and invoices
+const externalCodes = z.record(z.string().min(1).max(40), z.string().min(1).max(60));
+export const taxCodeBase = z.object({
+  code: z.string().min(1).max(20), name: z.string().min(1).max(100), rate: z.number().min(0).max(100), externalCodes,
+});
+export const taxCodeCreate = taxCodeBase.partial({ externalCodes: true });
+export const taxCodePatch = taxCodeBase.partial();
+
+/** One invoice line as the contractor billed it. Net is quantity x unit price; tax is stated, or worked out from the tax code. */
+export const invoiceLineInput = z.object({
+  description: z.string().min(1).max(500),
+  quantity: z.number().positive().max(1e9), unitPrice: z.number().nonnegative().max(1e9),
+  taxCodeId: z.string().uuid().nullable().optional(),
+  taxAmount: z.number().nonnegative().max(1e9).nullable().optional(),
+  workOrderId: z.string().uuid().nullable().optional(),
+  accountCode: z.string().max(40).nullable().optional(),
+});
+export const INVOICE_STATUSES = ['received', 'approved', 'exported', 'paid', 'disputed', 'rejected'] as const;
+export const invoiceBase = z.object({
+  contractorId: z.string().uuid(), contractId: z.string().uuid().nullable(),
+  supplierRef: z.string().trim().min(1).max(60), issueDate: isoDate, dueDate: isoDate.nullable(),
+  currency: z.string().length(3), notes: z.string().max(2000).nullable(),
+  lines: z.array(invoiceLineInput).min(1).max(500),
+});
+export const invoiceCreate = invoiceBase.partial({ contractId: true, dueDate: true, currency: true, notes: true });
+export const invoicePatch = invoiceBase.partial();
+export const invoiceStatusChange = z.object({
+  status: z.enum(['received', 'approved', 'disputed', 'rejected', 'paid', 'exported']),
+  override: z.boolean().optional(), reason: z.string().trim().min(1).max(500).optional(),
+  paidOn: isoDate.optional(),
+});
+export const invoiceQuery = z.object({
+  status: z.enum(INVOICE_STATUSES).optional(), contractorId: z.string().uuid().optional(), contractId: z.string().uuid().optional(),
+  from: isoDate.optional(), to: isoDate.optional(),
+  limit: z.coerce.number().int().min(1).max(500).default(200), offset: z.coerce.number().int().min(0).default(0),
+});

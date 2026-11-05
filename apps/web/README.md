@@ -21,6 +21,12 @@ with a Preview (what would be created, what already exists) and a Create button 
 **Work orders** (client tab, and on each contract): filters (status, site, due dates, overdue), paging, status moves
 (Start, Complete with date and actual cost, Cancel, Reopen), edit and delete. Overdue work shows its due date in red.
 
+**Invoices** (client tab, and a page per invoice): contractor invoices recorded against a contract and its work orders. A form with
+live totals, a status filter, and an invoice page with matching warnings (not complete, billed elsewhere, over estimate...),
+Approve (past warnings only with a reason), Dispute and Reject (reason needed), Reopen, Edit (while received or disputed) and
+Record as paid. **This system does not pay anything**: paid only records what the accounting system reports, and the screens say so.
+**Tax codes** (header link): rates and what each accounting system calls them.
+
 Write controls are hidden for roles that cannot use them (the API enforces this regardless).
 The `contractor` role sees a "not available yet" message.
 

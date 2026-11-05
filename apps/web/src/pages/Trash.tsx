@@ -6,7 +6,7 @@ import { ErrorMsg, Loading } from '../ui';
 
 const KIND: Record<TrashEntity, string> = {
   client: 'Client', region: 'Region', site: 'Site', 'asset-type': 'Asset type', asset: 'Asset', scenario: 'Saved scenario',
-  contractor: 'Contractor', contract: 'Contract', 'contract-line': 'Contract line', 'work-order': 'Work order',
+  contractor: 'Contractor', contract: 'Contract', 'contract-line': 'Contract line', 'work-order': 'Work order', invoice: 'Invoice', 'tax-code': 'Tax code',
 };
 
 export function Trash() {

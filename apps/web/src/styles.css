@@ -37,6 +37,11 @@ button.link.danger { color: var(--danger); }
 .badge.active, .badge.complete { color: var(--ok); border-color: var(--ok); }
 .badge.in_progress { color: var(--accent); border-color: var(--accent); }
 .badge.cancelled, .badge.closed { color: var(--muted); text-decoration: line-through; }
+.badge.approved, .badge.paid, .badge.exported { color: var(--ok); border-color: var(--ok); }
+.badge.disputed { color: var(--accent); border-color: var(--accent); }
+.badge.rejected { color: var(--muted); text-decoration: line-through; }
+.warn { color: var(--warn, #b45309); }
+.scroll { overflow-x: auto; }
 .check { display: inline-flex; gap: 0.35rem; align-items: center; font-size: 0.9rem; padding-bottom: 0.45rem; }
 .actions { display: inline-flex; gap: 0.5rem; white-space: nowrap; }
 .list li { display: flex; gap: 0.5rem; align-items: baseline; flex-wrap: wrap; }
