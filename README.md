@@ -1,5 +1,5 @@
 # ace-et-management
-Asset management platform: a modernisation of the legacy CMS (Delphi/PHP). It serves a company managing its
+Asset management platform: an open source app for use in asset management It serves a company managing its
 own assets, or a consultancy managing assets for several clients, and projects replacement spend 5-30 years ahead.
 
 | Path | What |
