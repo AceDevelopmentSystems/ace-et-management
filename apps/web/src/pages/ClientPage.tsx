@@ -6,6 +6,7 @@ import { useAuth } from '../auth';
 import { usePatch, useRemove } from '../hooks';
 import { num } from '../lib';
 import { ErrorMsg, Field, Loading, RowActions, confirmDelete } from '../ui';
+import { ContractsTab, WorkOrdersTab } from './Contracts';
 import { ForecastTab } from './Forecast';
 
 export function ClientPage() {
@@ -24,6 +25,8 @@ export function ClientPage() {
             <NavLink to="sites">Sites</NavLink>
             <NavLink to="regions">Regions</NavLink>
             <NavLink to="types">Asset types</NavLink>
+            <NavLink to="contracts">Contracts</NavLink>
+            <NavLink to="work-orders">Work orders</NavLink>
             <NavLink to="forecast">Forecast</NavLink>
           </nav>
           <Routes>
@@ -31,6 +34,8 @@ export function ClientPage() {
             <Route path="sites" element={<SitesTab clientId={clientId} />} />
             <Route path="regions" element={<RegionsTab clientId={clientId} />} />
             <Route path="types" element={<TypesTab clientId={clientId} />} />
+            <Route path="contracts" element={<ContractsTab clientId={clientId} />} />
+            <Route path="work-orders" element={<WorkOrdersTab client={client} />} />
             <Route path="forecast" element={<ForecastTab client={client} />} />
           </Routes>
         </>

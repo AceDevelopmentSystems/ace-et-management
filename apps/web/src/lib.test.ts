@@ -53,3 +53,47 @@ describe('helpers', () => {
     expect(money(1234.5, 'NZD')).toContain('1,235');
   });
 });
+
+import { addDays, describeFrequency, isOverdue, statusActions, todayLocal } from './lib';
+
+describe('dates', () => {
+  it('addDays crosses month, year and leap-day boundaries', () => {
+    expect(addDays('2026-01-31', 1)).toBe('2026-02-01');
+    expect(addDays('2026-12-31', 1)).toBe('2027-01-01');
+    expect(addDays('2024-02-28', 1)).toBe('2024-02-29');
+    expect(addDays('2025-02-28', 1)).toBe('2025-03-01');
+    expect(addDays('2026-03-01', -1)).toBe('2026-02-28');
+    expect(addDays('2026-11-04', 90)).toBe('2027-02-02');
+  });
+  it('todayLocal is a YYYY-MM-DD date', () => {
+    expect(todayLocal()).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+  it('describes how often', () => {
+    expect(describeFrequency(1, 'month')).toBe('monthly');
+    expect(describeFrequency(1, 'year')).toBe('yearly');
+    expect(describeFrequency(3, 'month')).toBe('every 3 months');
+    expect(describeFrequency(2, 'week')).toBe('every 2 weeks');
+  });
+});
+
+describe('work order status flow', () => {
+  it('offers only the moves the server allows', () => {
+    expect(statusActions('new').map((a) => a.to)).toEqual(['in_progress', 'complete', 'cancelled']);
+    expect(statusActions('in_progress').map((a) => a.to)).toEqual(['complete', 'new', 'cancelled']);
+    expect(statusActions('complete').map((a) => a.to)).toEqual(['in_progress']);
+    expect(statusActions('cancelled').map((a) => a.to)).toEqual(['new']);
+  });
+  it('completing needs details; nothing else does', () => {
+    const all = (['new', 'in_progress', 'complete', 'cancelled'] as const).flatMap(statusActions);
+    expect(all.filter((a) => a.needsDetails).every((a) => a.to === 'complete')).toBe(true);
+    expect(all.some((a) => a.needsDetails)).toBe(true);
+  });
+  it('overdue means open and past due', () => {
+    expect(isOverdue({ status: 'new', due_date: '2026-01-01' }, '2026-06-01')).toBe(true);
+    expect(isOverdue({ status: 'in_progress', due_date: '2026-01-01' }, '2026-06-01')).toBe(true);
+    expect(isOverdue({ status: 'complete', due_date: '2026-01-01' }, '2026-06-01')).toBe(false);
+    expect(isOverdue({ status: 'cancelled', due_date: '2026-01-01' }, '2026-06-01')).toBe(false);
+    expect(isOverdue({ status: 'new', due_date: '2026-06-01' }, '2026-06-01')).toBe(false); // due today is not late yet
+    expect(isOverdue({ status: 'new', due_date: '2026-06-02' }, '2026-06-01')).toBe(false);
+  });
+});

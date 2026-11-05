@@ -3,6 +3,7 @@
 //   npm run seed:demo -w @ace/api                      # idempotent: create or top up
 //   npm run seed:demo -w @ace/api -- --reset           # delete the demo client first, then rebuild it
 //   npm run seed:demo -w @ace/api -- --no-assets       # regions and sites only
+//   npm run seed:demo -w @ace/api -- --no-contracts    # skip contractors, contracts and work orders
 //   npm run seed:demo -w @ace/api -- --states ACT,TAS  # a subset of states
 //   DEMO_PASSWORD=... npm run seed:demo -w @ace/api -- --reset-password   # set the demo user's password
 //
@@ -27,9 +28,10 @@ async function main() {
     if (applied.length) console.log('Applied migrations:', applied.join(', '));
     const r = await seedDemo(db, {
       reset: args.includes('--reset'), assets: !args.includes('--no-assets'), states, password: process.env.DEMO_PASSWORD || undefined,
-      resetPassword: args.includes('--reset-password'),
+      resetPassword: args.includes('--reset-password'), contracts: !args.includes('--no-contracts'),
     });
     console.log(`Seeded "${DEMO_ORG}": ${r.regions} regions, ${r.sites} sites, ${r.assetTypes} asset types, ${r.assets} assets, ${r.inspections} inspections.`);
+    console.log(`Contracts: ${r.contractors} contractors, ${r.contracts} contracts, ${r.contractLines} lines, ${r.workOrders} work orders.`);
     if (r.demoUser.password) console.log(`Demo login created: ${r.demoUser.email} / ${r.demoUser.password}  (shown once; set DEMO_PASSWORD to choose your own)`);
     else console.log(`Demo login: ${r.demoUser.email} (already existed, password unchanged)`);
   } finally {

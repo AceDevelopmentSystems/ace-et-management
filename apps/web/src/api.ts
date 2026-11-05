@@ -61,9 +61,9 @@ export const api = {
 // ------------------------------------------------------------------ types (as returned by the API)
 export interface Client { id: string; name: string; code: string | null; currency: string }
 export interface Region { id: string; code: string; name: string; site_count: number }
-export type TrashEntity = 'client' | 'region' | 'site' | 'asset-type' | 'asset' | 'scenario';
+export type TrashEntity = 'client' | 'region' | 'site' | 'asset-type' | 'asset' | 'scenario' | 'contractor' | 'contract' | 'contract-line' | 'work-order';
 export interface TrashItem {
-  entity: TrashEntity; id: string; label: string; clientId: string; clientName: string;
+  entity: TrashEntity; id: string; label: string; clientId: string | null; clientName: string | null;
   deletedAt: string; deletedBy: string | null; /** Items that went with it (sites and assets of a deleted client, assets of a site). */ includes: number;
 }
 export interface Site {
@@ -97,4 +97,34 @@ export interface ForecastResponse {
   leveled?: LeveledYear[];
   bySite: Record<string, Record<string, number>>;
   totals: { real: number; nominal: number; presentValue: number };
+}
+
+// ------------------------------------------------------------------ contractors, contracts, work orders
+export interface Contractor {
+  id: string; name: string; contact_name: string | null; email: string | null; phone: string | null; notes: string | null; contract_count: number;
+}
+export type ContractStatus = 'draft' | 'active' | 'closed';
+export interface ContractSummary {
+  id: string; code: string; name: string; status: ContractStatus; start_date: string; end_date: string;
+  contractor_id: string; contractor_name: string | null; line_count: number; open_work_orders: number;
+}
+export type Frequency = 'day' | 'week' | 'month' | 'year';
+export interface ContractLine {
+  id: string; description: string; frequency_interval: number; frequency_unit: Frequency; first_due_date: string; cost_per_occurrence: string;
+  site_id: string | null; asset_id: string | null; site_code: string | null; site_name: string | null; asset_name: string | null; asset_site_code: string | null;
+}
+export interface ContractDetail {
+  id: string; client_id: string; code: string; name: string; status: ContractStatus; start_date: string; end_date: string; notes: string | null;
+  contractor_id: string; contractor_name: string | null; lines: ContractLine[]; workOrderCounts: Record<string, number>;
+}
+export type WorkOrderStatus = 'new' | 'in_progress' | 'complete' | 'cancelled';
+export interface WorkOrder {
+  id: string; code: string; title: string; status: WorkOrderStatus; due_date: string; estimated_cost: string | null; actual_cost: string | null;
+  completed_on: string | null; notes: string | null; client_id: string; site_id: string; site_code: string; site_name: string;
+  asset_id: string | null; asset_name: string | null; contract_id: string | null; contract_code: string | null; contract_line_id: string | null;
+  contractor_id: string | null; contractor_name: string | null;
+}
+export interface GenerateResult {
+  dryRun: boolean; from: string | null; through: string; existing: number; deletedSkipped: number; wouldCreate: number; created: number;
+  sample: { lineId: string; description: string; dueDate: string }[];
 }
