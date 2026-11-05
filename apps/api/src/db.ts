@@ -61,6 +61,9 @@ export async function createPgDatabase(connectionString: string): Promise<Databa
     connectionString,
     types: { getTypeParser: ((oid: number, format?: any) => (oid === DATE_OID ? (v: string) => v : pg.types.getTypeParser(oid, format))) as any },
   });
+  // An idle client the server drops (restart, failover, DROP DATABASE ... FORCE) emits 'error' on the pool. Without a
+  // listener that is an unhandled error that crashes the process; the pool discards the client and reconnects on demand.
+  pool.on('error', (e) => console.warn(`postgres: idle connection error: ${e.message}`));
   const run = async <T>(fn: (q: Queryable) => Promise<T>, setup?: (q: Queryable) => Promise<void>) => {
     const client = await pool.connect();
     try {
